@@ -20,7 +20,6 @@ namespace Park_and_Company.TestCases.Module.IncentiveProgm
             LoginPage lpage = new LoginPage(ObjectRepository.Driver);
             HomePage hPage = lpage.LoginApplication(ObjectRepository.Config.GetUsername(), ObjectRepository.Config.GetPassword());
             ManageIncentivePrograms mIPage = hPage.OpenManageIncentivePrograms();
-            mIPage.SelectItemPerList("100");
             NewProgram npPage = mIPage.ClickNewProgram();
             ActivityIncentiveTemplate aiPage =  npPage.CreateActivityIncentiveTemplate();
             aiPage.SelectProgramName("Test", "Test");
@@ -34,7 +33,7 @@ namespace Park_and_Company.TestCases.Module.IncentiveProgm
             aiPage.AddPointType("test", "100");
             aiPage.AddProgramIncentive("CODE1", "TPE1", "TesTing", "100");
             aiPage.AddEligibleGroup("test");
-            aiPage.checkValidationField(true, false, true, false, false);
+            aiPage.CheckValidationField(true, false, true, false, false);
             aiPage.ClickFinish();
             mIPage.SelectItemPerList("100");
             mIPage.VerifyIncentiveGridEntry("//div[@id='ManageIncentiveProgramsGrid']/div/div[position()=3]", "Test", "24/04/2002","01/10/2002","Pending");

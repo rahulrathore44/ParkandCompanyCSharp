@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Park_and_Company.BaseClasses;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.PageObjects;
+using Park_and_Company.PageObject.IncentivePage;
 
 namespace Park_and_Company.PageObject
 {
@@ -14,6 +16,83 @@ namespace Park_and_Company.PageObject
         public SalesIncentiveTemplateBasic(IWebDriver _driver) : base(_driver)
         {
             this.driver = _driver;
+        }
+
+        [FindsBy(How = How.XPath, Using = "//a[text()='Program Incentive']")]
+        private IWebElement ProgramIncentive;
+
+        [FindsBy(How = How.XPath, Using = "//button[text()='Add']")]
+        private IWebElement Add;
+
+        [FindsBy(How = How.XPath, Using = "//a[text()='Validation']")]
+        private IWebElement Validation;
+
+        [FindsBy(How = How.XPath, Using = "//div[@id='accordion']/descendant::div[@id='rendered'][position()=6]/button")]
+        private IWebElement ValidationNext;
+
+        [FindsBy(How = How.XPath, Using = "//a[text()='Finish']")]
+        private IWebElement Finish;
+
+        [FindsBy(How = How.XPath, Using = "//div[@id='accordion']/descendant::div[@id='rendered'][position()=4]/button")]
+        private IWebElement ProgramIncentiveNext;
+
+        public void SelectProgramName(string pName, string pDesc)
+        {
+            SelectProgramPage spPage = new SelectProgramPage(driver);
+            spPage.SelectProgramName(pName, pDesc);
+        }
+
+
+        public void SelectProgramVisibilityStartDate(string day, string month,
+                string year)
+        {
+            SelectProgramDatesPage spdPage = new SelectProgramDatesPage(driver);
+            spdPage.SelectProgramVisibilityStartDate(day, month, year);
+        }
+
+
+        public void SelectProgramVisibilityEndDate(string day, string month,
+                string year)
+        {
+            SelectProgramDatesPage spdPage = new SelectProgramDatesPage(driver);
+            spdPage.SelectProgramVisibilityEndDate(day, month, year);
+
+        }
+
+
+        public void SelectProgramStartDate(string day, string month,
+                string year)
+        {
+            SelectProgramDatesPage spdPage = new SelectProgramDatesPage(driver);
+            spdPage.SelectProgramStartDate(day, month, year);
+
+        }
+
+
+        public void SelectProgramEndDate(string day, string month,
+                string year)
+        {
+            SelectProgramDatesPage spdPage = new SelectProgramDatesPage(driver);
+            spdPage.SelectProgramEndDate(day, month, year);
+
+        }
+
+
+        public void SelectProgramLastSubmitDate(string day, string month,
+                string year)
+        {
+            SelectProgramDatesPage spdPage = new SelectProgramDatesPage(driver);
+            spdPage.SelectProgramLastSubmitDate(day, month, year);
+
+        }
+
+
+        public void SelectProgramCloseDates(string day, string month,
+                string year)
+        {
+            SelectProgramDatesPage spdPage = new SelectProgramDatesPage(driver);
+            spdPage.SelectProgramCloseDates(day, month, year);
+
         }
 
     }

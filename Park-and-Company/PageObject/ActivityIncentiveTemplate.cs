@@ -70,7 +70,7 @@ namespace Park_and_Company.PageObject
             GenericHelper.WaitForLoadingMask();
         }
 
-        public void checkValidationField(bool fName, bool lName, bool eMail, bool acCode, bool date) 
+        public void CheckValidationField(bool fName, bool lName, bool eMail, bool acCode, bool date) 
         {
 
             JavaScriptExecutorHelper.ScrollElementAndClick(Validation);
