@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
@@ -26,7 +27,6 @@ namespace Park_and_Company.PageObject
         [FindsBy(How = How.XPath,Using = "//button[text()='Add']")]
         private IWebElement Add;
 
-
         [FindsBy(How = How.XPath,Using = "//a[text()='Validation']")]
         private IWebElement Validation;
 
@@ -36,6 +36,11 @@ namespace Park_and_Company.PageObject
         [FindsBy(How = How.XPath,Using = "//a[text()='Finish']")]
         private IWebElement Finish;
 
+        [FindsBy(How = How.XPath,Using = "//div[@id='accordion']/descendant::div[@id='rendered'][position()=4]/button")]
+        private IWebElement ProgramIncentiveNext;
+
+
+
         public void AddProgramIncentive(string acCode, string acType, string desc, string points)
         {
             JavaScriptExecutorHelper.ScrollElementAndClick(ProgramIncentive);
@@ -44,10 +49,26 @@ namespace Park_and_Company.PageObject
             Add.Click();
             ProgramIncentive addInc = new ProgramIncentive(driver);
             addInc.AddProgramIncentive(acCode, acType, desc, points);
+            Thread.Sleep(500);
+            ProgramIncentiveNext.Click();
             JavaScriptExecutorHelper.ScrollElementAndClick(ProgramIncentive);
             GenericHelper.WaitForLoadingMask();
         }
 
+        public void AddProdProgramIncentive(string points, string prodSku, string prdDescp, string prodFamily, string prodClass,
+            string prodLine, string prodType, string unitSoldMax, string unitSoldMin)
+        {
+            JavaScriptExecutorHelper.ScrollElementAndClick(ProgramIncentive);
+            GenericHelper.WaitForLoadingMask();
+            GenericHelper.WaitForElement(Add);
+            Add.Click();
+            ProgramIncentive addInc = new ProgramIncentive(driver);
+            addInc.AddProgramIncentive(points,prodSku,prdDescp,prodFamily,prodClass,prodLine,prodType,unitSoldMax,unitSoldMin);
+            Thread.Sleep(500);
+            ProgramIncentiveNext.Click();
+            JavaScriptExecutorHelper.ScrollElementAndClick(ProgramIncentive);
+            GenericHelper.WaitForLoadingMask();
+        }
 
         public void checkValidationField(bool fName, bool lName, bool eMail, bool acCode, bool date) 
         {

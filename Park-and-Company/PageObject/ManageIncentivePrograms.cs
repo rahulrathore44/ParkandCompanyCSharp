@@ -50,9 +50,8 @@ namespace Park_and_Company.PageObject
         public void SelectItemPerList(string number)
         {
             JavaScriptExecutorHelper.ScrollElementAndClick(DownArrow);
-            var list = GenericHelper.GetElement(By.XPath("//li[text()='" + number + "']"));
-            list.Click();
-            GenericHelper.WaitForLoadingMask();
+            DropDownHelper.SelectItemPerList(number);
+
         }
 
         /**
@@ -65,14 +64,8 @@ namespace Park_and_Company.PageObject
         {
             SelectItemPerList("100");
             GenericHelper.WaitForLoadingMask();
-		    for(int i = 1; i <= 100; i++){
-			    if(GenericHelper.IsElementPresent(By.XPath(gridXpath + "//table//tbody//tr[" + i + "]//td[1]/a"))){
-				Assert.AreEqual(GenericHelper.GetText(By.XPath(gridXpath + "//table//tbody//tr[" + i + "]//td[1]/a")), program);
-				Assert.AreEqual(GenericHelper.GetText(By.XPath(gridXpath + "//table//tbody//tr[" + i + "]//td[2]")), startDate);
-				Assert.AreEqual(GenericHelper.GetText(By.XPath(gridXpath + "//table//tbody//tr[" + i + "]//td[3]")), endDate);
-				Assert.AreEqual(GenericHelper.GetText(By.XPath(gridXpath + "//table//tbody//tr[" + i + "]//td[4]/span")), status);
-			}
-}
-	}
+            GridHelper.VerifyIncentiveGridEntry(gridXpath,program,startDate,endDate,startDate);
+        }
     }
 }
+

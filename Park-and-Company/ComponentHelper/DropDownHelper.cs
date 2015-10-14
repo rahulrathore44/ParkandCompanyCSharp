@@ -23,5 +23,12 @@ namespace Park_and_Company.ComponentHelper
             select = new SelectElement(element);
             select.SelectByText(text);
         }
+
+        public static void SelectItemPerList(string number)
+        {
+            var list = GenericHelper.GetElement(By.XPath("//li[text()='" + number + "']"));
+            list.Click();
+            GenericHelper.WaitForLoadingMask();
+        }
     }
 }

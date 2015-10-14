@@ -66,6 +66,7 @@
     <Compile Include="ComponentHelper\CalenderHelper.cs" />
     <Compile Include="ComponentHelper\DropDownHelper.cs" />
     <Compile Include="ComponentHelper\GenericHelper.cs" />
+    <Compile Include="ComponentHelper\GridHelper.cs" />
     <Compile Include="ComponentHelper\JavaScriptExecutorHelper.cs" />
     <Compile Include="Configuration\AppConfigReader.cs" />
     <Compile Include="Configuration\BrowserType.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="Settings\ErrorMessage.cs" />
     <Compile Include="Settings\ObjectRepository.cs" />
     <Compile Include="TestCases\Module\IncentiveProgm\TestActivityIncentiveTemplate.cs" />
+    <Compile Include="TestCases\Module\IncentiveProgm\TestSalesIncentiveTemplate.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

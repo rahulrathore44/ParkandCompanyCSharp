@@ -23,8 +23,14 @@ namespace Park_and_Company.PageObject.IncentivePage
             [FindsBy(How = How.XPath,Using = "//select[@title='Group']")]
             private IWebElement EligibleGroupDropown;
 
+            [FindsBy(How = How.XPath, Using = "//select[@title='Nomination Group']")]
+            private IWebElement NominationGroupDropown;
+
             [FindsBy(How = How.XPath,Using = "//div[@id='accordion']/descendant::div[@id='rendered'][position()=5]/button")]
             private IWebElement EligibleGroupNext;
+
+            [FindsBy(How = How.Name,Using = "USE_NOMINATION")]
+            private IWebElement UseNominationCheckBox;
 
             public void AddEligibleGroup(string grpName)
             {
@@ -36,5 +42,18 @@ namespace Park_and_Company.PageObject.IncentivePage
                 EligibleGroup.Click();
                 GenericHelper.WaitForLoadingMask();
             }
+
+        public void AddEligibleGroup(string grpName,bool useNomination,string nominationGrpName)
+        {
+            JavaScriptExecutorHelper.ScrollElementAndClick(EligibleGroup);
+            GenericHelper.WaitForLoadingMask();
+            DropDownHelper.SelectByVisibleText(EligibleGroupDropown, grpName);
+            UseNominationCheckBox.Click();
+            DropDownHelper.SelectByVisibleText(NominationGroupDropown,nominationGrpName);
+            EligibleGroupNext.Click();
+            Thread.Sleep(500);
+            EligibleGroup.Click();
+            GenericHelper.WaitForLoadingMask();
+        }
     }
 }
