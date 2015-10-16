@@ -125,7 +125,7 @@ namespace Park_and_Company.PageObject
             ProgramIncentive addInc = new ProgramIncentive(driver);
             addInc.AddProgramIncentive(points, prodSku, prdDescp, prodFamily, prodClass, prodLine, prodType, unitSoldMax, unitSoldMin);
             Thread.Sleep(500);
-            ProgramIncentiveNext.Click();
+            JavaScriptExecutorHelper.ScrollElementAndClick(ProgramIncentiveNext);
             JavaScriptExecutorHelper.ScrollElementAndClick(ProgramIncentive);
             GenericHelper.WaitForLoadingMask();
         }
@@ -140,9 +140,6 @@ namespace Park_and_Company.PageObject
         public void OpenValidationField()
         {
             JavaScriptExecutorHelper.ScrollElementAndClick(Validation);
-            GenericHelper.WaitForLoadingMask();
-            JavaScriptExecutorHelper.ScrollElementAndClick(ValidationNext);
-            Validation.Click();
             GenericHelper.WaitForLoadingMask();
         }
 

@@ -27,6 +27,12 @@ namespace Park_and_Company.ComponentHelper
             element.Click();
         }
 
+        public static void ScrollToElement(IWebElement element)
+        {
+            Thread.Sleep(500);
+            JavaScriptExecutorHelper.ExecuteScript("window.scrollTo(0," + element.Location.Y + ");");
+        }
+
         public static void ScrollElementAndClick(By locator)
         {
             IWebElement element = ObjectRepository.Driver.FindElement(locator);

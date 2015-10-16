@@ -47,8 +47,10 @@ namespace Park_and_Company.PageObject.IncentivePage
         {
             JavaScriptExecutorHelper.ScrollElementAndClick(EligibleGroup);
             GenericHelper.WaitForLoadingMask();
+            JavaScriptExecutorHelper.ScrollToElement(EligibleGroupDropown);
             DropDownHelper.SelectByVisibleText(EligibleGroupDropown, grpName);
             UseNominationCheckBox.Click();
+            JavaScriptExecutorHelper.ScrollToElement(NominationGroupDropown);
             DropDownHelper.SelectByVisibleText(NominationGroupDropown,nominationGrpName);
             EligibleGroupNext.Click();
             Thread.Sleep(500);
