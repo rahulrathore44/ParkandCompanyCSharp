@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Park_and_Company.BaseClasses;
@@ -13,6 +14,8 @@ namespace Park_and_Company.TestCases.Module.IncentiveProgm
     [TestClass]
     public class TestSalesIncentiveTemplate : BaseClass
     {
+        //Should be called in sequence
+
         [TestMethod]
         public void TestSalesIncentiveTemp()
         {
@@ -28,6 +31,15 @@ namespace Park_and_Company.TestCases.Module.IncentiveProgm
             sitPage.SelectProgramEndDate("30", "November", "2015");
             sitPage.SelectProgramLastSubmitDate("01", "December", "2015");
             sitPage.SelectProgramCloseDates("31", "December", "2015");
+            sitPage.AddPoints("1001", "22"); 
+            sitPage.AddPointType("test", "100");
+            sitPage.AddProdProgramIncentive("10","prodSku","ProdDesc","PordFamily","ProdClass","ProdLine","ProdType","unitSoldMAx","unitSoldMin");
+            sitPage.AddEligibleGroup("test",true,"test");
+            sitPage.OpenValidationField();
+            sitPage.AddInvoiceNoValidation(true,true,true);
+            // Similarly for other validation
+            Thread.Sleep(4000);
+
         }
     }
 }

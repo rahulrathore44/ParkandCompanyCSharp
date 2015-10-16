@@ -51,6 +51,18 @@ namespace Park_and_Company.PageObject.IncentivePage
             MyPointsMessage.SendKeys(myPointMsg);
         }
 
+        public void AddPoints(string maxPointAllow, string pointExpire)
+        {
+            JavaScriptExecutorHelper.ScrollElementAndClick(ConfigureProgram);
+            GenericHelper.WaitForLoadingMask();
+            JavaScriptExecutorHelper.ScrollElementAndClick(MaximumPointsAllowed);
+            MaximumPointsAllowed.Clear();
+            MaximumPointsAllowed.SendKeys(maxPointAllow);
+            JavaScriptExecutorHelper.ScrollElementAndClick(PointsExpire);
+            PointsExpire.Clear();
+            PointsExpire.SendKeys(pointExpire);
+        }
+
         public void AddPointType(string type, string poitAlloc)
         {
             PointAllocation.Clear();

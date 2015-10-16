@@ -83,6 +83,7 @@ namespace Park_and_Company.PageObject.IncentivePage
             UnitSoldMax.SendKeys(unitSoldMax);
             UnitSoldMin.SendKeys(unitSoldMin);
             Submit.Click();
+            GenericHelper.WaitForLoadingMask();
         }
     }
 }

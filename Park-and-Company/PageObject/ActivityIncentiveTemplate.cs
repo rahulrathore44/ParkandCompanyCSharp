@@ -55,21 +55,6 @@ namespace Park_and_Company.PageObject
             GenericHelper.WaitForLoadingMask();
         }
 
-        public void AddProdProgramIncentive(string points, string prodSku, string prdDescp, string prodFamily, string prodClass,
-            string prodLine, string prodType, string unitSoldMax, string unitSoldMin)
-        {
-            JavaScriptExecutorHelper.ScrollElementAndClick(ProgramIncentive);
-            GenericHelper.WaitForLoadingMask();
-            GenericHelper.WaitForElement(Add);
-            Add.Click();
-            ProgramIncentive addInc = new ProgramIncentive(driver);
-            addInc.AddProgramIncentive(points,prodSku,prdDescp,prodFamily,prodClass,prodLine,prodType,unitSoldMax,unitSoldMin);
-            Thread.Sleep(500);
-            ProgramIncentiveNext.Click();
-            JavaScriptExecutorHelper.ScrollElementAndClick(ProgramIncentive);
-            GenericHelper.WaitForLoadingMask();
-        }
-
         public void CheckValidationField(bool fName, bool lName, bool eMail, bool acCode, bool date) 
         {
 
@@ -162,7 +147,6 @@ namespace Park_and_Company.PageObject
             cpPage.AddPointType(type, poitAlloc);
 
         }
-
 
         public void AddEligibleGroup(string grpName) 
         {
