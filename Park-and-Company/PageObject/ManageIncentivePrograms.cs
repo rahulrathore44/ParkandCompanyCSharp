@@ -44,7 +44,7 @@ namespace Park_and_Company.PageObject
         {
             JavaScriptExecutorHelper.ScrollElementAndClick(NewProgram);
             GenericHelper.WaitForLoadingMask();
-		return new NewProgram(driver);
+		    return new NewProgram(driver);
         }
 
         public void SelectItemPerList(string number)

@@ -29,6 +29,11 @@ namespace Park_and_Company.ComponentHelper
             }
         }
 
+        public static void VerifyInGridEntry(string gridXpath, string value, int row,int column)
+        {
+            Assert.AreEqual(GenericHelper.GetText(By.XPath(gridXpath + "//table//tbody//tr[" + row + "]//td[" + column + "]/span")), value);
+        }
+
 
     }
 }

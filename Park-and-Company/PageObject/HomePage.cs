@@ -8,6 +8,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using Park_and_Company.BaseClasses;
 using Park_and_Company.ComponentHelper;
+using Park_and_Company.PageObject.UserGroups;
 using Park_and_Company.Settings;
 
 namespace Park_and_Company.PageObject
@@ -49,6 +50,9 @@ namespace Park_and_Company.PageObject
         [FindsBy(How = How.XPath, Using = "//div[@id='header4']/descendant::a[text()='Manage Incentive Programs']")]
         private IWebElement ManageIncentivePrograms;
 
+        [FindsBy(How = How.XPath, Using = "//div[@id='header4']/descendant::a[text()='Manage User Groups']")]
+        private IWebElement ManageUserGroups;
+
 
 
         public ManageIncentivePrograms OpenManageIncentivePrograms()
@@ -60,6 +64,17 @@ namespace Park_and_Company.PageObject
             Assert.IsTrue(GenericHelper.IsElementPresent(By.Id("titleDiv")), ErrorMessage.PageLoadErrMsg + "Manage Incentive Programs Page");
             GenericHelper.WaitForLoadingMask();
             return new ManageIncentivePrograms(driver);
+        }
+
+        public ManageUserGroups OpenManageUserGroups()
+        {
+            User.Click();
+            GenericHelper.WaitForElement(ManageUserGroups);
+            ManageUserGroups.Click();
+            GenericHelper.WaitForElement(By.Id("titleDiv"));
+            Assert.IsTrue(GenericHelper.IsElementPresent(By.Id("titleDiv")), ErrorMessage.PageLoadErrMsg + "Manage Incentive Programs Page");
+            GenericHelper.WaitForLoadingMask();
+            return new ManageUserGroups(driver);
         }
     }
 }
