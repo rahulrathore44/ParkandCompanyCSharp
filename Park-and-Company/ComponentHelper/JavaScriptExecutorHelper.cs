@@ -22,7 +22,7 @@ namespace Park_and_Company.ComponentHelper
 
         public static void ScrollElementAndClick(IWebElement element)
         {
-            Thread.Sleep(1000);
+            Thread.Sleep(500);
             JavaScriptExecutorHelper.ExecuteScript("window.scrollTo(0," + element.Location.Y + ");");
             element.Click();
         }

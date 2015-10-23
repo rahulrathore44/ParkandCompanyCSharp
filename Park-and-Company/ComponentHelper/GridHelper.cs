@@ -29,9 +29,49 @@ namespace Park_and_Company.ComponentHelper
             }
         }
 
+        public static IWebElement GetGridElement(string gridXpath, int row, int column)
+        {
+            if (
+                GenericHelper.IsElementPresent(
+                    By.XPath(gridXpath + "//table//tbody//tr[" + row + "]//td[" + column + "]/a")))
+            {
+                return GenericHelper.GetElement(By.XPath(gridXpath + "//table//tbody//tr[" + row + "]//td[" + column + "]/a"));
+            }
+            else if (
+                GenericHelper.IsElementPresent(
+                    By.XPath(gridXpath + "//table//tbody//tr[" + row + "]//td[" + column + "]/span")))
+            {
+                return GenericHelper.GetElement(By.XPath(gridXpath + "//table//tbody//tr[" + row + "]//td[" + column + "]/span"));
+            }
+            else if (
+                GenericHelper.IsElementPresent(
+                    By.XPath(gridXpath + "//table//tbody//tr[" + row + "]//td[" + column + "]")))
+            {
+                return GenericHelper.GetElement(By.XPath(gridXpath + "//table//tbody//tr[" + row + "]//td[" + column + "]"));
+            }
+            else if (
+               GenericHelper.IsElementPresent(
+                   By.XPath(gridXpath + "//table//tbody//tr[" + row + "]//td[" + column + "]/input")))
+            {
+                return GenericHelper.GetElement(By.XPath(gridXpath + "//table//tbody//tr[" + row + "]//td[" + column + "]/input"));
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public static void VerifyInGridEntry(string gridXpath, string value, int row,int column)
         {
-            Assert.AreEqual(GenericHelper.GetText(By.XPath(gridXpath + "//table//tbody//tr[" + row + "]//td[" + column + "]/span")), value);
+            var element = GetGridElement(gridXpath, row, column);
+            if (element != null)
+            {
+                Assert.AreEqual(element.Text,value);
+            }
+            else
+            {
+                Assert.Fail("Expected Value Not Found : ",value);
+            }
         }
 
 

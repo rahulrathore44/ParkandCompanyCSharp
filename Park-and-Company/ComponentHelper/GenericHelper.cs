@@ -129,5 +129,18 @@ namespace Park_and_Company.ComponentHelper
                 return ObjectRepository.Driver.FindElement(locator).Text;
             return null;
         }
+
+        public static bool IsAlertPresent()
+        {
+            try
+            {
+                ObjectRepository.Driver.SwitchTo().Alert();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }

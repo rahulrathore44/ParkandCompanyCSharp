@@ -22,3 +22,16 @@ G:\AutomationWorkspace\Git-Hub\ParkandCompanyCSharp\Park-and-Company\bin\Debug\W
 G:\AutomationWorkspace\Git-Hub\ParkandCompanyCSharp\Park-and-Company\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
 G:\AutomationWorkspace\Git-Hub\ParkandCompanyCSharp\Park-and-Company\obj\Debug\Park-and-Company.dll
 G:\AutomationWorkspace\Git-Hub\ParkandCompanyCSharp\Park-and-Company\obj\Debug\Park-and-Company.pdb
+C:\Users\rsr\Documents\GitHub\ParkandCompanyCSharp\Park-and-Company\bin\Debug\chromedriver.exe
+C:\Users\rsr\Documents\GitHub\ParkandCompanyCSharp\Park-and-Company\bin\Debug\Park-and-Company.dll.config
+C:\Users\rsr\Documents\GitHub\ParkandCompanyCSharp\Park-and-Company\bin\Debug\Park-and-Company.dll
+C:\Users\rsr\Documents\GitHub\ParkandCompanyCSharp\Park-and-Company\bin\Debug\Park-and-Company.pdb
+C:\Users\rsr\Documents\GitHub\ParkandCompanyCSharp\Park-and-Company\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\rsr\Documents\GitHub\ParkandCompanyCSharp\Park-and-Company\bin\Debug\WebDriver.dll
+C:\Users\rsr\Documents\GitHub\ParkandCompanyCSharp\Park-and-Company\bin\Debug\WebDriver.Support.dll
+C:\Users\rsr\Documents\GitHub\ParkandCompanyCSharp\Park-and-Company\bin\Debug\WebDriver.xml
+C:\Users\rsr\Documents\GitHub\ParkandCompanyCSharp\Park-and-Company\bin\Debug\WebDriver.Support.xml
+C:\Users\rsr\Documents\GitHub\ParkandCompanyCSharp\Park-and-Company\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\rsr\Documents\GitHub\ParkandCompanyCSharp\Park-and-Company\obj\Debug\Park-and-Company.csprojResolveAssemblyReference.cache
+C:\Users\rsr\Documents\GitHub\ParkandCompanyCSharp\Park-and-Company\obj\Debug\Park-and-Company.dll
+C:\Users\rsr\Documents\GitHub\ParkandCompanyCSharp\Park-and-Company\obj\Debug\Park-and-Company.pdb

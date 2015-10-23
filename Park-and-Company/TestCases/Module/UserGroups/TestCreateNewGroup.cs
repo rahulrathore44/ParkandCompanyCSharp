@@ -18,8 +18,14 @@ namespace Park_and_Company.TestCases.Module.UserGroups
         {
             LoginPage lpage = new LoginPage(ObjectRepository.Driver);
             HomePage hPage = lpage.LoginApplication(ObjectRepository.Config.GetUsername(), ObjectRepository.Config.GetPassword());
-            var mUIPage = hPage.OpenManageUserGroups();
-            mUIPage.CreateGroup("grpName",true);
+            var mUiPage = hPage.OpenManageUserGroups();
+            mUiPage.CreateGroup("StaticStage6", true);
+            mUiPage.VerifyCreateGroup("//div[@id='UserGroupsGrid']", "StaticStage1",1,3);
+            mUiPage.ClickOnUserGrp("//div[@id='UserGroupsGrid']", "StaticStage1", 1,3);
+            mUiPage.AddToGroup("//div[@id='allUsersGrid']",1,1);
+            mUiPage.DeleteFrmGroup("//div[@id='GroupUsersGrid'", 1, 1);
+            mUiPage.ClickSave();
+            mUiPage.Logout();
             Thread.Sleep(5000);
         }
     }

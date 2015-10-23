@@ -11,6 +11,7 @@ namespace Park_and_Company.ComponentHelper
     public class DropDownHelper
     {
         private static SelectElement select;
+        private static By DownArrow = By.XPath("//span[text()='select']");
 
         public static void SelectByVisibleText(By locator, string text)
         {
@@ -26,8 +27,10 @@ namespace Park_and_Company.ComponentHelper
 
         public static void SelectItemPerList(string number)
         {
+            var arrow = GenericHelper.GetElement(DownArrow);
+            JavaScriptExecutorHelper.ScrollElementAndClick(arrow);
             var list = GenericHelper.GetElement(By.XPath("//li[text()='" + number + "']"));
-            list.Click();
+            JavaScriptExecutorHelper.ScrollElementAndClick(list);
             GenericHelper.WaitForLoadingMask();
         }
     }

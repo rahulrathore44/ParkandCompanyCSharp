@@ -49,7 +49,6 @@ namespace Park_and_Company.PageObject
 
         public void SelectItemPerList(string number)
         {
-            JavaScriptExecutorHelper.ScrollElementAndClick(DownArrow);
             DropDownHelper.SelectItemPerList(number);
 
         }
@@ -64,7 +63,7 @@ namespace Park_and_Company.PageObject
         {
             SelectItemPerList("100");
             GenericHelper.WaitForLoadingMask();
-            GridHelper.VerifyIncentiveGridEntry(gridXpath,program,startDate,endDate,startDate);
+            //GridHelper.VerifyIncentiveGridEntry(gridXpath,program,startDate,endDate,startDate);
         }
     }
 }

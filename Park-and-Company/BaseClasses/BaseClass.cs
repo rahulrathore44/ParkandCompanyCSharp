@@ -10,7 +10,7 @@ namespace Park_and_Company.BaseClasses
 {
     public class BaseClass
     {
-        protected void Logout()
+        public void Logout()
         {
             if (GenericHelper.IsElementPresentQuick(By.XPath(("//span[@class='headerMenuPipe']/preceding-sibling::span[contains(text(),'Welcome')]"))))
             {
