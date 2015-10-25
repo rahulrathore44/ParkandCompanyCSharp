@@ -43,7 +43,7 @@ namespace Park_and_Company.PageObject.UserGroups
         /// <param name="column"></param>
         public void AddToGrop(string gridXpath, int row, int column)
         {
-            DropDownHelper.SelectItemPerList("100");
+            //DropDownHelper.SelectItemPerList("100");
             var element = GridHelper.GetGridElement(gridXpath, row, column);
             JavaScriptExecutorHelper.ScrollElementAndClick(element);
             GenericHelper.WaitForLoadingMask();
@@ -58,7 +58,7 @@ namespace Park_and_Company.PageObject.UserGroups
         /// <param name="column"></param>
         public void DeleteFromGrop(string gridXpath, int row, int column)
         {
-            DropDownHelper.SelectItemPerList("100");
+            //DropDownHelper.SelectItemPerList("100");
             var element = GridHelper.GetGridElement(gridXpath, row, column);
             JavaScriptExecutorHelper.ScrollElementAndClick(element);
             GenericHelper.WaitForLoadingMask();
@@ -69,7 +69,7 @@ namespace Park_and_Company.PageObject.UserGroups
         public void ClickSave()
         {
             JavaScriptExecutorHelper.ScrollElementAndClick(Save);
-            GenericHelper.WaitForLoadingMask();
+            GenericHelper.WaitForAlert();
             if (GenericHelper.IsAlertPresent())
             {
                 _driver.SwitchTo().Alert().Accept();

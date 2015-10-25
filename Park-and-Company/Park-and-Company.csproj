@@ -94,6 +94,7 @@
     <Compile Include="TestCases\Module\IncentiveProgm\TestActivityIncentiveTemplate.cs" />
     <Compile Include="TestCases\Module\IncentiveProgm\TestSalesIncentiveTemplate.cs" />
     <Compile Include="TestCases\Module\UserGroups\TestCreateNewGroup.cs" />
+    <Compile Include="TestCases\Module\UserGroups\TestDuplicateGrp.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

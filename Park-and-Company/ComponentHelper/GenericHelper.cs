@@ -123,6 +123,14 @@ namespace Park_and_Company.ComponentHelper
             ObjectRepository.Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(ObjectRepository.Config.GetElementLoadTimeOut()));
         }
 
+        public static void WaitForAlert()
+        {
+            ObjectRepository.Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(1));
+            var wait = GetWebDriverWait(60);
+            wait.Until(ExpectedConditions.AlertIsPresent());
+            ObjectRepository.Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(ObjectRepository.Config.GetElementLoadTimeOut()));
+        }
+
         public static string GetText(By locator)
         {
             if (IsElementPresent(locator))

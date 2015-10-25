@@ -15,7 +15,7 @@ namespace Park_and_Company.ComponentHelper
         {
             for (int i = 1; i <= 100; i++)
             {
-                if (GenericHelper.IsElementPresent(By.XPath(gridXpath + "//table//tbody//tr[" + i + "]//td[1]/a")))
+                if (GenericHelper.IsElementPresentQuick(By.XPath(gridXpath + "//table//tbody//tr[" + i + "]//td[1]/a")))
                 {
                     Assert.AreEqual(
                         GenericHelper.GetText(By.XPath(gridXpath + "//table//tbody//tr[" + i + "]//td[1]/a")), program);
@@ -32,28 +32,28 @@ namespace Park_and_Company.ComponentHelper
         public static IWebElement GetGridElement(string gridXpath, int row, int column)
         {
             if (
-                GenericHelper.IsElementPresent(
+                GenericHelper.IsElementPresentQuick(
                     By.XPath(gridXpath + "//table//tbody//tr[" + row + "]//td[" + column + "]/a")))
             {
                 return GenericHelper.GetElement(By.XPath(gridXpath + "//table//tbody//tr[" + row + "]//td[" + column + "]/a"));
             }
             else if (
-                GenericHelper.IsElementPresent(
+                GenericHelper.IsElementPresentQuick(
                     By.XPath(gridXpath + "//table//tbody//tr[" + row + "]//td[" + column + "]/span")))
             {
                 return GenericHelper.GetElement(By.XPath(gridXpath + "//table//tbody//tr[" + row + "]//td[" + column + "]/span"));
             }
-            else if (
-                GenericHelper.IsElementPresent(
-                    By.XPath(gridXpath + "//table//tbody//tr[" + row + "]//td[" + column + "]")))
-            {
-                return GenericHelper.GetElement(By.XPath(gridXpath + "//table//tbody//tr[" + row + "]//td[" + column + "]"));
-            }
-            else if (
-               GenericHelper.IsElementPresent(
+           else if (
+               GenericHelper.IsElementPresentQuick(
                    By.XPath(gridXpath + "//table//tbody//tr[" + row + "]//td[" + column + "]/input")))
             {
                 return GenericHelper.GetElement(By.XPath(gridXpath + "//table//tbody//tr[" + row + "]//td[" + column + "]/input"));
+            }
+            else if (
+               GenericHelper.IsElementPresentQuick(
+                   By.XPath(gridXpath + "//table//tbody//tr[" + row + "]//td[" + column + "]")))
+            {
+                return GenericHelper.GetElement(By.XPath(gridXpath + "//table//tbody//tr[" + row + "]//td[" + column + "]"));
             }
             else
             {

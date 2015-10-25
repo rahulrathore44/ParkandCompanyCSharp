@@ -9,6 +9,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using Park_and_Company.BaseClasses;
 using Park_and_Company.ComponentHelper;
+using Park_and_Company.Settings;
 
 namespace Park_and_Company.PageObject.UserGroups
 {
@@ -18,6 +19,8 @@ namespace Park_and_Company.PageObject.UserGroups
         private readonly GrpNameDetailPage grpPage;
 
         [FindsBy(How = How.XPath, Using = "//button[text()='Create']")] private IWebElement Create;
+        [FindsBy(How = How.XPath, Using = "//*[text()='Duplicate Group']")]
+        private IWebElement duplicatBtn;
 
 
         public ManageUserGroups(IWebDriver drive) : base(drive)
@@ -99,6 +102,24 @@ namespace Park_and_Company.PageObject.UserGroups
         public void ClickSave()
         {
             grpPage.ClickSave();
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="gridXpath"></param>
+        /// <param name="row"></param>
+        /// <param name="column">Column index should be always 1 for check box</param>
+        public void DuplicateGrp(string gridXpath, int row, int column)
+        {
+            var element = GridHelper.GetGridElement(gridXpath, row, column);
+            element.Click();
+            JavaScriptExecutorHelper.ScrollElementAndClick(duplicatBtn);
+            GenericHelper.WaitForAlert();
+            if (GenericHelper.IsAlertPresent())
+            {
+                ObjectRepository.Driver.SwitchTo().Alert().Accept();
+            }
+            GenericHelper.WaitForLoadingMask();
         }
     }
 }

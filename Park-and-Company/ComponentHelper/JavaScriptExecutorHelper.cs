@@ -23,21 +23,21 @@ namespace Park_and_Company.ComponentHelper
         public static void ScrollElementAndClick(IWebElement element)
         {
             Thread.Sleep(500);
-            JavaScriptExecutorHelper.ExecuteScript("window.scrollTo(0," + element.Location.Y + ");");
+            ExecuteScript("window.scrollTo(0," + element.Location.Y + ");");
             element.Click();
         }
 
         public static void ScrollToElement(IWebElement element)
         {
             Thread.Sleep(500);
-            JavaScriptExecutorHelper.ExecuteScript("window.scrollTo(0," + element.Location.Y + ");");
+            ExecuteScript("window.scrollTo(0," + element.Location.Y + ");");
         }
 
         public static void ScrollElementAndClick(By locator)
         {
             IWebElement element = ObjectRepository.Driver.FindElement(locator);
             GenericHelper.WaitForElement(element);
-            JavaScriptExecutorHelper.ExecuteScript("window.scrollTo(0," + element.Location.Y + ");");
+            ExecuteScript("window.scrollTo(0," + element.Location.Y + ");");
             element.Click();
         }
     }

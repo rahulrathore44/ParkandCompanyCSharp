@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
@@ -29,8 +30,9 @@ namespace Park_and_Company.ComponentHelper
         {
             var arrow = GenericHelper.GetElement(DownArrow);
             JavaScriptExecutorHelper.ScrollElementAndClick(arrow);
+            Thread.Sleep(500);
             var list = GenericHelper.GetElement(By.XPath("//li[text()='" + number + "']"));
-            JavaScriptExecutorHelper.ScrollElementAndClick(list);
+            list.Click();
             GenericHelper.WaitForLoadingMask();
         }
     }
