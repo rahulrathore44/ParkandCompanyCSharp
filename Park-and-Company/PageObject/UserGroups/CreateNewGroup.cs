@@ -17,6 +17,9 @@ namespace Park_and_Company.PageObject.UserGroups
         [FindsBy(How = How.Id,Using = "GroupName")]
         private IWebElement GroupName;
 
+        [FindsBy(How = How.Id, Using = "GroupDescription")]
+        private IWebElement GroupDescription;
+
         [FindsBy(How = How.XPath,Using = "//input[@name='SmartGroup' and @value='yes']")]
         private IWebElement Yes;
 
@@ -41,6 +44,13 @@ namespace Park_and_Company.PageObject.UserGroups
                 Yes.Click();
             else
                 No.Click();
+            Thread.Sleep(500);
+        }
+
+        public void CreateGrpOfGroup(string grpName, string grpDescription)
+        {
+            GroupName.SendKeys(grpName);
+            GroupDescription.SendKeys(grpDescription);
             Thread.Sleep(500);
         }
 

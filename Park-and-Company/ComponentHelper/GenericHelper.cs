@@ -76,6 +76,12 @@ namespace Park_and_Company.ComponentHelper
             throw new NoSuchElementException("Element Not Found : " + locator.ToString());
         }
 
+        public static IWebElement GetVisiblityOfElement(By locator)
+        {
+            var wait = GetWebDriverWait(60);
+            return wait.Until(ExpectedConditions.ElementIsVisible(locator));
+        }
+
         public static void WindowMaximize()
         {
             ObjectRepository.Driver.Manage().Window.Maximize();

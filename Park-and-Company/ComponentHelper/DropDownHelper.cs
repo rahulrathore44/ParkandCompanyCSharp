@@ -31,9 +31,10 @@ namespace Park_and_Company.ComponentHelper
             var arrow = GenericHelper.GetElement(DownArrow);
             JavaScriptExecutorHelper.ScrollElementAndClick(arrow);
             Thread.Sleep(500);
-            var list = GenericHelper.GetElement(By.XPath("//li[text()='" + number + "']"));
+            var list = GenericHelper.GetVisiblityOfElement(By.XPath("//li[text()='" + number + "']"));
             list.Click();
             GenericHelper.WaitForLoadingMask();
+            Thread.Sleep(1000);
         }
     }
 }

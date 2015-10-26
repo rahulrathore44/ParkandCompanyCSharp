@@ -17,16 +17,22 @@ namespace Park_and_Company.PageObject.UserGroups
     {
         private IWebDriver _driver;
         private readonly GrpNameDetailPage grpPage;
+        private readonly CreateNewGroup grp;
 
-        [FindsBy(How = How.XPath, Using = "//button[text()='Create']")] private IWebElement Create;
-        [FindsBy(How = How.XPath, Using = "//*[text()='Duplicate Group']")]
+        [FindsBy(How = How.XPath, Using = "//button[text()='Create']")]
+        private IWebElement Create;
+
+        [FindsBy(How = How.XPath, Using = "//button[text()='Duplicate Group']")]
         private IWebElement duplicatBtn;
 
-
+        [FindsBy(How = How.XPath, Using = "//button[contains(text(),'Create a Group')]")]
+        private IWebElement createGrp;
+        
         public ManageUserGroups(IWebDriver drive) : base(drive)
         {
             this._driver = drive;
             grpPage = new GrpNameDetailPage(_driver);
+            grp = new CreateNewGroup(_driver);
         }
         /// <summary>
         /// 
@@ -38,7 +44,6 @@ namespace Park_and_Company.PageObject.UserGroups
             JavaScriptExecutorHelper.ScrollElementAndClick(Create);
             GenericHelper.WaitForLoadingMask();
             GenericHelper.WaitForElement(By.Id("GroupName"));
-            var grp = new CreateNewGroup(_driver);
             grp.CreateGroup(grpName,isSmartGroup);
             grp.ClickOk();
             Thread.Sleep(500);
@@ -120,6 +125,23 @@ namespace Park_and_Company.PageObject.UserGroups
                 ObjectRepository.Driver.SwitchTo().Alert().Accept();
             }
             GenericHelper.WaitForLoadingMask();
+        }
+
+        public void SelectGroup(string gridXpath, int row, int column)
+        {
+            var element = GridHelper.GetGridElement(gridXpath, row, column);
+            element.Click();
+        }
+
+        public void CreateGrpOfGroup(string grpName,string grpDes)
+        {
+            JavaScriptExecutorHelper.ScrollElementAndClick(createGrp);
+            GenericHelper.WaitForLoadingMask();
+            GenericHelper.WaitForElement(By.XPath("//h3[text()='Create a Group Of Groups']"));
+            grp.CreateGrpOfGroup(grpName,grpDes);
+            grp.ClickOk();
+            GenericHelper.WaitForLoadingMask();
+            Thread.Sleep(500);
         }
     }
 }
