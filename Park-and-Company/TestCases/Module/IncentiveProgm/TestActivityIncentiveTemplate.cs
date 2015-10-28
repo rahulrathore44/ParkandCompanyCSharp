@@ -23,7 +23,7 @@ namespace Park_and_Company.TestCases.Module.IncentiveProgm
             NewProgram npPage = mIPage.ClickNewProgram();
             ActivityIncentiveTemplate aiPage =  npPage.CreateActivityIncentiveTemplate();
             aiPage.SelectProgramName("Test", "Test");
-            aiPage.SelectProgramVisibilityStartDate("05", "April", "2002");
+            aiPage.SelectProgramVisibilityStartDate("28", "October", "2015");
             aiPage.SelectProgramVisibilityEndDate("01", "October", "2002");
             aiPage.SelectProgramStartDate("26", "April", "2002");
             aiPage.SelectProgramEndDate("30", "November", "2015");

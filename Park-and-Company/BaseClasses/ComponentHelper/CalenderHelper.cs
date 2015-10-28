@@ -63,19 +63,11 @@ namespace Park_and_Company.ComponentHelper
                 {
                     if (GenericHelper.IsElementPresentQuick(By.XPath(tableXPath + "/tbody/tr[" + i + "]/td[" + j + "]//span")))
                     {
-                        var xpath = tableXPath + "/tbody/tr[" + i + "]/td[" + j + "]//span";
-                        var aday = ObjectRepository.Driver.FindElement(By.XPath(xpath)).Text;
+                        string aday = ObjectRepository.Driver.FindElement(By.XPath(tableXPath + "/tbody/tr[" + i + "]/td[" + j + "]//span")).Text;
                         if (day.Equals(aday,StringComparison.OrdinalIgnoreCase))
                         {
-                            if (
-                                !ObjectRepository.Driver.FindElement(By.XPath(xpath))
-                                    .GetAttribute("class")
-                                    .Contains("text-muted"))
-                            {
-                                ObjectRepository.Driver.FindElement(By.XPath(xpath)).Click();
-                                return;
-                            }
-                               
+                            ObjectRepository.Driver.FindElement(By.XPath(tableXPath + "/tbody/tr[" + i + "]/td[" + j + "]//span")).Click();
+                            return;
                         }
                     }
                 }
