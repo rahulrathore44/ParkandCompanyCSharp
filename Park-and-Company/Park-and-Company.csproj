@@ -74,6 +74,7 @@
     <Compile Include="Interfaces\IConfig.cs" />
     <Compile Include="PageObject\ActivityIncentiveTemplate.cs" />
     <Compile Include="PageObject\HomePage.cs" />
+    <Compile Include="PageObject\IncentivePage\BundleSetup.cs" />
     <Compile Include="PageObject\IncentivePage\ConfigureProgramPage.cs" />
     <Compile Include="PageObject\IncentivePage\EligibleGroupPage.cs" />
     <Compile Include="PageObject\IncentivePage\ProgramIncentive.cs" />
