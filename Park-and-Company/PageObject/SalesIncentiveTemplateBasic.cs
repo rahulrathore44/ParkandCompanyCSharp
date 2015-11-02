@@ -40,7 +40,10 @@ namespace Park_and_Company.PageObject
         [FindsBy(How = How.XPath, Using = "//div[@id='accordion']/descendant::div[@id='rendered'][position()=4]/button")]
         private IWebElement ProgramIncentiveNext;
 
-        
+        [FindsBy(How = How.XPath, Using = "//a[text()='Bundle Setup']")]
+        private IWebElement BundelSetup;
+
+
 
         public void SelectProgramName(string pName, string pDesc)
         {
@@ -219,6 +222,16 @@ namespace Park_and_Company.PageObject
             JavaScriptExecutorHelper.ScrollElementAndClick(ValidationNext);
             Validation.Click();
             GenericHelper.WaitForLoadingMask();
+        }
+
+        public void SkipBundleSetUp()
+        {
+            var bsetUp = new BundleSetup(driver);
+            JavaScriptExecutorHelper.ScrollElementAndClick(BundelSetup);
+            GenericHelper.WaitForLoadingMask();
+            bsetUp.Skip();
+            JavaScriptExecutorHelper.ScrollElementAndClick(BundelSetup);
+
         }
 
     }
