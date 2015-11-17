@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.Extensions;
 using OpenQA.Selenium.Support.UI;
 using Park_and_Company.Settings;
 
@@ -155,6 +157,20 @@ namespace Park_and_Company.ComponentHelper
             {
                 return false;
             }
+        }
+
+        public static void TakeSceenShot(string name = null)
+        {
+            if (name == null)
+            {
+                name = "Screenshot" + DateTime.UtcNow.ToString("yy-MMM-dd-mm") + ".jpeg";
+            }
+            else
+            {
+                name = name + ".jpeg";
+            }
+            var src = ObjectRepository.Driver.TakeScreenshot();
+            src.SaveAsFile(name,ImageFormat.Jpeg);
         }
     }
 }

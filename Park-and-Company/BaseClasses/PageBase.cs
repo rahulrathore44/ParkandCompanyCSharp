@@ -19,6 +19,21 @@ namespace Park_and_Company.BaseClasses
             PageFactory.InitElements(driver, this);
         }
 
-        
+        protected List<IWebElement> GetAllHyperLinks()
+        {
+            var hyperlinkList = _driver.FindElements(By.TagName("a"));
+            return hyperlinkList.ToList();
+        }
+
+        public void ClickOnLink()
+        {
+            foreach (var link in GetAllHyperLinks())
+            {
+                link.Click();
+                GenericHelper.TakeSceenShot();
+                BrowserHelper.GoBack();
+                GenericHelper.WaitForLoadingMask();
+            }
+        }
     }
 }
