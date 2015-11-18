@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Park_and_Company.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ForgotUsername" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">//a[contains(text(),'Forgot Username')]</Value>
+    </Setting>
+    <Setting Name="ForgotPassword" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">//a[contains(text(),'Forgot Password')]</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

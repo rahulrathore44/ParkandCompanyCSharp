@@ -25,15 +25,13 @@ namespace Park_and_Company.BaseClasses
             return hyperlinkList.ToList();
         }
 
-        public void ClickOnLink()
+        protected void TakeScreenShotofPage(IWebElement element,string name)
         {
-            foreach (var link in GetAllHyperLinks())
-            {
-                link.Click();
-                GenericHelper.TakeSceenShot();
-                BrowserHelper.GoBack();
-                GenericHelper.WaitForLoadingMask();
-            }
+            JavaScriptExecutorHelper.ScrollElementAndClick(element);
+            GenericHelper.WaitForLoadingMask();
+            GenericHelper.TakeSceenShot(name);
+            BrowserHelper.GoBack();
+            GenericHelper.WaitForLoadingMask();
         }
     }
 }

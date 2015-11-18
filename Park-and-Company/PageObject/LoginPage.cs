@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
@@ -29,6 +30,27 @@ namespace Park_and_Company.PageObject
         [FindsBy(How = How.XPath, Using = "//button[@type='submit']")]
         private IWebElement login;
 
+        [FindsBy(How = How.XPath, Using = "//a[contains(text(),'Forgot Username')]")]
+        private IWebElement ForgotUser;
+
+        [FindsBy(How = How.XPath, Using = "//a[contains(text(),'Forgot Password')]")]
+        private IWebElement ForgotPass;
+
+        [FindsBy(How = How.XPath, Using = "//a[contains(text(),'Open Register')]")]
+        private IWebElement OpenReg;
+
+        [FindsBy(How = How.XPath, Using = "//button[contains(text(),'Cancel')]")]
+        private IWebElement Cancel;
+
+        private void ScreenShotofForgotLink(IWebElement element,string name)
+        {
+            JavaScriptExecutorHelper.ScrollElementAndClick(element);
+            GenericHelper.WaitForElement(Cancel);
+            GenericHelper.TakeSceenShot(name);
+            JavaScriptExecutorHelper.ScrollElementAndClick(Cancel);
+            Thread.Sleep(200);
+        }
+
         public HomePage LoginApplication(string urname, string pass)
         {
             Logout();
@@ -41,6 +63,21 @@ namespace Park_and_Company.PageObject
 
             Assert.IsTrue(GenericHelper.IsElementPresent(By.CssSelector(".homeProgramsNav")), ErrorMessage.PageLoadErrMsg + "Home Page");
             return new HomePage(driver);
+        }
+
+        public void ScreenShotofForgotUserName(string name)
+        {
+            ScreenShotofForgotLink(ForgotUser, name);
+        }
+
+        public void ScreenShotofForgotPassword(string name)
+        {
+            ScreenShotofForgotLink(ForgotPass, name);
+        }
+
+        public void ScreenShotofOpenReg(string name)
+        {
+            TakeScreenShotofPage(OpenReg,name);
         }
     }
 }

@@ -19,7 +19,6 @@ namespace Park_and_Company.TestCases.Module.IncentiveProgm
         {
             LoginPage lpage = new LoginPage(ObjectRepository.Driver);
             HomePage hPage = lpage.LoginApplication(ObjectRepository.Config.GetUsername(), ObjectRepository.Config.GetPassword());
-            hPage.ClickOnLink();
             ManageIncentivePrograms mIPage = hPage.OpenManageIncentivePrograms();
             NewProgram npPage = mIPage.ClickNewProgram();
             ActivityIncentiveTemplate aiPage =  npPage.CreateActivityIncentiveTemplate();

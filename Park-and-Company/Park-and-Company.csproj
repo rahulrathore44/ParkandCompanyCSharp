@@ -90,11 +90,17 @@
     <Compile Include="PageObject\UserGroups\GrpNameDetailPage.cs" />
     <Compile Include="PageObject\UserGroups\ManageUserGroups.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="Settings\AppConfigKeys.cs" />
     <Compile Include="Settings\ErrorMessage.cs" />
     <Compile Include="Settings\ObjectRepository.cs" />
     <Compile Include="TestCases\Module\IncentiveProgm\TestActivityIncentiveTemplate.cs" />
     <Compile Include="TestCases\Module\IncentiveProgm\TestSalesIncentiveTemplate.cs" />
+    <Compile Include="TestCases\Module\ScreenShot\LoginPageScreenShot.cs" />
     <Compile Include="TestCases\Module\UserGroups\TestCreateNewGroup.cs" />
     <Compile Include="TestCases\Module\UserGroups\TestDuplicateGrp.cs" />
     <Compile Include="TestCases\Module\UserGroups\TestGroupofGroups.cs" />
@@ -102,6 +108,10 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ExcelReader\" />
