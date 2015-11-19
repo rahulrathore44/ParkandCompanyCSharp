@@ -101,6 +101,7 @@
     <Compile Include="TestCases\Module\IncentiveProgm\TestActivityIncentiveTemplate.cs" />
     <Compile Include="TestCases\Module\IncentiveProgm\TestSalesIncentiveTemplate.cs" />
     <Compile Include="TestCases\Module\ScreenShot\LoginPageScreenShot.cs" />
+    <Compile Include="TestCases\Module\ScreenShot\ProgramPageScreenShot.cs" />
     <Compile Include="TestCases\Module\UserGroups\TestCreateNewGroup.cs" />
     <Compile Include="TestCases\Module\UserGroups\TestDuplicateGrp.cs" />
     <Compile Include="TestCases\Module\UserGroups\TestGroupofGroups.cs" />
