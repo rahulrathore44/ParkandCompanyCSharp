@@ -116,6 +116,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ExcelReader\" />
+    <Folder Include="PageObject\Claims\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="..\packages\WebDriver.ChromeDriver.win32.2.19.0.0\content\chromedriver.exe">

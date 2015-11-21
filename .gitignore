@@ -17,6 +17,9 @@ obj/**/*
 *.la
 *.lo
 
+# Screen shots
+*.jpeg
+
 # Shared objects (inc. Windows DLLs)
 *.dll
 *.so

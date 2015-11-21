@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
@@ -98,6 +99,42 @@ namespace Park_and_Company.PageObject
         [FindsBy(How = How.XPath, Using = "//div[@id='header4']/descendant::a[text()='Manage Customer Content']")]
         private IWebElement ManageCustomerContent;
 
+        [FindsBy(How = How.XPath, Using = "//div[@id='header4']/descendant::a[text()='New Customer']")]
+        private IWebElement NewCustomer;
+
+        [FindsBy(How = How.XPath, Using = "//div[@id='header4']/descendant::a[text()='SFDC Configuration']")]
+        private IWebElement SFDCConfiguration;
+
+        [FindsBy(How = How.XPath, Using = "//h6[@class='footerLinks']/a[1]")]
+        private IWebElement PrivacyPolicy;
+
+        [FindsBy(How = How.XPath, Using = "//div[@class='incentive-modal-content']//button[text()='Ok']")]
+        private IWebElement Ok;
+
+        [FindsBy(How = How.XPath, Using = "//h6[@class='footerLinks']/a[2]")]
+        private IWebElement TermsandConditions;
+
+        [FindsBy(How = How.XPath, Using = "//div[@class='incentive-modal-content']//button[text()='Close']")]
+        private IWebElement Close;
+
+        [FindsBy(How = How.XPath, Using = "//h6[@class='footerLinks']/a[3]")]
+        private IWebElement ContactUs;
+
+        [FindsBy(How = How.XPath, Using = "//button[text()='Submit']")]
+        private IWebElement Submit;
+
+        [FindsBy(How = How.XPath, Using = "//h6[@class='footerLinks']/a[4]")]
+        private IWebElement FAQ;
+
+
+        private void ScreenShotofLink(IWebElement element, IWebElement button,string name)
+        {
+            JavaScriptExecutorHelper.ScrollElementAndClick(element);
+            GenericHelper.WaitForElement(button);
+            GenericHelper.TakeSceenShot(name);
+            JavaScriptExecutorHelper.ScrollElementAndClick(button);
+            Thread.Sleep(200);
+        }
 
         public ManageIncentivePrograms OpenManageIncentivePrograms()
         {
@@ -247,5 +284,48 @@ namespace Park_and_Company.PageObject
             BrowserHelper.GoBack();
             GenericHelper.WaitForLoadingMask();
         }
+
+        public void TakeNewCustomerScrShot(string name)
+        {
+            Onboarding.Click();
+            GenericHelper.WaitForElement(NewCustomer);
+            TakeScreenShotofPage(NewCustomer, name);
+        }
+        public void TakeSFDCConfScrShot(string name)
+        {
+            Onboarding.Click();
+            GenericHelper.WaitForElement(SFDCConfiguration);
+            TakeScreenShotofPage(SFDCConfiguration, name);
+        }
+
+        public void TakePrivacyPolicyScrShot(string name)
+        {
+            ScreenShotofLink(PrivacyPolicy, Ok, name);
+
+        }
+
+        public void TakeTermsConditionScrShot(string name)
+        {
+            ScreenShotofLink(TermsandConditions, Close, name);
+
+        }
+        public void TakeContactUsScrShot(string name)
+        {
+            JavaScriptExecutorHelper.ScrollElementAndClick(ContactUs);
+            GenericHelper.WaitForLoadingMask();
+            GenericHelper.TakeSceenShot(name);
+            BrowserHelper.GoBack();
+            GenericHelper.WaitForLoadingMask();
+        }
+
+        public void TakeFaqScrShot(string name)
+        {
+            JavaScriptExecutorHelper.ScrollElementAndClick(FAQ);
+            GenericHelper.WaitForLoadingMask();
+            GenericHelper.TakeSceenShot(name);
+            BrowserHelper.GoBack();
+            GenericHelper.WaitForLoadingMask();
+        }
+
     }
 }

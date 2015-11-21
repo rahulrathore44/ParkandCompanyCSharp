@@ -54,5 +54,19 @@ namespace Park_and_Company.TestCases.Module.ScreenShot
             hPage.TakeManageCustomerContentScrShot("Manage Customer Content");
             hPage.Logout();
         }
+
+        [TestMethod]
+        public void OnboardingPageSrcShot()
+        {
+            var lpage = new LoginPage(ObjectRepository.Driver);
+            var hPage = lpage.LoginApplication(ObjectRepository.Config.GetUsername(), ObjectRepository.Config.GetPassword());
+            hPage.TakeNewCustomerScrShot("New Customer");
+            hPage.TakeSFDCConfScrShot("SFDC Configuration");
+            hPage.TakePrivacyPolicyScrShot("Privacy Policy");
+            hPage.TakeTermsConditionScrShot("Terms and Condition");
+            hPage.TakeContactUsScrShot("Contact Us");
+            hPage.TakeFaqScrShot("Faq");
+            hPage.Logout();
+        }
     }
 }
