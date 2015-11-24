@@ -157,6 +157,57 @@ namespace Park_and_Company.PageObject.IncentivePage
         [FindsBy(How = How.Name, Using = "EMPLOYEE_ID_DISPLAY_ON_CLAIM_FORM")]
         private IWebElement EmpyIdDisplayOnForm;
 
+        [FindsBy(How = How.Name, Using = "PENDING_DAYS_SELECTION")]
+        private IWebElement PendingDaysSelection;
+
+        [FindsBy(How = How.XPath, Using = "//label[text()='Program Sales Data']/parent::div/parent::div/following-sibling::div/descendant::input[position()=1]")]
+        private IWebElement PrgSalDataNo;
+
+        [FindsBy(How = How.XPath, Using = "//label[text()='Program Sales Data']/parent::div/parent::div/following-sibling::div/descendant::input[position()=2]")]
+        private IWebElement PrgSalDataYes;
+
+        [FindsBy(How = How.XPath, Using = "//label[text()='Claim Auto Complete']/parent::div/parent::div/following-sibling::div/descendant::input[position()=1]")]
+        private IWebElement ClamAutoNo;
+
+        [FindsBy(How = How.XPath, Using = "//label[text()='Claim Auto Complete']/parent::div/parent::div/following-sibling::div/descendant::input[position()=2]")]
+        private IWebElement ClamAutoYes;
+
+        [FindsBy(How = How.XPath, Using = "//label[text()='Allow Pending Claims']/parent::div/parent::div/following-sibling::div/descendant::input[position()=1]")]
+        private IWebElement AllowPendingClaimNo;
+
+        [FindsBy(How = How.XPath, Using = "//label[text()='Allow Pending Claims']/parent::div/parent::div/following-sibling::div/descendant::input[position()=2]")]
+        private IWebElement AllowPendingClaimYes;
+
+        [FindsBy(How = How.XPath, Using = "//label[text()='Partner Type']/parent::div/parent::div/following-sibling::div/descendant::input[position()=1]")]
+        private IWebElement PartnerTypeNo;
+
+        [FindsBy(How = How.XPath, Using = "//label[text()='Partner Type']/parent::div/parent::div/following-sibling::div/descendant::input[position()=2]")]
+        private IWebElement PartnerTypeYes;
+
+        [FindsBy(How = How.XPath, Using = "//label[text()='Job Function Claim Limit']/parent::div/parent::div/following-sibling::div/descendant::input[position()=1]")]
+        private IWebElement JobFunctionNo;
+
+        [FindsBy(How = How.XPath, Using = "//label[text()='Job Function Claim Limit']/parent::div/parent::div/following-sibling::div/descendant::input[position()=2]")]
+        private IWebElement JobFunctionYes;
+
+        [FindsBy(How = How.XPath, Using = "//label[text()='Claim Audit']/parent::div/parent::div/following-sibling::div/descendant::input[position()=1]")]
+        private IWebElement ClaimAuditNo;
+
+        [FindsBy(How = How.XPath, Using = "//label[text()='Claim Audit']/parent::div/parent::div/following-sibling::div/descendant::input[position()=2]")]
+        private IWebElement ClaimAuditYes;
+
+        [FindsBy(How = How.Name, Using = "JOB_FUNCTION_CLAIM_LIMIT_SELECTION")]
+        private IWebElement JobFunctionSelection;
+
+        [FindsBy(How = How.Name, Using = "CLAIM_AUDIT_VALUE")]
+        private IWebElement CalimAuditValue;
+
+        [FindsBy(How = How.XPath, Using = "//input[@title='Percentage']")]
+        private IWebElement ClaimAuditPercentage;
+        
+        [FindsBy(How = How.XPath, Using = "//input[@title='Amount']")]
+        private IWebElement ClaimAuditAmount;
+
         /// <summary>
         /// 
         /// </summary>
@@ -183,10 +234,12 @@ namespace Park_and_Company.PageObject.IncentivePage
             if (yes)
             {
                 JavaScriptExecutorHelper.ScrollElementAndClick(eleYes);
+                GenericHelper.WaitForLoadingMask();
             }
             else
             {
                 JavaScriptExecutorHelper.ScrollElementAndClick(eleNo);
+                GenericHelper.WaitForLoadingMask();
             }
         }
 
@@ -364,6 +417,67 @@ namespace Park_and_Company.PageObject.IncentivePage
         {
             CheckValidationWithWebElement(EmpyIdValidate, validate, EmpyIdClaimLimit, claimLimitation,
                EmpyIdDisplayOnForm, displayOnclaimForm);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="yes"></param>
+        public void ProgramSalesData(bool yes)
+        {
+            CheckRadioValidationWebElement(PrgSalDataYes, yes, PrgSalDataNo);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="yes"></param>
+        public void ClaimAutoComplete(bool yes)
+        {
+            CheckRadioValidationWebElement(ClamAutoYes, yes, ClamAutoNo);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="yes"></param>
+        /// <param name="days"></param>
+        public void AllowPendingClaims(bool yes,string days)
+        {
+            CheckRadioValidationWebElement(AllowPendingClaimYes, yes, AllowPendingClaimNo);
+            GenericHelper.WaitForElement(PendingDaysSelection);
+            DropDownHelper.SelectByVisibleText(PendingDaysSelection,days);
+            GenericHelper.WaitForLoadingMask();
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="yes"></param>
+        public void PartnerType(bool yes)
+        {
+            CheckRadioValidationWebElement(PartnerTypeYes, yes, PartnerTypeNo);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="yes"></param>
+        /// <param name="jobFunction"></param>
+        public void JobFunctionClaimLimit(bool yes,string jobFunction)
+        {
+            CheckRadioValidationWebElement(JobFunctionYes, yes, JobFunctionNo);
+            GenericHelper.WaitForElement(JobFunctionSelection);
+            DropDownHelper.SelectByVisibleText(JobFunctionSelection, jobFunction);
+            GenericHelper.WaitForLoadingMask();
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="yes"></param>
+        /// <param name="calimAuditValue"></param>
+        /// <param name="percentage"></param>
+        public void ClaimAudit(bool yes, string calimAuditValue, bool percentage)
+        {
+            CheckRadioValidationWebElement(ClaimAuditYes, yes, ClaimAuditNo);
+            GenericHelper.WaitForElement(CalimAuditValue);
+            CalimAuditValue.SendKeys(calimAuditValue);
+            GenericHelper.WaitForLoadingMask();
         }
 
     }
