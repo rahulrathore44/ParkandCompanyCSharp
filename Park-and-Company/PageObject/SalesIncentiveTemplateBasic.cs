@@ -215,7 +215,35 @@ namespace Park_and_Company.PageObject
             val.EmployeeId(validate, claimLimitation, displayOnclaimForm);
         }
 
-        //TODO for  other validations RSR
+        public void AddProgramSalesDataValidation(bool yes)
+        {
+            val.ProgramSalesData(yes);
+        }
+
+        public void AddClaimAutoCompleteValidation(bool yes)
+        {
+            val.ClaimAutoComplete(yes);
+        }
+
+        public void AddAllowPendingClaimsValidation(bool yes, string days)
+        {
+            val.AllowPendingClaims(yes,days);
+        }
+
+        public void AddPartnerTypeValiation(bool yes)
+        {
+            val.PartnerType(yes);
+        }
+
+        public void AddJobFunctionClaimLimitValiation(bool yes, string jobFunction)
+        {
+            val.JobFunctionClaimLimit(yes,jobFunction);
+        }
+
+        public void AddClaimAuditValidation(bool yes, string clainAuditValue,bool percentge)
+        {
+            val.ClaimAudit(yes,clainAuditValue,percentge);
+        }
 
         public void CloseValidationField()
         {

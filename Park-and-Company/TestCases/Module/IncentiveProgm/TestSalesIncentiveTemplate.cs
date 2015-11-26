@@ -38,6 +38,7 @@ namespace Park_and_Company.TestCases.Module.IncentiveProgm
             sitPage.OpenValidationField();
             sitPage.AddInvoiceNoValidation(true,true,true);
             // Similarly for other validation
+            sitPage.AddClaimAuditValidation(true,"100",true);
             Thread.Sleep(4000);
 
         }

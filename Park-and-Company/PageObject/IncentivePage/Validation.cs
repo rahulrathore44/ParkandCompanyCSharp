@@ -442,9 +442,13 @@ namespace Park_and_Company.PageObject.IncentivePage
         public void AllowPendingClaims(bool yes,string days)
         {
             CheckRadioValidationWebElement(AllowPendingClaimYes, yes, AllowPendingClaimNo);
-            GenericHelper.WaitForElement(PendingDaysSelection);
-            DropDownHelper.SelectByVisibleText(PendingDaysSelection,days);
-            GenericHelper.WaitForLoadingMask();
+            if (yes)
+            {
+                GenericHelper.WaitForElement(PendingDaysSelection);
+                DropDownHelper.SelectByVisibleText(PendingDaysSelection, days);
+                GenericHelper.WaitForLoadingMask();
+            }
+            
         }
         /// <summary>
         /// 
@@ -462,9 +466,13 @@ namespace Park_and_Company.PageObject.IncentivePage
         public void JobFunctionClaimLimit(bool yes,string jobFunction)
         {
             CheckRadioValidationWebElement(JobFunctionYes, yes, JobFunctionNo);
-            GenericHelper.WaitForElement(JobFunctionSelection);
-            DropDownHelper.SelectByVisibleText(JobFunctionSelection, jobFunction);
-            GenericHelper.WaitForLoadingMask();
+            if (yes)
+            {
+                GenericHelper.WaitForElement(JobFunctionSelection);
+                DropDownHelper.SelectByVisibleText(JobFunctionSelection, jobFunction);
+                GenericHelper.WaitForLoadingMask();
+            }
+            
         }
         /// <summary>
         /// 
@@ -475,9 +483,14 @@ namespace Park_and_Company.PageObject.IncentivePage
         public void ClaimAudit(bool yes, string calimAuditValue, bool percentage)
         {
             CheckRadioValidationWebElement(ClaimAuditYes, yes, ClaimAuditNo);
-            GenericHelper.WaitForElement(CalimAuditValue);
-            CalimAuditValue.SendKeys(calimAuditValue);
-            GenericHelper.WaitForLoadingMask();
+            if (yes)
+            {
+                GenericHelper.WaitForElement(CalimAuditValue);
+                CheckRadioValidationWebElement(ClaimAuditPercentage, percentage, ClaimAuditAmount);
+                CalimAuditValue.SendKeys(calimAuditValue);
+                GenericHelper.WaitForLoadingMask();
+            }
+            
         }
 
     }
