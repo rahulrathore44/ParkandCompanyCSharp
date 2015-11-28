@@ -1,6 +1,9 @@
 bin/**/*
 obj/**/*
 
+bin/Debug/**/*
+obj/Debug/**/*
+
 # Object files
 *.o
 *.ko
