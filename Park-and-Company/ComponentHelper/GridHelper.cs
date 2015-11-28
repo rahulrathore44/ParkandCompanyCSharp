@@ -75,5 +75,26 @@ namespace Park_and_Company.ComponentHelper
         }
 
 
+        public static void ClickVerifyBtnInGrid(string gridXpath, int row, int column)
+        {
+            if (
+                GenericHelper.IsElementPresentQuick(
+                    By.XPath(gridXpath + "//table//tbody//tr[" + row + "]//td[" + column + "]//i[2]")))
+            {
+                var element =
+                    GenericHelper.GetElement(
+                        By.XPath(gridXpath + "//table//tbody//tr[" + row + "]//td[" + column + "]//i[2]"));
+                element.Click();
+                GenericHelper.WaitForLoadingMask();
+            }
+        }
+
+        public static void ClickDeleteBtnInGrid(string gridXpath, int row, int column)
+        {
+            var element = GetGridElement(gridXpath, row, column);
+            element?.Click();
+            GenericHelper.WaitForLoadingMask();               
+        }
+
     }
 }

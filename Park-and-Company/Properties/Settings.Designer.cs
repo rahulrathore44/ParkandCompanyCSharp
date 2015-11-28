@@ -25,19 +25,28 @@ namespace Park_and_Company.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("//a[contains(text(),\'Forgot Username\')]")]
-        public string ForgotUsername {
+        [global::System.Configuration.DefaultSettingValueAttribute("//div[@class=\'k-grid-content\']")]
+        public string ClaimDataGrid {
             get {
-                return ((string)(this["ForgotUsername"]));
+                return ((string)(this["ClaimDataGrid"]));
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("//a[contains(text(),\'Forgot Password\')]")]
-        public string ForgotPassword {
+        [global::System.Configuration.DefaultSettingValueAttribute("//div[@id=\'UserGroupsGrid\']")]
+        public string UserGroupGrid {
             get {
-                return ((string)(this["ForgotPassword"]));
+                return ((string)(this["UserGroupGrid"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("//div[@id=\'allUsersGrid\']")]
+        public string AllUserGrid {
+            get {
+                return ((string)(this["AllUserGrid"]));
             }
         }
     }

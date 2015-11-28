@@ -9,6 +9,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using Park_and_Company.BaseClasses;
 using Park_and_Company.ComponentHelper;
+using Park_and_Company.PageObject.Claims;
 using Park_and_Company.PageObject.UserGroups;
 using Park_and_Company.Settings;
 
@@ -126,6 +127,12 @@ namespace Park_and_Company.PageObject
         [FindsBy(How = How.XPath, Using = "//h6[@class='footerLinks']/a[4]")]
         private IWebElement FAQ;
 
+        [FindsBy(How = How.XPath, Using = "//div[@class='dropdown mainNavDropCont']/button[contains(text(),'Claims')]")]
+        private IWebElement Claims;
+
+        [FindsBy(How = How.LinkText, Using = "New Claim")]
+        private IWebElement NewClaims;
+
 
         private void ScreenShotofLink(IWebElement element, IWebElement button,string name)
         {
@@ -156,6 +163,16 @@ namespace Park_and_Company.PageObject
             Assert.IsTrue(GenericHelper.IsElementPresent(By.Id("titleDiv")), ErrorMessage.PageLoadErrMsg + "Manage Incentive Programs Page");
             GenericHelper.WaitForLoadingMask();
             return new ManageUserGroups(driver);
+        }
+
+        public NewClaim OpeNewClaimPage()
+        {
+            Claims.Click();
+            GenericHelper.WaitForElement(NewClaims);
+            NewClaims.Click();
+            GenericHelper.WaitForLoadingMask();
+            GenericHelper.WaitForElement(By.Id("titleDiv"));
+            return new NewClaim(driver);
         }
 
         public void TakeHomePageScrShot(string name)

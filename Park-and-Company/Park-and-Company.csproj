@@ -74,6 +74,7 @@
     <Compile Include="CustomException\NoSutiableDriverFound.cs" />
     <Compile Include="Interfaces\IConfig.cs" />
     <Compile Include="PageObject\ActivityIncentiveTemplate.cs" />
+    <Compile Include="PageObject\Claims\NewClaim.cs" />
     <Compile Include="PageObject\HomePage.cs" />
     <Compile Include="PageObject\IncentivePage\BundleSetup.cs" />
     <Compile Include="PageObject\IncentivePage\ConfigureProgramPage.cs" />
@@ -98,6 +99,7 @@
     <Compile Include="Settings\AppConfigKeys.cs" />
     <Compile Include="Settings\ErrorMessage.cs" />
     <Compile Include="Settings\ObjectRepository.cs" />
+    <Compile Include="TestCases\Module\Claims\TestClaims.cs" />
     <Compile Include="TestCases\Module\IncentiveProgm\TestActivityIncentiveTemplate.cs" />
     <Compile Include="TestCases\Module\IncentiveProgm\TestSalesIncentiveTemplate.cs" />
     <Compile Include="TestCases\Module\ScreenShot\LoginPageScreenShot.cs" />
@@ -116,7 +118,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ExcelReader\" />
-    <Folder Include="PageObject\Claims\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="..\packages\WebDriver.ChromeDriver.win32.2.19.0.0\content\chromedriver.exe">

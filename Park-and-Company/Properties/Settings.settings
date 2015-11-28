@@ -2,11 +2,14 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Park_and_Company.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="ForgotUsername" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">//a[contains(text(),'Forgot Username')]</Value>
+    <Setting Name="ClaimDataGrid" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">//div[@class='k-grid-content']</Value>
     </Setting>
-    <Setting Name="ForgotPassword" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">//a[contains(text(),'Forgot Password')]</Value>
+    <Setting Name="UserGroupGrid" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">//div[@id='UserGroupsGrid']</Value>
+    </Setting>
+    <Setting Name="AllUserGrid" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">//div[@id='allUsersGrid']</Value>
     </Setting>
   </Settings>
 </SettingsFile>

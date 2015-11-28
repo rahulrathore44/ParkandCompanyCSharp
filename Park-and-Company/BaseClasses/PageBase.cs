@@ -33,5 +33,10 @@ namespace Park_and_Company.BaseClasses
             BrowserHelper.GoBack();
             GenericHelper.WaitForLoadingMask();
         }
+
+        protected void TakeScreenShot(string name)
+        {
+            GenericHelper.TakeSceenShot(name);
+        }
     }
 }

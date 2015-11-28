@@ -20,8 +20,8 @@ namespace Park_and_Company.TestCases.Module.UserGroups
             var lpage = new LoginPage(ObjectRepository.Driver);
             var hPage = lpage.LoginApplication(ObjectRepository.Config.GetUsername(), ObjectRepository.Config.GetPassword());
             var mUiPage = hPage.OpenManageUserGroups();
-            mUiPage.SelectGroup("//div[@id='UserGroupsGrid']", 1, 1);
-            mUiPage.SelectGroup("//div[@id='UserGroupsGrid']", 2, 1);
+            mUiPage.SelectGroup(Properties.Settings.Default.UserGroupGrid, 1, 1);
+            mUiPage.SelectGroup(Properties.Settings.Default.UserGroupGrid, 2, 1);
             mUiPage.CreateGrpOfGroup(grpName,grpName);
             mUiPage.Logout();
         }
