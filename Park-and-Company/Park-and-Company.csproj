@@ -74,7 +74,8 @@
     <Compile Include="CustomException\NoSutiableDriverFound.cs" />
     <Compile Include="Interfaces\IConfig.cs" />
     <Compile Include="PageObject\ActivityIncentiveTemplate.cs" />
-    <Compile Include="PageObject\Claims\NewClaim.cs" />
+    <Compile Include="PageObject\Claims\NewClaimElements.cs" />
+    <Compile Include="PageObject\Claims\NewClaimMethods.cs" />
     <Compile Include="PageObject\HomePage.cs" />
     <Compile Include="PageObject\IncentivePage\BundleSetup.cs" />
     <Compile Include="PageObject\IncentivePage\ConfigureProgramPage.cs" />
