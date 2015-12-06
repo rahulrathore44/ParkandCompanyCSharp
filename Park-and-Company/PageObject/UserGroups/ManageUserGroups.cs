@@ -49,6 +49,17 @@ namespace Park_and_Company.PageObject.UserGroups
             Thread.Sleep(500);
             GenericHelper.WaitForLoadingMask();
         }
+
+        public void ClickCreateAndCancel(string scrShotName)
+        {
+            JavaScriptExecutorHelper.ScrollElementAndClick(Create);
+            GenericHelper.WaitForLoadingMask();
+            GenericHelper.WaitForElement(By.Id("GroupName"));
+            Thread.Sleep(200);
+            TakeScreenShot(scrShotName);
+            grp.ClickCancel();
+            GenericHelper.WaitForLoadingMask();
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -142,6 +153,22 @@ namespace Park_and_Company.PageObject.UserGroups
             grp.ClickOk();
             GenericHelper.WaitForLoadingMask();
             Thread.Sleep(500);
+        }
+
+        /// <summary>
+        /// Select multiple grp, then click on create a grp button, take the scr shot and then hit cancel
+        /// </summary>
+        /// <param name="name"></param>
+        public void CreateGrpOfGrpAndCancel(string name)
+        {
+            JavaScriptExecutorHelper.ScrollElementAndClick(createGrp);
+            GenericHelper.WaitForLoadingMask();
+            GenericHelper.WaitForElement(By.XPath("//h3[text()='Create a Group Of Groups']"));
+            Thread.Sleep(200);
+            TakeScreenShot(name);
+            grp.ClickCancel();
+            GenericHelper.WaitForLoadingMask();
+            Thread.Sleep(100);
         }
     }
 }

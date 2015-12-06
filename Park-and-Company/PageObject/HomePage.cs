@@ -10,6 +10,8 @@ using OpenQA.Selenium.Support.PageObjects;
 using Park_and_Company.BaseClasses;
 using Park_and_Company.ComponentHelper;
 using Park_and_Company.PageObject.Claims;
+using Park_and_Company.PageObject.Configuration.ManageRoles;
+using Park_and_Company.PageObject.Partner.PartnerGrp;
 using Park_and_Company.PageObject.UserGroups;
 using Park_and_Company.Settings;
 
@@ -342,6 +344,24 @@ namespace Park_and_Company.PageObject
             GenericHelper.TakeSceenShot(name);
             BrowserHelper.GoBack();
             GenericHelper.WaitForLoadingMask();
+        }
+
+        public ManageRoles ClickManageRoles()
+        {
+            Configuration.Click();
+            GenericHelper.WaitForElement(ManageRoles);
+            ManageRoles.Click();
+            GenericHelper.WaitForLoadingMask();
+            return new ManageRoles(driver);
+        }
+
+        public ManagePartnerGrp ClickManagePartnerGrp()
+        {
+            Partner.Click();
+            GenericHelper.WaitForElement(PartnerGroups);
+            PartnerGroups.Click();
+            GenericHelper.WaitForLoadingMask();
+            return new ManagePartnerGrp(driver);
         }
 
     }

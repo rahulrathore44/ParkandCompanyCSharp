@@ -49,5 +49,23 @@ namespace Park_and_Company.Properties {
                 return ((string)(this["AllUserGrid"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("//div[@id=\'RolesGrid\']")]
+        public string ManageRolesGrid {
+            get {
+                return ((string)(this["ManageRolesGrid"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("//div[@id=\'PartnerGroupsGrid\']")]
+        public string PartenrGrpGrid {
+            get {
+                return ((string)(this["PartenrGrpGrid"]));
+            }
+        }
     }
 }

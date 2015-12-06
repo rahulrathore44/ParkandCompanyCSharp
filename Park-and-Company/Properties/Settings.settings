@@ -11,5 +11,11 @@
     <Setting Name="AllUserGrid" Type="System.String" Scope="Application">
       <Value Profile="(Default)">//div[@id='allUsersGrid']</Value>
     </Setting>
+    <Setting Name="ManageRolesGrid" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">//div[@id='RolesGrid']</Value>
+    </Setting>
+    <Setting Name="PartenrGrpGrid" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">//div[@id='PartnerGroupsGrid']</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

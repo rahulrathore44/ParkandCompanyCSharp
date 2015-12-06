@@ -18,9 +18,9 @@ namespace Park_and_Company.BaseClasses
             {
                 var logout = GenericHelper.GetElement(By.XPath(logoutXpath));
                 logout = GenericHelper.WaitForElementClickAble(logout);
-                logout.Click();
+                JavaScriptExecutorHelper.ScrollElementAndClick(logout);
                 logout = GenericHelper.WaitForElement(By.XPath("//a[contains(text(),'Log Off')]"));
-                logout.Click();
+                JavaScriptExecutorHelper.ScrollElementAndClick(logout);
                 GenericHelper.WaitForElement(By.XPath("//div[@class='loginWrapper']"));
             }
 

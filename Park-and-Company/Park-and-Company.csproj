@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="BaseClasses\BaseClass.cs" />
     <Compile Include="BaseClasses\InitializeWebDriver.cs" />
+    <Compile Include="BaseClasses\LoginBaseClass\LoginBase.cs" />
     <Compile Include="BaseClasses\PageBase.cs" />
     <Compile Include="ComponentHelper\BrowserHelper.cs" />
     <Compile Include="ComponentHelper\CalenderHelper.cs" />
@@ -76,6 +77,8 @@
     <Compile Include="PageObject\ActivityIncentiveTemplate.cs" />
     <Compile Include="PageObject\Claims\NewClaimElements.cs" />
     <Compile Include="PageObject\Claims\NewClaimMethods.cs" />
+    <Compile Include="PageObject\Configuration\ManageRoles\ManageRoles.cs" />
+    <Compile Include="PageObject\Configuration\ManageRoles\RolesDetails.cs" />
     <Compile Include="PageObject\HomePage.cs" />
     <Compile Include="PageObject\IncentivePage\BundleSetup.cs" />
     <Compile Include="PageObject\IncentivePage\ConfigureProgramPage.cs" />
@@ -87,6 +90,7 @@
     <Compile Include="PageObject\LoginPage.cs" />
     <Compile Include="PageObject\ManageIncentivePrograms.cs" />
     <Compile Include="PageObject\NewProgram.cs" />
+    <Compile Include="PageObject\Partner\PartnerGrp\ManagePartnerGrp.cs" />
     <Compile Include="PageObject\SalesIncentiveTemplateBasic.cs" />
     <Compile Include="PageObject\UserGroups\CreateNewGroup.cs" />
     <Compile Include="PageObject\UserGroups\GrpNameDetailPage.cs" />
@@ -100,6 +104,9 @@
     <Compile Include="Settings\AppConfigKeys.cs" />
     <Compile Include="Settings\ErrorMessage.cs" />
     <Compile Include="Settings\ObjectRepository.cs" />
+    <Compile Include="TestCases\CheckScreens\Module\ManagePartnerGrp\TestManagePartnerGrp.cs" />
+    <Compile Include="TestCases\CheckScreens\Module\ManageRoles\TestManageRoles.cs" />
+    <Compile Include="TestCases\CheckScreens\Module\ManageUserGrps\TestManageUserGrp.cs" />
     <Compile Include="TestCases\Module\Claims\TestClaims.cs" />
     <Compile Include="TestCases\Module\IncentiveProgm\TestActivityIncentiveTemplate.cs" />
     <Compile Include="TestCases\Module\IncentiveProgm\TestSalesIncentiveTemplate.cs" />

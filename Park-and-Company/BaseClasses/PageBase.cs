@@ -13,6 +13,10 @@ namespace Park_and_Company.BaseClasses
     {
         private IWebDriver _driver;
 
+        [FindsBy(How = How.XPath,Using = "//div[@class='homeProgramsNav']/a[position()=1]")]
+        private IWebElement Homebtn;
+
+
         public PageBase(IWebDriver driver)
         {
             _driver = driver;
@@ -37,6 +41,12 @@ namespace Park_and_Company.BaseClasses
         protected void TakeScreenShot(string name)
         {
             GenericHelper.TakeSceenShot(name);
+        }
+
+        public void NavigateToHome()
+        {
+            JavaScriptExecutorHelper.ScrollElementAndClick(Homebtn);
+            GenericHelper.WaitForLoadingMask();
         }
     }
 }
