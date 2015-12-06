@@ -13,6 +13,8 @@ using Park_and_Company.PageObject.Claims;
 using Park_and_Company.PageObject.Configuration.CustomeAttribute;
 using Park_and_Company.PageObject.Configuration.ManageRoles;
 using Park_and_Company.PageObject.Partner.PartnerGrp;
+using Park_and_Company.PageObject.Programs.ManualPointAdjustment;
+using Park_and_Company.PageObject.Reports;
 using Park_and_Company.PageObject.UserGroups;
 using Park_and_Company.Settings;
 
@@ -374,5 +376,20 @@ namespace Park_and_Company.PageObject
             return new CustomAttributes(driver);
         }
 
+        public ReportPage NavigateToReportsPage()
+        {
+            Reports.Click();
+            GenericHelper.WaitForLoadingMask();
+            return new ReportPage(driver);
+        }
+
+        public ManualPointAdjustment NavigateToManualPointAdjustment()
+        {
+            Programs.Click();
+            GenericHelper.WaitForElement(ManualPointAdj);
+            ManualPointAdj.Click();
+            GenericHelper.WaitForLoadingMask();
+            return new ManualPointAdjustment(driver);
+        }
     }
 }

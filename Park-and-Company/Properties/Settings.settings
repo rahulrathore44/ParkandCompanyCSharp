@@ -20,5 +20,8 @@
     <Setting Name="CustomAttGrid" Type="System.String" Scope="Application">
       <Value Profile="(Default)">//div[@id='CustomAttributeGrid']</Value>
     </Setting>
+    <Setting Name="ManualPointAdjustmentGrid" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">//div[@id='ManualPointAdjustmentGrid']</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

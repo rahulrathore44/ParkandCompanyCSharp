@@ -72,6 +72,7 @@
     <Compile Include="ComponentHelper\JavaScriptExecutorHelper.cs" />
     <Compile Include="Configuration\AppConfigReader.cs" />
     <Compile Include="Configuration\BrowserType.cs" />
+    <Compile Include="CustomException\InvalidBrowserWindowIndex.cs" />
     <Compile Include="CustomException\NoSutiableDriverFound.cs" />
     <Compile Include="Interfaces\IConfig.cs" />
     <Compile Include="PageObject\ActivityIncentiveTemplate.cs" />
@@ -93,6 +94,9 @@
     <Compile Include="PageObject\ManageIncentivePrograms.cs" />
     <Compile Include="PageObject\NewProgram.cs" />
     <Compile Include="PageObject\Partner\PartnerGrp\ManagePartnerGrp.cs" />
+    <Compile Include="PageObject\Programs\ManualPointAdjustment\ManualPointAdjustment.cs" />
+    <Compile Include="PageObject\Programs\ManualPointAdjustment\PointTypeDetail.cs" />
+    <Compile Include="PageObject\Reports\ReportPage.cs" />
     <Compile Include="PageObject\SalesIncentiveTemplateBasic.cs" />
     <Compile Include="PageObject\UserGroups\CreateNewGroup.cs" />
     <Compile Include="PageObject\UserGroups\GrpNameDetailPage.cs" />
@@ -110,6 +114,8 @@
     <Compile Include="TestCases\CheckScreens\Module\ManagePartnerGrp\TestManagePartnerGrp.cs" />
     <Compile Include="TestCases\CheckScreens\Module\ManageRoles\TestManageRoles.cs" />
     <Compile Include="TestCases\CheckScreens\Module\ManageUserGrps\TestManageUserGrp.cs" />
+    <Compile Include="TestCases\CheckScreens\Module\Program\ManualPointAdjustment\TestPointAdjustment.cs" />
+    <Compile Include="TestCases\CheckScreens\Module\Reports\TestReport.cs" />
     <Compile Include="TestCases\Module\Claims\TestClaims.cs" />
     <Compile Include="TestCases\Module\IncentiveProgm\TestActivityIncentiveTemplate.cs" />
     <Compile Include="TestCases\Module\IncentiveProgm\TestSalesIncentiveTemplate.cs" />
@@ -120,7 +126,9 @@
     <Compile Include="TestCases\Module\UserGroups\TestGroupofGroups.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

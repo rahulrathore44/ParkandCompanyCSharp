@@ -12,7 +12,7 @@ namespace Park_and_Company.ComponentHelper
     public class DropDownHelper
     {
         private static SelectElement select;
-        private static By DownArrow = By.XPath("//span[text()='select']");
+        private static readonly By DownArrow = By.XPath("//span[text()='select']");
 
         public static void SelectByVisibleText(By locator, string text)
         {
@@ -36,5 +36,17 @@ namespace Park_and_Company.ComponentHelper
             GenericHelper.WaitForLoadingMask();
             Thread.Sleep(1000);
         }
+
+        public static void SelectFromKendoDropDown(By selectArrow,string value)
+        {
+            var arrow = GenericHelper.GetElement(selectArrow);
+            JavaScriptExecutorHelper.ScrollElementAndClick(arrow);
+            Thread.Sleep(500);
+            var list = GenericHelper.GetVisiblityOfElement(By.XPath("//li[text()='" + value + "']"));
+            list.Click();
+            GenericHelper.WaitForLoadingMask();
+            Thread.Sleep(1000);
+        }
+
     }
 }

@@ -76,5 +76,14 @@ namespace Park_and_Company.Properties {
                 return ((string)(this["CustomAttGrid"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("//div[@id=\'ManualPointAdjustmentGrid\']")]
+        public string ManualPointAdjustmentGrid {
+            get {
+                return ((string)(this["ManualPointAdjustmentGrid"]));
+            }
+        }
     }
 }

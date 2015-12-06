@@ -82,7 +82,7 @@ namespace Park_and_Company.PageObject.Configuration.CustomeAttribute
         {
             ClickEditInGrid(gridXpath,row,column);
             _add.WaitForHeader();
-            Thread.Sleep(200);
+            Thread.Sleep(500);
             TakeScreenShot(name);
             _add.ClickOnCancel();
             GenericHelper.WaitForLoadingMask();
