@@ -77,6 +77,8 @@
     <Compile Include="PageObject\ActivityIncentiveTemplate.cs" />
     <Compile Include="PageObject\Claims\NewClaimElements.cs" />
     <Compile Include="PageObject\Claims\NewClaimMethods.cs" />
+    <Compile Include="PageObject\Configuration\CustomeAttribute\AddEditCustAttributeDetailPage.cs" />
+    <Compile Include="PageObject\Configuration\CustomeAttribute\CustomAttributes.cs" />
     <Compile Include="PageObject\Configuration\ManageRoles\ManageRoles.cs" />
     <Compile Include="PageObject\Configuration\ManageRoles\RolesDetails.cs" />
     <Compile Include="PageObject\HomePage.cs" />
@@ -104,6 +106,7 @@
     <Compile Include="Settings\AppConfigKeys.cs" />
     <Compile Include="Settings\ErrorMessage.cs" />
     <Compile Include="Settings\ObjectRepository.cs" />
+    <Compile Include="TestCases\CheckScreens\Module\Configuration\CustomeAttribute\TestAttribute.cs" />
     <Compile Include="TestCases\CheckScreens\Module\ManagePartnerGrp\TestManagePartnerGrp.cs" />
     <Compile Include="TestCases\CheckScreens\Module\ManageRoles\TestManageRoles.cs" />
     <Compile Include="TestCases\CheckScreens\Module\ManageUserGrps\TestManageUserGrp.cs" />

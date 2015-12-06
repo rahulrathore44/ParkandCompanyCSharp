@@ -10,6 +10,7 @@ using OpenQA.Selenium.Support.PageObjects;
 using Park_and_Company.BaseClasses;
 using Park_and_Company.ComponentHelper;
 using Park_and_Company.PageObject.Claims;
+using Park_and_Company.PageObject.Configuration.CustomeAttribute;
 using Park_and_Company.PageObject.Configuration.ManageRoles;
 using Park_and_Company.PageObject.Partner.PartnerGrp;
 using Park_and_Company.PageObject.UserGroups;
@@ -362,6 +363,15 @@ namespace Park_and_Company.PageObject
             PartnerGroups.Click();
             GenericHelper.WaitForLoadingMask();
             return new ManagePartnerGrp(driver);
+        }
+
+        public CustomAttributes NavigateToCustomeAttribute()
+        {
+            Configuration.Click();
+            GenericHelper.WaitForElement(CustomAttributes);
+            CustomAttributes.Click();
+            GenericHelper.WaitForLoadingMask();
+            return new CustomAttributes(driver);
         }
 
     }
