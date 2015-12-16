@@ -33,6 +33,6 @@ G:\AutomationWorkspace\Git-Hub\ParkandCompanyCSharp\Park-and-Company\bin\Debug\W
 G:\AutomationWorkspace\Git-Hub\ParkandCompanyCSharp\Park-and-Company\bin\Debug\WebDriver.xml
 G:\AutomationWorkspace\Git-Hub\ParkandCompanyCSharp\Park-and-Company\bin\Debug\WebDriver.Support.xml
 G:\AutomationWorkspace\Git-Hub\ParkandCompanyCSharp\Park-and-Company\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
-G:\AutomationWorkspace\Git-Hub\ParkandCompanyCSharp\Park-and-Company\obj\Debug\Park-and-Company.csprojResolveAssemblyReference.cache
 G:\AutomationWorkspace\Git-Hub\ParkandCompanyCSharp\Park-and-Company\obj\Debug\Park-and-Company.dll
 G:\AutomationWorkspace\Git-Hub\ParkandCompanyCSharp\Park-and-Company\obj\Debug\Park-and-Company.pdb
+G:\AutomationWorkspace\Git-Hub\ParkandCompanyCSharp\Park-and-Company\obj\Debug\Park-and-Company.csprojResolveAssemblyReference.cache

@@ -15,8 +15,8 @@ namespace Park_and_Company.TestCases.CheckScreens.Module.Program.ManualPointAdju
         public void TestPointAdjustmentScr()
         {
             var pAdjPage = hPage.NavigateToManualPointAdjustment();
-            pAdjPage.SelectPointAndProgram("test", "test");
-            pAdjPage.SelectPointTypInGrid(Properties.Settings.Default.ManualPointAdjustmentGrid,2,1);
+            pAdjPage.SelectPointAndProgram("test", "Test Activity"); // Provide unique Point Type and Programe Name
+            pAdjPage.SelectPointTypInGrid(Properties.Settings.Default.ManualPointAdjustmentGrid,1,1);
             pAdjPage.ClickPointAdjTakeScrShot($"ManualPointAdjustment-{DateTime.UtcNow.ToString("hh-mm-ss")}");
             pAdjPage.Logout();
         }

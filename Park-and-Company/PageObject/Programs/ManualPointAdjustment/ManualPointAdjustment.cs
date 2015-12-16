@@ -36,23 +36,24 @@ namespace Park_and_Company.PageObject.Programs.ManualPointAdjustment
 
         public void SelectPointAndProgram(string pointTy,string programName)
         {
-            DropDownHelper.SelectByVisibleText(PointType, pointTy);
+            //DropDownHelper.SelectByVisibleText(PointType, pointTy);
+            DropDownHelper.SelectFromDropDownWithLabel("Point Types", pointTy);
             Thread.Sleep(200);
-            DropDownHelper.SelectByVisibleText(ProgramNames, programName);
-            Thread.Sleep(600);
+            //DropDownHelper.SelectByVisibleText(ProgramNames, programName);
+            DropDownHelper.SelectFromDropDownWithLabel("Program Names", programName);
+            Thread.Sleep(2000);
             GenericHelper.WaitForLoadingMask();
         }
 
         public void SelectPointTypInGrid(string gridXpath, int row, int column)
         {
             var element = GridHelper.GetGridElement(gridXpath, row, column);
-            element.Click();
+            JavaScriptExecutorHelper.ScrollElementAndClick(element);
         }
 
         public void ClickPointToAdjust()
         {
             JavaScriptExecutorHelper.ScrollElementAndClick(PointAdjustmet);
-
         }
 
         public void ClickPointAdjTakeScrShot(string name)
