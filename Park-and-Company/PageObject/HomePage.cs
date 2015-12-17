@@ -138,6 +138,16 @@ namespace Park_and_Company.PageObject
         [FindsBy(How = How.LinkText, Using = "New Claim")]
         private IWebElement NewClaims;
 
+        /// <summary>
+        /// Supply the Name of Element which you want to validate. The element should be in same class
+        /// </summary>
+        public void ValidateElements()
+        {
+            Assert.IsTrue(GenericHelper.IsElementPresentQuick(GetLocatorOfWebElement("Programs")),"Element Not Found"); // Similarly for other element which u want to validate. Supply name as string
+            Assert.IsTrue(GenericHelper.IsElementPresentQuick(GetLocatorOfWebElement("User")), "Element Not Found");
+            Assert.IsTrue(GenericHelper.IsElementPresentQuick(GetLocatorOfWebElement("Partner")), "Element Not Found");
+            Assert.IsTrue(GenericHelper.IsElementPresentQuick(GetLocatorOfWebElement("File")), "Element Not Found");
+        }
 
         private void ScreenShotofLink(IWebElement element, IWebElement button,string name)
         {

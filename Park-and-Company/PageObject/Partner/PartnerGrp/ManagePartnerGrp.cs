@@ -28,6 +28,14 @@ namespace Park_and_Company.PageObject.Partner.PartnerGrp
         [FindsBy(How = How.XPath, Using = "//button[contains(text(),'Create a Group')]")]
         private IWebElement createGrp;
 
+        /// <summary>
+        /// Supply the Name of Element which you want to validate. The element should be in same class
+        /// </summary>
+        public void ValidateElement()
+        {
+            Assert.IsTrue(GenericHelper.IsElementPresentQuick(GetLocatorOfWebElement("Create")));
+        }
+
         public ManagePartnerGrp(IWebDriver driver) : base(driver)
         {
             _driver = driver;

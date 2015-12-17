@@ -14,6 +14,7 @@ namespace Park_and_Company.TestCases.CheckScreens.Module.Reports
         [TestMethod]
         public void TestReportPage()
         {
+            hPage.ValidateElements();
             var rPage = hPage.NavigateToReportsPage();
             rPage.PartnerDetailReportScrShot($"PartnerDetailReport-{DateTime.UtcNow.ToString("hh-mm-ss")}");
             rPage.PointBalanceDetailReportScrShot($"PointBalanceDetailReport-{DateTime.UtcNow.ToString("hh-mm-ss")}");

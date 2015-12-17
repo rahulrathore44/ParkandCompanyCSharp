@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
@@ -47,6 +48,15 @@ namespace Park_and_Company.BaseClasses
         {
             JavaScriptExecutorHelper.ScrollElementAndClick(Homebtn);
             GenericHelper.WaitForLoadingMask();
+        }
+
+        protected By GetLocatorOfWebElement(string elementName)
+        {
+            var T = GetClassType();
+            var field = T.GetField(elementName, BindingFlags.Instance | BindingFlags.NonPublic);
+            var cusAttri = field.GetCustomAttribute(typeof(FindsByAttribute));
+            var ele = (FindsByAttribute)cusAttri;
+            return GetElementLocator(ele.How, ele.Using);
         }
     }
 }

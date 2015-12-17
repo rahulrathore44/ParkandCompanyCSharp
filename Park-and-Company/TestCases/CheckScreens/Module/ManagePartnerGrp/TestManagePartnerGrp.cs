@@ -16,6 +16,7 @@ namespace Park_and_Company.TestCases.CheckScreens.Module.ManagePartnerGrp
         public void TestManagePartnerGrpScr()
         {
             var partPage = hPage.ClickManagePartnerGrp();
+            partPage.ValidateElement();
             partPage.ClickOnUserGrp(Properties.Settings.Default.PartenrGrpGrid,"test",1,2);
             GenericHelper.TakeSceenShot("Partner Static Grp");
             partPage.NavigateToHome();

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.PageObjects;
 using Park_and_Company.ComponentHelper;
 
 namespace Park_and_Company.BaseClasses
@@ -24,6 +25,32 @@ namespace Park_and_Company.BaseClasses
                 GenericHelper.WaitForElement(By.XPath("//div[@class='loginWrapper']"));
             }
 
+        }
+
+        public virtual Type GetClassType()
+        {
+            return GetType();
+        }
+
+        protected By GetElementLocator(How locator, string locatorValue)
+        {
+            switch (locator)
+            {
+                case How.XPath:
+                    return By.XPath(locatorValue);
+                case How.ClassName:
+                    return By.ClassName(locatorValue);
+                case How.CssSelector:
+                    return By.CssSelector(locatorValue);
+                case How.LinkText:
+                    return By.LinkText(locatorValue);
+                case How.Name:
+                    return By.Name(locatorValue);
+                case How.PartialLinkText:
+                    return By.PartialLinkText(locatorValue);
+                default:
+                    return By.Id(locatorValue);
+            }
         }
     }
 }
