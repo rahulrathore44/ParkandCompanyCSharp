@@ -75,6 +75,8 @@
     <Compile Include="Configuration\BrowserType.cs" />
     <Compile Include="CustomException\InvalidBrowserWindowIndex.cs" />
     <Compile Include="CustomException\NoSutiableDriverFound.cs" />
+    <Compile Include="ExtensionClass\ScreenShotExtClass\TakeScreenShot.cs" />
+    <Compile Include="ExtensionClass\WebElementExtClass\JavaScriptExecutor.cs" />
     <Compile Include="Interfaces\IConfig.cs" />
     <Compile Include="PageObject\ActivityIncentiveTemplate.cs" />
     <Compile Include="PageObject\Claims\NewClaimElements.cs" />
@@ -138,10 +140,12 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="ExcelReader\" />
-  </ItemGroup>
-  <ItemGroup>
+    <Content Include="..\packages\Selenium.WebDriver.IEDriver.2.48.0.0\driver\IEDriverServer.exe">
+      <Link>IEDriverServer.exe</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="..\packages\WebDriver.ChromeDriver.win32.2.19.0.0\content\chromedriver.exe">
       <Link>chromedriver.exe</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

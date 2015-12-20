@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Park_and_Company.BaseClasses.LoginBaseClass;
+using Park_and_Company.ExtensionClass.ScreenShotExtClass;
 
 namespace Park_and_Company.TestCases.CheckScreens.Module.Reports
 {
@@ -16,6 +17,7 @@ namespace Park_and_Company.TestCases.CheckScreens.Module.Reports
         {
             hPage.ValidateElements();
             var rPage = hPage.NavigateToReportsPage();
+            rPage.CaptureScreenShot("Check");
             rPage.PartnerDetailReportScrShot($"PartnerDetailReport-{DateTime.UtcNow.ToString("hh-mm-ss")}");
             rPage.PointBalanceDetailReportScrShot($"PointBalanceDetailReport-{DateTime.UtcNow.ToString("hh-mm-ss")}");
             rPage.IncentiveClaimDetailReportScrShot($"IncentiveClaimDetailReport-{DateTime.UtcNow.ToString("hh-mm-ss")}");

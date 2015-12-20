@@ -7,6 +7,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using Park_and_Company.BaseClasses.LoginBaseClass;
 using Park_and_Company.ComponentHelper;
+using Park_and_Company.ExtensionClass.ScreenShotExtClass;
 using Park_and_Company.PageObject.IncentivePage;
 
 namespace Park_and_Company.TestCases.CheckScreens.Module.Program.ManageIncentivePrograms
@@ -19,6 +20,7 @@ namespace Park_and_Company.TestCases.CheckScreens.Module.Program.ManageIncentive
         {
             var pAdjPage = hPage.OpenManageIncentivePrograms();
             pAdjPage.SelectItemPerList("100");
+            pAdjPage.CaptureScreenShot();
             pAdjPage.ClickElemetInGrid(Properties.Settings.Default.ManageIncentiveProgramsGrid,20,1);
             pAdjPage.SelectProgramNameClickNext();
             pAdjPage.SelectProgramDatesClickNext();
