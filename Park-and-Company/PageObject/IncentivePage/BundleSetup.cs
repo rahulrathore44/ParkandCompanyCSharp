@@ -14,6 +14,9 @@ namespace Park_and_Company.PageObject.IncentivePage
     {
         private IWebDriver _driver;
 
+        [FindsBy(How = How.XPath, Using = "//a[text()='Bundle Setup']")]
+        private IWebElement BundleSetups;
+
         [FindsBy(How = How.Name,Using = "UserGroups")]
         private IWebElement bundleDropDown;
 
@@ -24,7 +27,7 @@ namespace Park_and_Company.PageObject.IncentivePage
         private IWebElement createNewBundle;
 
         [FindsBy(How = How.XPath, Using = "//div[@id='accordion']/descendant::div[@id='rendered'][position()=6]/button")]
-        private IWebElement next;
+        private IWebElement BundleSetupsNext;
 
         public BundleSetup(IWebDriver driver) : base(driver)
         {
@@ -34,7 +37,18 @@ namespace Park_and_Company.PageObject.IncentivePage
         public void Skip()
         {
             JavaScriptExecutorHelper.ScrollElementAndClick(skip);
-            next.Click();
+            BundleSetupsNext.Click();
+            GenericHelper.WaitForLoadingMask();
+        }
+
+        public void ClickBundleSetupsAndNext()
+        {
+            JavaScriptExecutorHelper.ScrollElementAndClick(BundleSetups);
+            GenericHelper.WaitForLoadingMask();
+            TakeScreenShot($"BundleSetups-{DateTime.UtcNow.ToString("hh-mm-ss")}");
+            JavaScriptExecutorHelper.ScrollElementAndClick(BundleSetupsNext);
+            GenericHelper.WaitForLoadingMask();
+            JavaScriptExecutorHelper.ScrollElementAndClick(BundleSetups);
             GenericHelper.WaitForLoadingMask();
         }
     }

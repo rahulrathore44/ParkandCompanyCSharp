@@ -111,5 +111,16 @@ namespace Park_and_Company.PageObject.IncentivePage
             JavaScriptExecutorHelper.ScrollElementAndClick(SelectPrograDates);
             GenericHelper.WaitForLoadingMask();
         }
+
+        public void SelectProgramDatesAndClickNext()
+        {
+            JavaScriptExecutorHelper.ScrollElementAndClick(SelectPrograDates);
+            GenericHelper.WaitForLoadingMask();
+            TakeScreenShot($"SelectPrograDates-{DateTime.UtcNow.ToString("hh-mm-ss")}");
+            JavaScriptExecutorHelper.ScrollElementAndClick(SelectDatesNext);
+            GenericHelper.WaitForLoadingMask();
+            JavaScriptExecutorHelper.ScrollElementAndClick(SelectPrograDates);
+            GenericHelper.WaitForLoadingMask();
+        }
     }
 }

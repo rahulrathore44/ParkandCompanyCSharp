@@ -65,6 +65,7 @@
     <Compile Include="BaseClasses\LoginBaseClass\LoginBase.cs" />
     <Compile Include="BaseClasses\PageBase.cs" />
     <Compile Include="ComponentHelper\BrowserHelper.cs" />
+    <Compile Include="ComponentHelper\ButtonHelper.cs" />
     <Compile Include="ComponentHelper\CalenderHelper.cs" />
     <Compile Include="ComponentHelper\DropDownHelper.cs" />
     <Compile Include="ComponentHelper\GenericHelper.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="PageObject\IncentivePage\BundleSetup.cs" />
     <Compile Include="PageObject\IncentivePage\ConfigureProgramPage.cs" />
     <Compile Include="PageObject\IncentivePage\EligibleGroupPage.cs" />
+    <Compile Include="PageObject\IncentivePage\OverlaySetup.cs" />
     <Compile Include="PageObject\IncentivePage\ProgramIncentive.cs" />
     <Compile Include="PageObject\IncentivePage\SelectProgramDatesPage.cs" />
     <Compile Include="PageObject\IncentivePage\SelectProgramPage.cs" />
@@ -114,6 +116,7 @@
     <Compile Include="TestCases\CheckScreens\Module\ManagePartnerGrp\TestManagePartnerGrp.cs" />
     <Compile Include="TestCases\CheckScreens\Module\ManageRoles\TestManageRoles.cs" />
     <Compile Include="TestCases\CheckScreens\Module\ManageUserGrps\TestManageUserGrp.cs" />
+    <Compile Include="TestCases\CheckScreens\Module\Program\ManageIncentivePrograms\TestManageIncentivePrograms.cs" />
     <Compile Include="TestCases\CheckScreens\Module\Program\ManualPointAdjustment\TestPointAdjustment.cs" />
     <Compile Include="TestCases\CheckScreens\Module\Reports\TestReport.cs" />
     <Compile Include="TestCases\Module\Claims\TestClaims.cs" />

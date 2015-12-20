@@ -208,6 +208,12 @@ namespace Park_and_Company.PageObject.IncentivePage
         [FindsBy(How = How.XPath, Using = "//input[@title='Amount']")]
         private IWebElement ClaimAuditAmount;
 
+        [FindsBy(How = How.XPath, Using = "//a[text()='Validation']")]
+        private IWebElement Validations;
+
+        [FindsBy(How = How.XPath, Using = "//div[@id='validationstep']/parent::div/following-sibling::button")]
+        private IWebElement ValidationNext;
+
         /// <summary>
         /// 
         /// </summary>
@@ -493,5 +499,15 @@ namespace Park_and_Company.PageObject.IncentivePage
             
         }
 
+        public void ClickEligibelGrpAndNext()
+        {
+            JavaScriptExecutorHelper.ScrollElementAndClick(Validations);
+            GenericHelper.WaitForLoadingMask();
+            TakeScreenShot($"Validations-{DateTime.UtcNow.ToString("hh-mm-ss")}");
+            JavaScriptExecutorHelper.ScrollElementAndClick(ValidationNext);
+            GenericHelper.WaitForLoadingMask();
+            JavaScriptExecutorHelper.ScrollElementAndClick(Validations);
+            GenericHelper.WaitForLoadingMask();
+        }
     }
 }

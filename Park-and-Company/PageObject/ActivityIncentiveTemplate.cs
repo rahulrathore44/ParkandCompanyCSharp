@@ -30,10 +30,10 @@ namespace Park_and_Company.PageObject
         [FindsBy(How = How.XPath,Using = "//a[text()='Validation']")]
         private IWebElement Validation;
 
-        [FindsBy(How = How.XPath,Using = "//div[@id='accordion']/descendant::div[@id='rendered'][position()=6]/button")]
+        [FindsBy(How = How.XPath,Using = "//div[@id='validationstep']/parent::div/following-sibling::button")]
         private IWebElement ValidationNext;
 
-        [FindsBy(How = How.XPath,Using = "//a[text()='Finish']")]
+        [FindsBy(How = How.XPath,Using = "//button[text()='Finish']")]
         private IWebElement Finish;
 
         [FindsBy(How = How.XPath,Using = "//div[@id='accordion']/descendant::div[@id='rendered'][position()=4]/button")]

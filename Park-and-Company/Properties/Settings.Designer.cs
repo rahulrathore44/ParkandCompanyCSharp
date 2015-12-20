@@ -85,5 +85,14 @@ namespace Park_and_Company.Properties {
                 return ((string)(this["ManualPointAdjustmentGrid"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("//div[@id=\'ManageIncentiveProgramsGrid\']")]
+        public string ManageIncentiveProgramsGrid {
+            get {
+                return ((string)(this["ManageIncentiveProgramsGrid"]));
+            }
+        }
     }
 }

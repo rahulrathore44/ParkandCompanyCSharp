@@ -16,6 +16,9 @@ namespace Park_and_Company.PageObject.IncentivePage
         {
         }
 
+        [FindsBy(How = How.XPath, Using = "//a[text()='Program Incentive']")]
+        private IWebElement ProgramIncentives;
+
         [FindsBy(How = How.XPath,Using = "//label[text()='ACTIVITY_CODE']/following-sibling::div/input")]
         private IWebElement Activity_Code;
 
@@ -55,6 +58,9 @@ namespace Park_and_Company.PageObject.IncentivePage
         [FindsBy(How = How.XPath, Using = "//label[text()='UNITS_SOLD_MIN']/following-sibling::div/input")]
         private IWebElement UnitSoldMin;
 
+        [FindsBy(How = How.XPath, Using = "//div[@id='accordion']/descendant::div[@id='rendered'][position()=4]/button")]
+        private IWebElement ProgramIncentiveNext;
+
         public void AddProgramIncentive(string acCode, string acType, string desc, string points)
         {
             Activity_Code.SendKeys(acCode);
@@ -83,6 +89,17 @@ namespace Park_and_Company.PageObject.IncentivePage
             UnitSoldMax.SendKeys(unitSoldMax);
             UnitSoldMin.SendKeys(unitSoldMin);
             Submit.Click();
+            GenericHelper.WaitForLoadingMask();
+        }
+
+        public void ClickProgramIncentiveAndNext()
+        {
+            JavaScriptExecutorHelper.ScrollElementAndClick(ProgramIncentives);
+            GenericHelper.WaitForLoadingMask();
+            TakeScreenShot($"ProgramIncentives-{DateTime.UtcNow.ToString("hh-mm-ss")}");
+            JavaScriptExecutorHelper.ScrollElementAndClick(ProgramIncentiveNext);
+            GenericHelper.WaitForLoadingMask();
+            JavaScriptExecutorHelper.ScrollElementAndClick(ProgramIncentives);
             GenericHelper.WaitForLoadingMask();
         }
     }

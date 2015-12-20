@@ -58,5 +58,10 @@ namespace Park_and_Company.BaseClasses
             var ele = (FindsByAttribute)cusAttri;
             return GetElementLocator(ele.How, ele.Using);
         }
+
+        public PageBase GetPageBaseObject()
+        {
+            return new PageBase(_driver);
+        }
     }
 }

@@ -8,6 +8,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using Park_and_Company.BaseClasses;
 using Park_and_Company.ComponentHelper;
+using Park_and_Company.PageObject.IncentivePage;
 
 namespace Park_and_Company.PageObject
 {
@@ -50,7 +51,7 @@ namespace Park_and_Company.PageObject
         public void SelectItemPerList(string number)
         {
             DropDownHelper.SelectItemPerList(number);
-
+            GenericHelper.WaitForLoadingMask();
         }
 
         /**
@@ -64,6 +65,60 @@ namespace Park_and_Company.PageObject
             SelectItemPerList("100");
             GenericHelper.WaitForLoadingMask();
             //GridHelper.VerifyIncentiveGridEntry(gridXpath,program,startDate,endDate,startDate);
+        }
+
+       public void ClickElemetInGrid(string gridXpath, int row, int column)
+       {
+           var element = GridHelper.GetGridElement(gridXpath, row, column);
+            JavaScriptExecutorHelper.ScrollElementAndClick(element);
+           GenericHelper.WaitForLoadingMask();
+       }
+
+       public void SelectProgramNameClickNext()
+       {
+           var prgName = new SelectProgramPage(driver);
+            prgName.SelectProgramAndClickNext();
+       }
+
+        public void SelectProgramDatesClickNext()
+        {
+            var prgName = new SelectProgramDatesPage(driver);
+            prgName.SelectProgramDatesAndClickNext();
+        }
+
+        public void SelectConfigurePrgsClickNext()
+        {
+            var prgName = new ConfigureProgramPage(driver);
+            prgName.ClickConfigurePrgAndNext();
+        }
+
+        public void SelectProgramIncetiveClickNext()
+        {
+            var prgName = new ProgramIncentive(driver);
+            prgName.ClickProgramIncentiveAndNext();
+        }
+
+        public void SelectEligibelGrpClickNext()
+        {
+            var prgName = new EligibleGroupPage(driver);
+            prgName.ClickEligibelGrpAndNext();
+        }
+
+        public void SelectValidationClickNext()
+        {
+            var prgName = new Validation(driver);
+            prgName.ClickEligibelGrpAndNext();
+        }
+
+        public void SelectBundelSetupClickNext()
+        {
+            var prgName = new BundleSetup(driver);
+            prgName.ClickBundleSetupsAndNext();
+        }
+        public void SelectOverlaySetupClickNext()
+        {
+            var prgName = new OverlaySetup(driver);
+            prgName.ClickOverlaySetupAndNext();
         }
     }
 }

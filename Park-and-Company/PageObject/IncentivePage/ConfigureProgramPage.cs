@@ -76,6 +76,16 @@ namespace Park_and_Company.PageObject.IncentivePage
             GenericHelper.WaitForLoadingMask();
         }
 
+        public void ClickConfigurePrgAndNext()
+        {
+            JavaScriptExecutorHelper.ScrollElementAndClick(ConfigureProgram);
+            GenericHelper.WaitForLoadingMask();
+            TakeScreenShot($"ConfigureProgram-{DateTime.UtcNow.ToString("hh-mm-ss")}");
+            JavaScriptExecutorHelper.ScrollElementAndClick(ConfigureProgramNext);
+            GenericHelper.WaitForLoadingMask();
+            JavaScriptExecutorHelper.ScrollElementAndClick(ConfigureProgram);
+            GenericHelper.WaitForLoadingMask();
+        }
 
     }
 }

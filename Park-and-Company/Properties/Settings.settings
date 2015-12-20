@@ -23,5 +23,8 @@
     <Setting Name="ManualPointAdjustmentGrid" Type="System.String" Scope="Application">
       <Value Profile="(Default)">//div[@id='ManualPointAdjustmentGrid']</Value>
     </Setting>
+    <Setting Name="ManageIncentiveProgramsGrid" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">//div[@id='ManageIncentiveProgramsGrid']</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
