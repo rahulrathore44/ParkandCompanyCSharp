@@ -32,6 +32,7 @@ namespace Park_and_Company.BaseClasses
         {
             ChromeOptions option = new ChromeOptions();
             option.AddArgument("start-maximized");
+            option.Proxy = null;
             return option;
         }
 
@@ -53,7 +54,7 @@ namespace Park_and_Company.BaseClasses
 
         private static ChromeDriver GetChromeDriver()
         {
-            ChromeDriver driver = new ChromeDriver();
+            ChromeDriver driver = new ChromeDriver(GetChromeOptions());
             return driver;
         }
 

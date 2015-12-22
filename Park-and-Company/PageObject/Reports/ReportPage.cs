@@ -8,6 +8,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using Park_and_Company.BaseClasses;
 using Park_and_Company.ComponentHelper;
+using Park_and_Company.ExtensionClass.WebElementExtClass;
 
 namespace Park_and_Company.PageObject.Reports
 {
@@ -37,7 +38,8 @@ namespace Park_and_Company.PageObject.Reports
 
         private void TakeReportPageScrShot(IWebElement element, string name)
         {
-            JavaScriptExecutorHelper.ScrollElementAndClick(element);
+            //JavaScriptExecutorHelper.ScrollElementAndClick(element);
+            element.ScrollElementAndClick();
             BrowserHelper.SwitchToWindow(1);
             Thread.Sleep(500);
             TakeScreenShot(name);
