@@ -27,7 +27,7 @@ namespace Park_and_Company.TestCases.Module.Claims
             clPage.SelectInvoiceDate("11", "April","2015"); // Do not call if field is not at page
             clPage.InsertEmpPoInvoiceNo("1", "1", "122"); // pass null if field is not at page
             clPage.EnterProductDetails("SKU1", "1","1");
-            GridHelper.VerifyInGridEntry(Properties.Settings.Default.ClaimDataGrid, "SKU1", 1,1); // verify in gird Similarly for other column
+            //GridHelper.VerifyInGridEntry(Properties.Settings.Default.ClaimDataGrid, "SKU1", 1,1); // verify in gird Similarly for other column
            // clPage.ClickVerifyBtnInGrid(Properties.Settings.Default.ClaimDataGrid,1,7); // for Verify button in grid
             //clPage.ClickDeleteBtnInGrid(Properties.Settings.Default.ClaimDataGrid,1,8); // for delete button in grid
             //clPage.VerifyEstimatedTotalPts("100"); // for verifying the total esmt points

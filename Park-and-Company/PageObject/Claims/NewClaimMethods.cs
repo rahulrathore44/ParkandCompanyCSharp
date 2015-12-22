@@ -122,7 +122,8 @@ namespace Park_and_Company.PageObject.Claims
         {
             JavaScriptExecutorHelper.ScrollElementAndClick(SubmitBtn);
             GenericHelper.WaitForLoadingMask();
-            var claimNoStr = GenericHelper.GetText(By.XPath("//form[@id='newClaimForm']/div[2]/div/div"));
+            var claimNoStr = GenericHelper.GetText(By.XPath("//form[@id='incentivesForm']/following-sibling::div[position()=1]/div/div"));
+            claimNoStr = claimNoStr.Trim();
             var claimNo = claimNoStr.Split(' ');
             return claimNo[claimNo.Length - 1];
         }

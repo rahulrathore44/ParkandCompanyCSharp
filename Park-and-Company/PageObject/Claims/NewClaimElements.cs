@@ -49,13 +49,13 @@ namespace Park_and_Company.PageObject.Claims
         [FindsBy(How = How.Name, Using = "claimDataINVOICE_AMOUNT")]
         private IWebElement InvoiceAmount;
 
-        [FindsBy(How = How.Name, Using = "claimDataPRODUCT_SKU_NUMBER")]
+        [FindsBy(How = How.XPath, Using = "//form[@id='productForm']//input[@name='claimDataPRODUCT_SKU_NUMBER']")]
         private IWebElement ProductSKUNumber;
 
-        [FindsBy(How = How.Name, Using = "claimDataPRODUCT_SERIAL_NUMBER")]
+        [FindsBy(How = How.XPath, Using = "//form[@id='productForm']//input[@name='claimDataPRODUCT_SERIAL_NUMBER']")]
         private IWebElement ProductSerialNo;
 
-        [FindsBy(How = How.Name, Using = "claimDataQUANTITY")]
+        [FindsBy(How = How.XPath, Using = "//form[@id='productForm']//input[@name='claimDataQUANTITY']")]
         private IWebElement Quantity;
 
         [FindsBy(How = How.XPath, Using = "//form[@id='productForm']/descendant::i")]
