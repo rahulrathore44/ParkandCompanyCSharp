@@ -26,5 +26,8 @@
     <Setting Name="ManageIncentiveProgramsGrid" Type="System.String" Scope="Application">
       <Value Profile="(Default)">//div[@id='ManageIncentiveProgramsGrid']</Value>
     </Setting>
+    <Setting Name="ManualApprovalGrid" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">//div[@id='ManualApprovalGrid']</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

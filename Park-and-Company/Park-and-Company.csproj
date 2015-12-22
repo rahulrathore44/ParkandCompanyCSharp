@@ -79,6 +79,8 @@
     <Compile Include="ExtensionClass\WebElementExtClass\JavaScriptExecutor.cs" />
     <Compile Include="Interfaces\IConfig.cs" />
     <Compile Include="PageObject\ActivityIncentiveTemplate.cs" />
+    <Compile Include="PageObject\Claims\ManageCalims\AddProduct\AddProducts.cs" />
+    <Compile Include="PageObject\Claims\ManageCalims\ManageCalims.cs" />
     <Compile Include="PageObject\Claims\NewClaimElements.cs" />
     <Compile Include="PageObject\Claims\NewClaimMethods.cs" />
     <Compile Include="PageObject\Configuration\CustomeAttribute\AddEditCustAttributeDetailPage.cs" />
@@ -118,6 +120,7 @@
     <Compile Include="TestCases\CheckScreens\Module\ManagePartnerGrp\TestManagePartnerGrp.cs" />
     <Compile Include="TestCases\CheckScreens\Module\ManageRoles\TestManageRoles.cs" />
     <Compile Include="TestCases\CheckScreens\Module\ManageUserGrps\TestManageUserGrp.cs" />
+    <Compile Include="TestCases\CheckScreens\Module\Program\ManageCalims\TestManageCalims.cs" />
     <Compile Include="TestCases\CheckScreens\Module\Program\ManageIncentivePrograms\TestManageIncentivePrograms.cs" />
     <Compile Include="TestCases\CheckScreens\Module\Program\ManualPointAdjustment\TestPointAdjustment.cs" />
     <Compile Include="TestCases\CheckScreens\Module\Reports\TestReport.cs" />

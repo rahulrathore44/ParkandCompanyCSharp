@@ -34,6 +34,5 @@ C:\Users\rsr\Documents\GitHub\ParkandCompanyCSharp\Park-and-Company\bin\Debug\We
 C:\Users\rsr\Documents\GitHub\ParkandCompanyCSharp\Park-and-Company\bin\Debug\WebDriver.xml
 C:\Users\rsr\Documents\GitHub\ParkandCompanyCSharp\Park-and-Company\bin\Debug\WebDriver.Support.xml
 C:\Users\rsr\Documents\GitHub\ParkandCompanyCSharp\Park-and-Company\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
-C:\Users\rsr\Documents\GitHub\ParkandCompanyCSharp\Park-and-Company\obj\Debug\Park-and-Company.csprojResolveAssemblyReference.cache
 C:\Users\rsr\Documents\GitHub\ParkandCompanyCSharp\Park-and-Company\obj\Debug\Park-and-Company.dll
 C:\Users\rsr\Documents\GitHub\ParkandCompanyCSharp\Park-and-Company\obj\Debug\Park-and-Company.pdb

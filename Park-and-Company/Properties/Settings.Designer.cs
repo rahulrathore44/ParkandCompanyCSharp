@@ -94,5 +94,14 @@ namespace Park_and_Company.Properties {
                 return ((string)(this["ManageIncentiveProgramsGrid"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("//div[@id=\'ManualApprovalGrid\']")]
+        public string ManualApprovalGrid {
+            get {
+                return ((string)(this["ManualApprovalGrid"]));
+            }
+        }
     }
 }

@@ -10,6 +10,7 @@ using OpenQA.Selenium.Support.PageObjects;
 using Park_and_Company.BaseClasses;
 using Park_and_Company.ComponentHelper;
 using Park_and_Company.PageObject.Claims;
+using Park_and_Company.PageObject.Claims.ManageCalims;
 using Park_and_Company.PageObject.Configuration.CustomeAttribute;
 using Park_and_Company.PageObject.Configuration.ManageRoles;
 using Park_and_Company.PageObject.Partner.PartnerGrp;
@@ -189,6 +190,16 @@ namespace Park_and_Company.PageObject
             GenericHelper.WaitForLoadingMask();
             GenericHelper.WaitForElement(By.Id("titleDiv"));
             return new NewClaim(driver);
+        }
+
+        public ManageCalims OpeManageCalimsPage()
+        {
+            Programs.Click();
+            GenericHelper.WaitForElement(ManageClaims);
+            ManageClaims.Click();
+            GenericHelper.WaitForLoadingMask();
+            GenericHelper.WaitForElement(By.Id("titleDiv"));
+            return new ManageCalims(driver);
         }
 
         public void TakeHomePageScrShot(string name)
