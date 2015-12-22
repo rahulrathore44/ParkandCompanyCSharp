@@ -13,10 +13,10 @@ namespace Park_and_Company.ComponentHelper
     {
         private static IJavaScriptExecutor exeScript;
 
-        public static void ExecuteScript(string script)
+        public static object ExecuteScript(string script)
         {
             exeScript = ((IJavaScriptExecutor)ObjectRepository.Driver);
-            exeScript.ExecuteScript(script);
+            return exeScript.ExecuteScript(script);
         }
 
 

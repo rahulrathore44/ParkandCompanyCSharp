@@ -122,7 +122,11 @@ namespace Park_and_Company.BaseClasses
                 ImplicitlyWait(TimeSpan.FromSeconds(ObjectRepository.Config.GetElementLoadTimeOut()));
             GenericHelper.WindowMaximize();
             ObjectRepository.Driver.Navigate().GoToUrl(ObjectRepository.Config.GetWebsite());
-
+            if (GenericHelper.IsElementPresentQuick(By.Id("overridelink")))
+            {
+                ObjectRepository.Driver.FindElement(By.Id("overridelink")).Click();
+            }
+               
         }
 
 
