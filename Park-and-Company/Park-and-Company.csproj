@@ -106,6 +106,8 @@
     <Compile Include="PageObject\SalesIncentiveTemplateBasic.cs" />
     <Compile Include="PageObject\Shop\CardStores.cs" />
     <Compile Include="PageObject\Shop\Category\OpenPrePaid\CardDetailPage.cs" />
+    <Compile Include="PageObject\Shop\Category\OpenPrePaid\HomeShippingAddress.cs" />
+    <Compile Include="PageObject\Shop\Category\OpenPrePaid\ReviewBasket.cs" />
     <Compile Include="PageObject\Shop\Category\OpenPrePaid\ViewItems.cs" />
     <Compile Include="PageObject\UserGroups\CreateNewGroup.cs" />
     <Compile Include="PageObject\UserGroups\GrpNameDetailPage.cs" />

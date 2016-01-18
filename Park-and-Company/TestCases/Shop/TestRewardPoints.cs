@@ -19,10 +19,12 @@ namespace Park_and_Company.TestCases.Shop
         {
             var cPage = hPage.NavigateToCardStore();
             var vPage = cPage.ClickOpenPrePaid();
-            var detailPage = vPage.ClickSelectButton(1);
+            var detailPage = vPage.ClickSelectButton(4);
             detailPage.SetPointAmount("10");
             detailPage.SetQuantity("5");
-            detailPage.ClickAddToBasket();
+            var rPage = detailPage.ClickAddToBasket();
+            rPage.DeleteFromCart(2);
+            cPage.ClickCheckOut();
             vPage.Logout();
         }
     }
