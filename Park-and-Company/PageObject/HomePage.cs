@@ -9,6 +9,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using Park_and_Company.BaseClasses;
 using Park_and_Company.ComponentHelper;
+using Park_and_Company.ExtensionClass.WebElementExtClass;
 using Park_and_Company.PageObject.Claims;
 using Park_and_Company.PageObject.Claims.ManageCalims;
 using Park_and_Company.PageObject.Configuration.CustomeAttribute;
@@ -16,6 +17,7 @@ using Park_and_Company.PageObject.Configuration.ManageRoles;
 using Park_and_Company.PageObject.Partner.PartnerGrp;
 using Park_and_Company.PageObject.Programs.ManualPointAdjustment;
 using Park_and_Company.PageObject.Reports;
+using Park_and_Company.PageObject.Shop;
 using Park_and_Company.PageObject.UserGroups;
 using Park_and_Company.Settings;
 
@@ -139,6 +141,9 @@ namespace Park_and_Company.PageObject
         [FindsBy(How = How.LinkText, Using = "New Claim")]
         private IWebElement NewClaims;
 
+        [FindsBy(How = How.XPath, Using = "//button[contains(text(),'Shop')]")] public IWebElement Shop;
+
+        [FindsBy(How = How.XPath, Using = "//a[contains(text(),'Card Store')]")] public IWebElement CardStore;
         /// <summary>
         /// Supply the Name of Element which you want to validate. The element should be in same class
         // Similarly for other element which u want to validate. Supply name as string
@@ -412,6 +417,15 @@ namespace Park_and_Company.PageObject
             ManualPointAdj.Click();
             GenericHelper.WaitForLoadingMask();
             return new ManualPointAdjustment(driver);
+        }
+
+        public CardStores NavigateToCardStore()
+        {
+            Shop.ScrollElementAndClick();
+            GenericHelper.WaitForElement(CardStore);
+            CardStore.ScrollElementAndClick();
+            GenericHelper.WaitForLoadingMask();
+            return new  CardStores(driver);
         }
     }
 }

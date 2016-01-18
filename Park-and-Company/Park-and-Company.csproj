@@ -104,6 +104,9 @@
     <Compile Include="PageObject\Programs\ManualPointAdjustment\PointTypeDetail.cs" />
     <Compile Include="PageObject\Reports\ReportPage.cs" />
     <Compile Include="PageObject\SalesIncentiveTemplateBasic.cs" />
+    <Compile Include="PageObject\Shop\CardStores.cs" />
+    <Compile Include="PageObject\Shop\Category\OpenPrePaid\CardDetailPage.cs" />
+    <Compile Include="PageObject\Shop\Category\OpenPrePaid\ViewItems.cs" />
     <Compile Include="PageObject\UserGroups\CreateNewGroup.cs" />
     <Compile Include="PageObject\UserGroups\GrpNameDetailPage.cs" />
     <Compile Include="PageObject\UserGroups\ManageUserGroups.cs" />
@@ -132,6 +135,7 @@
     <Compile Include="TestCases\Module\UserGroups\TestCreateNewGroup.cs" />
     <Compile Include="TestCases\Module\UserGroups\TestDuplicateGrp.cs" />
     <Compile Include="TestCases\Module\UserGroups\TestGroupofGroups.cs" />
+    <Compile Include="TestCases\Shop\TestRewardPoints.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
