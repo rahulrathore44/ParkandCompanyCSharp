@@ -19,12 +19,16 @@ namespace Park_and_Company.TestCases.Shop
         {
             var cPage = hPage.NavigateToCardStore();
             var vPage = cPage.ClickOpenPrePaid();
-            var detailPage = vPage.ClickSelectButton(4);
-            detailPage.SetPointAmount("10");
-            detailPage.SetQuantity("5");
-            var rPage = detailPage.ClickAddToBasket();
-            rPage.DeleteFromCart(2);
-            cPage.ClickCheckOut();
+            var detailPage = vPage.ClickSelectButton(4); // use this method for selecting the card based on index
+            detailPage.SetPointAmount("10"); // to set the point amount
+            detailPage.SetQuantity("5"); // to set the quantity
+            var rPage = detailPage.ClickAddToBasket(); // Add to Basket action
+            //rPage.DeleteFromCart(2); // to delete something from the cart based on index
+            var shPage = cPage.ClickCheckOut(); // to click on check out button
+            var orPage = shPage.UseThisAddress(1); // use the exisiting address based on index
+            //shPage.AddExisitngAddress(); // use for adding new adderess and clicking "same as Profile"
+            orPage.PlaceOrder(); // to place the order
+            orPage.VerifyOrderConfirmation(); // verify the Thankyou confirmation
             vPage.Logout();
         }
     }
