@@ -53,7 +53,7 @@ namespace Park_and_Company.BaseClasses
         protected By GetLocatorOfWebElement(string elementName)
         {
             var T = GetClassType();
-            var field = T.GetField(elementName, BindingFlags.Instance | BindingFlags.NonPublic);
+            var field = T.GetField(elementName, BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
             var cusAttri = field.GetCustomAttribute(typeof(FindsByAttribute));
             var ele = (FindsByAttribute)cusAttri;
             return GetElementLocator(ele.How, ele.Using);

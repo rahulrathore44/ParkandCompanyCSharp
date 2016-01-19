@@ -24,7 +24,7 @@ namespace Park_and_Company.PageObject.Shop.Category.OpenPrePaid
         [FindsBy(How = How.XPath,Using = "//button[contains(.,'ADD NEW ADDRESS')]")]
         public IWebElement AddNewAddress;
 
-        [FindsBy(How = How.Id, Using = "sameAsProfileInput")]
+        [FindsBy(How = How.XPath, Using = "//input[@id='sameAsProfileInput']/following-sibling::label")]
         public IWebElement ProfileChkBox;
 
         [FindsBy(How = How.Id, Using = "saveButton")]
@@ -50,6 +50,8 @@ namespace Park_and_Company.PageObject.Shop.Category.OpenPrePaid
         public void AddExisitngAddress()
         {
             AddNewAddress.ScrollElementAndClick();
+            GenericHelper.WaitForLoadingMask();
+            ProfileChkBox.ScrollElementAndClick();
             GenericHelper.WaitForLoadingMask();
             AddBtn.ScrollElementAndClick();
             GenericHelper.WaitForLoadingMask();
