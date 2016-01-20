@@ -144,6 +144,17 @@ namespace Park_and_Company.PageObject
         [FindsBy(How = How.XPath, Using = "//button[contains(text(),'Shop')]")] public IWebElement Shop;
 
         [FindsBy(How = How.XPath, Using = "//a[contains(text(),'Card Store')]")] public IWebElement CardStore;
+
+
+        #region Private
+
+        private string GetSubMenuItemXpath(string name)
+        {
+            return "//a[contains(text(),'" + name + "')]";
+        }
+
+        #endregion
+
         /// <summary>
         /// Supply the Name of Element which you want to validate. The element should be in same class
         // Similarly for other element which u want to validate. Supply name as string
@@ -419,11 +430,12 @@ namespace Park_and_Company.PageObject
             return new ManualPointAdjustment(driver);
         }
 
-        public CardStores NavigateToCardStore()
+        public CardStores NavigateToCardStore(string subMenuItem)
         {
             Shop.ScrollElementAndClick();
-            GenericHelper.WaitForElement(CardStore);
-            CardStore.ScrollElementAndClick();
+            var menuItem = GenericHelper.GetElement(By.XPath(GetSubMenuItemXpath(subMenuItem)));
+            GenericHelper.WaitForElement(menuItem);
+            menuItem.ScrollElementAndClick();
             GenericHelper.WaitForLoadingMask();
             return new  CardStores(driver);
         }

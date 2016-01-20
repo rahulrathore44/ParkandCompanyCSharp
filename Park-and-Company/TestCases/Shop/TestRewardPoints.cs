@@ -17,7 +17,7 @@ namespace Park_and_Company.TestCases.Shop
         [TestMethod]
         public void TestRPoints()
         {
-            var cPage = hPage.NavigateToCardStore();
+            var cPage = hPage.NavigateToCardStore("Card Store"); // supply the name of sub menu item to open
             var vPage = cPage.ClickOpenPrePaid();
             var detailPage = vPage.ClickSelectButton(4); // use this method for selecting the card based on index
             detailPage.SetPointAmount("10"); // to set the point amount
@@ -26,9 +26,9 @@ namespace Park_and_Company.TestCases.Shop
             //rPage.DeleteFromCart(2); // to delete something from the cart based on index
             //index = 1 will delete the first item
             var shPage = cPage.ClickCheckOut(); // to click on check out button
-            var orPage = shPage.UseThisAddress(1); // use the exisiting address based on index
-            //shPage.AddExisitngAddress(); // use for adding new adderess and clicking "same as Profile"
-            // shPage.UseThisAddress(1) After adding the exisiting address you need to call the UseThisAddress(index) method
+            //var orPage = shPage.UseThisAddress(1); // use the exisiting address based on index
+            shPage.AddExisitngAddress(); // use for adding new adderess and clicking "same as Profile"
+            var orPage = shPage.UseThisAddress(1); //After adding the exisiting address you need to call the UseThisAddress(index) method
             // index = 1 will select the first address and so on 
             orPage.PlaceOrder(); // to place the order
             orPage.VerifyOrderConfirmation(); // verify the Thankyou confirmation
