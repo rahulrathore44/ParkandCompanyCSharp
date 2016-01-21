@@ -18,6 +18,7 @@ using Park_and_Company.PageObject.Partner.PartnerGrp;
 using Park_and_Company.PageObject.Programs.ManualPointAdjustment;
 using Park_and_Company.PageObject.Reports;
 using Park_and_Company.PageObject.Shop;
+using Park_and_Company.PageObject.Shop.Orders;
 using Park_and_Company.PageObject.UserGroups;
 using Park_and_Company.Settings;
 
@@ -438,6 +439,16 @@ namespace Park_and_Company.PageObject
             menuItem.ScrollElementAndClick();
             GenericHelper.WaitForLoadingMask();
             return new  CardStores(driver);
+        }
+
+        public MyOrders NavigateToOrders()
+        {
+            Shop.ScrollElementAndClick();
+            var menuItem = GenericHelper.GetElement(By.XPath(GetSubMenuItemXpath("Orders")));
+            GenericHelper.WaitForElement(menuItem);
+            menuItem.ScrollElementAndClick();
+            GenericHelper.WaitForLoadingMask();
+            return new MyOrders(driver);
         }
     }
 }

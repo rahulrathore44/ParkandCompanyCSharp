@@ -29,5 +29,8 @@
     <Setting Name="ManualApprovalGrid" Type="System.String" Scope="Application">
       <Value Profile="(Default)">//div[@id='ManualApprovalGrid']</Value>
     </Setting>
+    <Setting Name="MyOrdersGrid" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//div[@kendo-grid='myOrdersGrid']</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

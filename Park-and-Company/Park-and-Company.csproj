@@ -110,6 +110,7 @@
     <Compile Include="PageObject\Shop\Category\OpenPrePaid\OrderSummary.cs" />
     <Compile Include="PageObject\Shop\Category\OpenPrePaid\ReviewBasket.cs" />
     <Compile Include="PageObject\Shop\Category\OpenPrePaid\ViewItems.cs" />
+    <Compile Include="PageObject\Shop\Orders\MyOrders.cs" />
     <Compile Include="PageObject\UserGroups\CreateNewGroup.cs" />
     <Compile Include="PageObject\UserGroups\GrpNameDetailPage.cs" />
     <Compile Include="PageObject\UserGroups\ManageUserGroups.cs" />
@@ -138,6 +139,7 @@
     <Compile Include="TestCases\Module\UserGroups\TestCreateNewGroup.cs" />
     <Compile Include="TestCases\Module\UserGroups\TestDuplicateGrp.cs" />
     <Compile Include="TestCases\Module\UserGroups\TestGroupofGroups.cs" />
+    <Compile Include="TestCases\Shop\TestMyOrders.cs" />
     <Compile Include="TestCases\Shop\TestRewardPoints.cs" />
   </ItemGroup>
   <ItemGroup>

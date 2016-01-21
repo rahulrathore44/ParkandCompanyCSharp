@@ -103,5 +103,17 @@ namespace Park_and_Company.Properties {
                 return ((string)(this["ManualApprovalGrid"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("//div[@kendo-grid=\'myOrdersGrid\']")]
+        public string MyOrdersGrid {
+            get {
+                return ((string)(this["MyOrdersGrid"]));
+            }
+            set {
+                this["MyOrdersGrid"] = value;
+            }
+        }
     }
 }

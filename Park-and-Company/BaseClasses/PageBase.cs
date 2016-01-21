@@ -12,7 +12,7 @@ namespace Park_and_Company.BaseClasses
 {
     public class PageBase : BaseClass
     {
-        private IWebDriver _driver;
+        protected IWebDriver Driver;
 
         [FindsBy(How = How.XPath,Using = "//div[@class='homeProgramsNav']/a[position()=1]")]
         private IWebElement Homebtn;
@@ -20,13 +20,17 @@ namespace Park_and_Company.BaseClasses
 
         public PageBase(IWebDriver driver)
         {
-            _driver = driver;
+            if (driver == null)
+            {
+                throw new NullReferenceException("Driver Object is null");
+            }
             PageFactory.InitElements(driver, this);
+            Driver = driver;
         }
 
         protected List<IWebElement> GetAllHyperLinks()
         {
-            var hyperlinkList = _driver.FindElements(By.TagName("a"));
+            var hyperlinkList = Driver.FindElements(By.TagName("a"));
             return hyperlinkList.ToList();
         }
 
@@ -61,7 +65,7 @@ namespace Park_and_Company.BaseClasses
 
         public PageBase GetPageBaseObject()
         {
-            return new PageBase(_driver);
+            return new PageBase(Driver);
         }
     }
 }
