@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -27,6 +29,7 @@ namespace Park_and_Company.BaseClasses
             PageFactory.InitElements(driver, this);
             Driver = driver;
         }
+
 
         protected List<IWebElement> GetAllHyperLinks()
         {
@@ -67,5 +70,30 @@ namespace Park_and_Company.BaseClasses
         {
             return new PageBase(Driver);
         }
+
+        #region Virtual Methods
+
+        /// <summary>
+        /// Perform the file upload, the file name should be present in Resources folder
+        /// </summary>
+        /// <param name="fileName"></param>
+        public virtual void FileUpload(string fileName)
+        {
+            //TODO Need to modify script for file upload in IE
+
+            var processinfo = new ProcessStartInfo()
+            {
+                FileName = "FileUpload.exe",
+                Arguments = "\"" + Directory.GetCurrentDirectory() + "\\" + fileName + "\""
+            };
+
+            using (var process = Process.Start(processinfo))
+            {
+                process.WaitForExit();
+            }
+        }
+
+        #endregion
+
     }
 }

@@ -61,7 +61,7 @@ namespace Park_and_Company.TestCases.Module.ScreenShot
             var lpage = new LoginPage(ObjectRepository.Driver);
             var hPage = lpage.LoginApplication(ObjectRepository.Config.GetUsername(), ObjectRepository.Config.GetPassword());
             hPage.TakeNewCustomerScrShot("New Customer");
-            hPage.TakeSFDCConfScrShot("SFDC Configuration");
+            hPage.TakeSfdcConfScrShot("SFDC Configuration");
             hPage.TakePrivacyPolicyScrShot("Privacy Policy");
             hPage.TakeTermsConditionScrShot("Terms and Condition");
             hPage.TakeContactUsScrShot("Contact Us");

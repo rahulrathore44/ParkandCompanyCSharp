@@ -32,7 +32,7 @@ namespace Park_and_Company.BaseClasses
         {
             ChromeOptions option = new ChromeOptions();
             option.AddArgument("start-maximized");
-            //option.AddExtension(@"C:\Users\rsr\Documents\backup\holaVpn.crx");
+           // option.AddExtension(@"C:\downloads\GoogleAnalytics.crx");
             option.Proxy = null;
             return option;
         }

@@ -38,12 +38,12 @@
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Drawing" />
-    <Reference Include="WebDriver, Version=2.48.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Selenium.WebDriver.2.48.0\lib\net40\WebDriver.dll</HintPath>
+    <Reference Include="WebDriver, Version=2.52.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.2.52.0\lib\net40\WebDriver.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="WebDriver.Support, Version=2.48.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Selenium.Support.2.48.0\lib\net40\WebDriver.Support.dll</HintPath>
+    <Reference Include="WebDriver.Support, Version=2.52.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.2.52.0\lib\net40\WebDriver.Support.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
@@ -96,6 +96,7 @@
     <Compile Include="PageObject\IncentivePage\SelectProgramDatesPage.cs" />
     <Compile Include="PageObject\IncentivePage\SelectProgramPage.cs" />
     <Compile Include="PageObject\IncentivePage\Validation.cs" />
+    <Compile Include="PageObject\Learn\Library\LibraryDetailPage.cs" />
     <Compile Include="PageObject\LoginPage.cs" />
     <Compile Include="PageObject\ManageIncentivePrograms.cs" />
     <Compile Include="PageObject\NewProgram.cs" />
@@ -131,6 +132,7 @@
     <Compile Include="TestCases\CheckScreens\Module\Program\ManageIncentivePrograms\TestManageIncentivePrograms.cs" />
     <Compile Include="TestCases\CheckScreens\Module\Program\ManualPointAdjustment\TestPointAdjustment.cs" />
     <Compile Include="TestCases\CheckScreens\Module\Reports\TestReport.cs" />
+    <Compile Include="TestCases\Learn\Library\TestManageLibrary.cs" />
     <Compile Include="TestCases\Module\Claims\TestClaims.cs" />
     <Compile Include="TestCases\Module\IncentiveProgm\TestActivityIncentiveTemplate.cs" />
     <Compile Include="TestCases\Module\IncentiveProgm\TestSalesIncentiveTemplate.cs" />
@@ -151,16 +153,31 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Resources\TestDataFiles\Title.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="..\packages\Selenium.WebDriver.IEDriver.2.48.0.0\driver\IEDriverServer.exe">
+    <Content Include="..\packages\Selenium.WebDriver.IEDriver.2.49.0.0\driver\IEDriverServer.exe">
       <Link>IEDriverServer.exe</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\packages\WebDriver.ChromeDriver.win32.2.19.0.0\content\chromedriver.exe">
+    <Content Include="..\packages\WebDriver.ChromeDriver.win32.2.21.0.0\content\chromedriver.exe">
       <Link>chromedriver.exe</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\chromedriver.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\FileUpload.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\IEDriverServer.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\TestDataFiles\Thub.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <Choose>

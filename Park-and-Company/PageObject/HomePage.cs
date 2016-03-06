@@ -14,6 +14,7 @@ using Park_and_Company.PageObject.Claims;
 using Park_and_Company.PageObject.Claims.ManageCalims;
 using Park_and_Company.PageObject.Configuration.CustomeAttribute;
 using Park_and_Company.PageObject.Configuration.ManageRoles;
+using Park_and_Company.PageObject.Learn.Library;
 using Park_and_Company.PageObject.Partner.PartnerGrp;
 using Park_and_Company.PageObject.Programs.ManualPointAdjustment;
 using Park_and_Company.PageObject.Reports;
@@ -36,6 +37,12 @@ namespace Park_and_Company.PageObject
 
         [FindsBy(How = How.XPath,Using = "//div[@id='header4']/descendant::a[text()='Programs ']")]
         private IWebElement Programs;
+
+        [FindsBy(How = How.XPath, Using = "//div[@id='header4']/descendant::a[contains(text(),'Learn')]")]
+        private IWebElement _learn;
+
+        [FindsBy(How = How.XPath, Using = "//div[@id='header4']/descendant::a[contains(text(),'Library')]")]
+        private IWebElement _library;
 
         [FindsBy(How = How.XPath, Using = "//div[@id='header4']/descendant::a[text()='User ']")]
         private IWebElement User;
@@ -352,7 +359,7 @@ namespace Park_and_Company.PageObject
             GenericHelper.WaitForElement(NewCustomer);
             TakeScreenShotofPage(NewCustomer, name);
         }
-        public void TakeSFDCConfScrShot(string name)
+        public void TakeSfdcConfScrShot(string name)
         {
             Onboarding.Click();
             GenericHelper.WaitForElement(SFDCConfiguration);
@@ -449,6 +456,15 @@ namespace Park_and_Company.PageObject
             menuItem.ScrollElementAndClick();
             GenericHelper.WaitForLoadingMask();
             return new MyOrders(driver);
+        }
+
+        public LibraryDetailPage NavigateToLibrary()
+        {
+            _learn.ScrollElementAndClick();
+            GenericHelper.WaitForElement(_library);
+            _library.Click();
+            GenericHelper.WaitForLoadingMask();
+            return new LibraryDetailPage(driver);
         }
     }
 }

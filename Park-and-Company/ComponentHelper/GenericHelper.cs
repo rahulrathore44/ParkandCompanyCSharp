@@ -159,6 +159,14 @@ namespace Park_and_Company.ComponentHelper
             }
         }
 
+        public static void AcceptAlert()
+        {
+            if (IsAlertPresent())
+            {
+                ObjectRepository.Driver.SwitchTo().Alert().Accept();
+            }
+        }
+
         public static void TakeSceenShot(string name = null)
         {
             if (name == null)
