@@ -61,9 +61,7 @@ namespace Park_and_Company.ComponentHelper
         {
             try
             {
-                if (ObjectRepository.Driver.FindElements(locator).Count() == 1)
-                    return true;
-                return false;
+                return ObjectRepository.Driver.FindElements(locator).Count() == 1;
             }
             catch (Exception e)
             {
@@ -141,9 +139,7 @@ namespace Park_and_Company.ComponentHelper
 
         public static string GetText(By locator)
         {
-            if (IsElementPresent(locator))
-                return ObjectRepository.Driver.FindElement(locator).Text;
-            return null;
+            return IsElementPresent(locator) ? ObjectRepository.Driver.FindElement(locator).Text : null;
         }
 
         public static bool IsAlertPresent()
@@ -167,12 +163,12 @@ namespace Park_and_Company.ComponentHelper
             }
         }
 
-        //public static bool IsTextPresent(string text)
-        //{
-        //    var textNode = ObjectRepository.Driver.FindElements(By.XPath("//*[text()='" + text + "']"));
-        //    var result = textNode.FirstOrDefault((x) => !x.Text.Equals(text, StringComparison.OrdinalIgnoreCase));
-        //    return true;
-        //}
+        public static bool IsTextPresent(string text)
+        {
+            var textNode = ObjectRepository.Driver.FindElements(By.XPath("//*[text()='" + text + "']"));
+
+            return textNode.Count != 0 && textNode.All((x) => x.Text.Equals(text));
+        }
 
         public static void TakeSceenShot(string name = null)
         {

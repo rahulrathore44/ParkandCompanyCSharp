@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using Park_and_Company.BaseClasses.LoginBaseClass;
@@ -87,8 +82,7 @@ namespace Park_and_Company.TestCases.Learn.Library
             myLibPage.Save.ScrollElementAndClick();
             GenericHelper.WaitForLoadingMask();
             Thread.Sleep(1000);
-            // You can add other chages
-            //GenericHelper.IsTextPresent("Asset saved successfully");
+            Assert.IsTrue(GenericHelper.IsTextPresent("Asset saved successfully")," Success Message not found ");
             myLibPage.Logout();
 
         }
@@ -102,8 +96,6 @@ namespace Park_and_Company.TestCases.Learn.Library
             Thread.Sleep(1000);
             GenericHelper.WaitForLoadingMask();
             Thread.Sleep(1000);
-            // You can add other chages
-            //GenericHelper.IsTextPresent("Asset saved successfully");
             myLibPage.Logout();
 
         }

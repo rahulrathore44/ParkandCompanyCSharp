@@ -50,3 +50,5 @@ C:\Users\rsr\Documents\GitHub\ParkandCompanyCSharp\Park-and-Company\bin\Debug\Re
 C:\Users\rsr\Documents\GitHub\ParkandCompanyCSharp\Park-and-Company\bin\Debug\Resources\TestDataFiles\Title.docx
 C:\Users\rsr\Documents\GitHub\ParkandCompanyCSharp\Park-and-Company\bin\Debug\Resources\TestDataFiles\Inventorylist1.csv
 C:\Users\rsr\Documents\GitHub\ParkandCompanyCSharp\Park-and-Company\bin\Debug\Resources\TestDataFiles\InvalidThub.png
+G:\AutomationWorkspace\Git-Hub\ParkandCompanyCSharp\Park-and-Company\bin\Debug\Resources\TestDataFiles\InvalidThub.png
+G:\AutomationWorkspace\Git-Hub\ParkandCompanyCSharp\Park-and-Company\bin\Debug\Resources\TestDataFiles\Inventorylist1.csv
