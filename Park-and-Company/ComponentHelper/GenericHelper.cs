@@ -167,6 +167,13 @@ namespace Park_and_Company.ComponentHelper
             }
         }
 
+        //public static bool IsTextPresent(string text)
+        //{
+        //    var textNode = ObjectRepository.Driver.FindElements(By.XPath("//*[text()='" + text + "']"));
+        //    var result = textNode.FirstOrDefault((x) => !x.Text.Equals(text, StringComparison.OrdinalIgnoreCase));
+        //    return true;
+        //}
+
         public static void TakeSceenShot(string name = null)
         {
             if (name == null)

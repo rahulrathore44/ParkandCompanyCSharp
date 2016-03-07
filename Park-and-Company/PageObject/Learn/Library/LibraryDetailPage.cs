@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using Park_and_Company.BaseClasses;
+using Park_and_Company.ComponentHelper;
+using Park_and_Company.ExtensionClass.WebElementExtClass;
+using Park_and_Company.Settings;
 
 namespace Park_and_Company.PageObject.Learn.Library
 {
@@ -77,6 +80,85 @@ namespace Park_and_Company.PageObject.Learn.Library
 
         [FindsBy(How = How.XPath, Using = "//button[contains(text(),'Cancel')]")]
         public IWebElement Cancel;
+
+        [FindsBy(How = How.XPath, Using = "//label[contains(text(),'Visibility Start Date ')]/following-sibling::p/span//button")]
+        public IWebElement VisibilityStartDate;
+
+        [FindsBy(How = How.XPath, Using = "//label[contains(text(),'Visibility End Date ')]/following-sibling::p/span//button")]
+        public IWebElement VisibilityEndDate;
+
+        [FindsBy(How = How.XPath, Using = "//div[@class='homeProgramsNav']/a[contains(text(),'Library')]")]
+        public IWebElement LibrarySearchPage;
+
+        #endregion
+
+        #region internal
+
+        internal string GetCalanderXpath(string label)
+        {
+            return "//label[contains(text(),'" + label +  "')]/following-sibling::p//div[@role='application']//table[@role='grid']";
+        }
+
+        internal string GetAssetXpath(int index)
+        {
+            return "//div[@id='AssetList']//fieldset/div[" + index + "]";
+        }
+
+        #endregion
+
+        #region Public
+
+        public void SelectVisibilityStartDate(string day,string month,string year)
+        {
+            VisibilityStartDate.ScrollElementAndClick();
+            GenericHelper.WaitForElement(By.XPath(GetCalanderXpath(LabelRepository.VisibilityStartDate)));
+            CalenderHelper.SelectDate(GetCalanderXpath(LabelRepository.VisibilityStartDate), day, month, year);
+            GenericHelper.WaitForLoadingMask();
+        }
+
+        public void SelectVisibilityEndDate(string day, string month, string year)
+        {
+            VisibilityEndDate.ScrollElementAndClick();
+            GenericHelper.WaitForElement(By.XPath(GetCalanderXpath(LabelRepository.VisibilityEndDate)));
+            CalenderHelper.SelectDate(GetCalanderXpath(LabelRepository.VisibilityEndDate), day, month, year);
+            GenericHelper.WaitForLoadingMask();
+        }
+
+        public void EditAsset(int index)
+        {
+            var element = GenericHelper.GetElement(By.XPath(GetAssetXpath(index) + "//div[@class='assetEdit']/a[1]"));
+            element.ScrollElementAndClick();
+            GenericHelper.WaitForLoadingMask();
+        }
+
+        public void DeleteAsset(int index)
+        {
+            var element = GenericHelper.GetElement(By.XPath(GetAssetXpath(index) + "//div[@class='assetEdit']/a[2]"));
+            element.ScrollElementAndClick();
+            GenericHelper.AcceptAlert();
+            GenericHelper.WaitForLoadingMask();
+        }
+
+        public string GetAssetName(int index)
+        {
+            var element = GenericHelper.GetElement(By.XPath(GetAssetXpath(index) + "//div[@class='assetContent']/span//a"));
+            element.ScrollToElement();
+            return element.Text;
+        }
+
+        public string GetAssetDescription(int index)
+        {
+            var element = GenericHelper.GetElement(By.XPath(GetAssetXpath(index) + "//div[@class='assetContent']/div[@class='assetDesc']//p/text()"));
+            element.ScrollToElement();
+            return element.Text;
+        }
+
+
+        public LibrarySearchDetailPage NavigateToLibrarySearch()
+        {
+            LibrarySearchPage.ScrollElementAndClick();
+            return new LibrarySearchDetailPage(_driver);
+        }
 
         #endregion
 

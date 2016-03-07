@@ -97,6 +97,7 @@
     <Compile Include="PageObject\IncentivePage\SelectProgramPage.cs" />
     <Compile Include="PageObject\IncentivePage\Validation.cs" />
     <Compile Include="PageObject\Learn\Library\LibraryDetailPage.cs" />
+    <Compile Include="PageObject\Learn\Library\LibrarySearchDetailPage.cs" />
     <Compile Include="PageObject\LoginPage.cs" />
     <Compile Include="PageObject\ManageIncentivePrograms.cs" />
     <Compile Include="PageObject\NewProgram.cs" />
@@ -123,6 +124,7 @@
     </Compile>
     <Compile Include="Settings\AppConfigKeys.cs" />
     <Compile Include="Settings\ErrorMessage.cs" />
+    <Compile Include="Settings\LabelRepository.cs" />
     <Compile Include="Settings\ObjectRepository.cs" />
     <Compile Include="TestCases\CheckScreens\Module\Configuration\CustomeAttribute\TestAttribute.cs" />
     <Compile Include="TestCases\CheckScreens\Module\ManagePartnerGrp\TestManagePartnerGrp.cs" />
@@ -153,6 +155,9 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Resources\TestDataFiles\Inventorylist1.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\TestDataFiles\Title.docx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -174,6 +179,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\IEDriverServer.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\TestDataFiles\InvalidThub.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\TestDataFiles\Thub.png">

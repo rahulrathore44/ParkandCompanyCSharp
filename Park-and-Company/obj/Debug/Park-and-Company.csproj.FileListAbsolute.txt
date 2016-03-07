@@ -43,3 +43,10 @@ G:\AutomationWorkspace\Git-Hub\ParkandCompanyCSharp\Park-and-Company\bin\Debug\R
 G:\AutomationWorkspace\Git-Hub\ParkandCompanyCSharp\Park-and-Company\bin\Debug\Resources\FileUpload.exe
 G:\AutomationWorkspace\Git-Hub\ParkandCompanyCSharp\Park-and-Company\bin\Debug\Resources\TestDataFiles\Title.docx
 G:\AutomationWorkspace\Git-Hub\ParkandCompanyCSharp\Park-and-Company\bin\Debug\Resources\TestDataFiles\Thub.png
+C:\Users\rsr\Documents\GitHub\ParkandCompanyCSharp\Park-and-Company\bin\Debug\Resources\chromedriver.exe
+C:\Users\rsr\Documents\GitHub\ParkandCompanyCSharp\Park-and-Company\bin\Debug\Resources\FileUpload.exe
+C:\Users\rsr\Documents\GitHub\ParkandCompanyCSharp\Park-and-Company\bin\Debug\Resources\IEDriverServer.exe
+C:\Users\rsr\Documents\GitHub\ParkandCompanyCSharp\Park-and-Company\bin\Debug\Resources\TestDataFiles\Thub.png
+C:\Users\rsr\Documents\GitHub\ParkandCompanyCSharp\Park-and-Company\bin\Debug\Resources\TestDataFiles\Title.docx
+C:\Users\rsr\Documents\GitHub\ParkandCompanyCSharp\Park-and-Company\bin\Debug\Resources\TestDataFiles\Inventorylist1.csv
+C:\Users\rsr\Documents\GitHub\ParkandCompanyCSharp\Park-and-Company\bin\Debug\Resources\TestDataFiles\InvalidThub.png

@@ -22,7 +22,7 @@ namespace Park_and_Company.BaseClasses
                 JavaScriptExecutorHelper.ScrollElementAndClick(logout);
                 logout = GenericHelper.WaitForElement(By.XPath("//a[contains(text(),'Log Off')]"));
                 JavaScriptExecutorHelper.ScrollElementAndClick(logout);
-               // GenericHelper.AcceptAlert();
+                GenericHelper.AcceptAlert();
                 GenericHelper.WaitForElement(By.XPath("//div[@class='loginWrapper']"));
             }
 
