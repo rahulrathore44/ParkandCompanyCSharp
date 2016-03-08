@@ -13,7 +13,8 @@ namespace Park_and_Company.Settings
         public const string Password = "Password";
         public const string Website = "Website";
         public const string PageLoadTimeout = "PageLoadTimeout";
-        public const string ElementLoadTimeout = "ElementLoadTimeout";
+        public const string ImplicitElementLoadTimeout = "ImplicitElementLoadTimeout";
+        public const string ExplicitElementLoadTimeout = "ExplicitElementLoadTimeout";
 
 
     }

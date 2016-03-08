@@ -8,19 +8,19 @@ namespace Park_and_Company.ComponentHelper
         public static void VerifyIncentiveGridEntry(string gridXpath, string program, string startDate, string endDate,
             string status)
         {
-            for (int i = 1; i <= 100; i++)
+            for (var i = 1; i <= 100; i++)
             {
-                if (GenericHelper.IsElementPresentQuick(By.XPath(gridXpath + "//table//tbody//tr[" + i + "]//td[1]/a")))
-                {
-                    Assert.AreEqual(
-                        GenericHelper.GetText(By.XPath(gridXpath + "//table//tbody//tr[" + i + "]//td[1]/a")), program);
-                    Assert.AreEqual(
-                        GenericHelper.GetText(By.XPath(gridXpath + "//table//tbody//tr[" + i + "]//td[2]")), startDate);
-                    Assert.AreEqual(
-                        GenericHelper.GetText(By.XPath(gridXpath + "//table//tbody//tr[" + i + "]//td[3]")), endDate);
-                    Assert.AreEqual(
-                        GenericHelper.GetText(By.XPath(gridXpath + "//table//tbody//tr[" + i + "]//td[4]/span")), status);
-                }
+                if (!GenericHelper.IsElementPresentQuick(By.XPath(gridXpath + "//table//tbody//tr[" + i + "]//td[1]/a")))
+                    continue;
+
+                Assert.AreEqual(
+                    GenericHelper.GetText(By.XPath(gridXpath + "//table//tbody//tr[" + i + "]//td[1]/a")), program);
+                Assert.AreEqual(
+                    GenericHelper.GetText(By.XPath(gridXpath + "//table//tbody//tr[" + i + "]//td[2]")), startDate);
+                Assert.AreEqual(
+                    GenericHelper.GetText(By.XPath(gridXpath + "//table//tbody//tr[" + i + "]//td[3]")), endDate);
+                Assert.AreEqual(
+                    GenericHelper.GetText(By.XPath(gridXpath + "//table//tbody//tr[" + i + "]//td[4]/span")), status);
             }
         }
 
@@ -32,28 +32,23 @@ namespace Park_and_Company.ComponentHelper
             {
                 return GenericHelper.GetElement(By.XPath(gridXpath + "//table//tbody//tr[" + row + "]//td[" + column + "]/a"));
             }
-            else if (
+
+            if (
                 GenericHelper.IsElementPresentQuick(
                     By.XPath(gridXpath + "//table//tbody//tr[" + row + "]//td[" + column + "]/span")))
             {
                 return GenericHelper.GetElement(By.XPath(gridXpath + "//table//tbody//tr[" + row + "]//td[" + column + "]/span"));
             }
-           else if (
+
+            if (
                GenericHelper.IsElementPresentQuick(
                    By.XPath(gridXpath + "//table//tbody//tr[" + row + "]//td[" + column + "]/input")))
             {
                 return GenericHelper.GetElement(By.XPath(gridXpath + "//table//tbody//tr[" + row + "]//td[" + column + "]/input"));
             }
-            else if (
-               GenericHelper.IsElementPresentQuick(
-                   By.XPath(gridXpath + "//table//tbody//tr[" + row + "]//td[" + column + "]")))
-            {
-                return GenericHelper.GetElement(By.XPath(gridXpath + "//table//tbody//tr[" + row + "]//td[" + column + "]"));
-            }
-            else
-            {
-                return null;
-            }
+
+            return GenericHelper.IsElementPresentQuick(
+                By.XPath(gridXpath + "//table//tbody//tr[" + row + "]//td[" + column + "]")) ? GenericHelper.GetElement(By.XPath(gridXpath + "//table//tbody//tr[" + row + "]//td[" + column + "]")) : null;
         }
 
         public static void VerifyInGridEntry(string gridXpath, string value, int row,int column)
@@ -65,7 +60,7 @@ namespace Park_and_Company.ComponentHelper
             }
             else
             {
-                Assert.Fail("Expected Value Not Found : ",value);
+                Assert.Fail("Expected Value Not Found : {0}",value);
             }
         }
 

@@ -13,13 +13,13 @@ namespace Park_and_Company.ComponentHelper
 {
     public class GenericHelper
     {
-        private const string MaskXpath = "//div[@id='loadingIndicatorContainer' and contains(@style,'display: none;')]";
+        private static readonly int WaitTime = ObjectRepository.Config.GetExplicitElementLoadTimeout();
 
         private static Func<IWebDriver, bool> MaskPresence()
         {
             return ((x) =>
             {
-                if (x.FindElements((By.XPath(MaskXpath))).Any())
+                if (x.FindElements((By.XPath(LocatorRepository.LoadingMaskXpath))).Any())
                     return true;
                 return false;
             });
@@ -37,8 +37,11 @@ namespace Park_and_Company.ComponentHelper
 
         public static WebDriverWait GetWebDriverWait(int timeOutInSeconds)
         {
-            var wait = new WebDriverWait(ObjectRepository.Driver, TimeSpan.FromSeconds(timeOutInSeconds));
-            wait.PollingInterval = TimeSpan.FromMilliseconds(250);
+            var wait = new WebDriverWait(ObjectRepository.Driver, TimeSpan.FromSeconds(timeOutInSeconds))
+            {
+                PollingInterval = TimeSpan.FromMilliseconds(250),
+            };
+
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException),typeof(ElementNotVisibleException));
 		    return wait;
 		
@@ -47,7 +50,7 @@ namespace Park_and_Company.ComponentHelper
         {
             try
             {
-                var wait = GetWebDriverWait(60);
+                var wait = GetWebDriverWait(WaitTime);
                 return wait.Until((CheckForElement(locator)));
             }
             catch (TimeoutException e)
@@ -78,7 +81,7 @@ namespace Park_and_Company.ComponentHelper
 
         public static IWebElement GetVisiblityOfElement(By locator)
         {
-            var wait = GetWebDriverWait(60);
+            var wait = GetWebDriverWait(WaitTime);
             return wait.Until(ExpectedConditions.ElementIsVisible(locator));
         }
 
@@ -99,42 +102,42 @@ namespace Park_and_Company.ComponentHelper
 
         public static IWebElement WaitForElement(By locator)
         {
-            var wait = GetWebDriverWait(60);
+            var wait = GetWebDriverWait(WaitTime);
             return wait.Until(ExpectedConditions.ElementExists(locator));
         }
 
         public static IWebElement WaitForElementClickAble(By locator)
         {
-            var wait = GetWebDriverWait(60);
+            var wait = GetWebDriverWait(WaitTime);
             return wait.Until(ExpectedConditions.ElementToBeClickable(locator));
         }
 
         public static IWebElement WaitForElementClickAble(IWebElement element)
         {
-            var wait = GetWebDriverWait(60);
+            var wait = GetWebDriverWait(WaitTime);
             return wait.Until(ExpectedConditions.ElementToBeClickable(element));
         }
 
         public static IWebElement WaitForElement(IWebElement element)
         {
-            var wait = GetWebDriverWait(60);
+            var wait = GetWebDriverWait(WaitTime);
             return wait.Until(ExpectedConditions.ElementToBeClickable(element));
         }
 
         public static void WaitForLoadingMask()
         {
             ObjectRepository.Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(1));
-            var wait = GetWebDriverWait(60);
+            var wait = GetWebDriverWait(WaitTime);
             wait.Until(MaskPresence());
-            ObjectRepository.Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(ObjectRepository.Config.GetElementLoadTimeOut()));
+            ObjectRepository.Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(ObjectRepository.Config.GetImplicitElementLoadTimeout()));
         }
 
         public static void WaitForAlert()
         {
             ObjectRepository.Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(1));
-            var wait = GetWebDriverWait(60);
+            var wait = GetWebDriverWait(WaitTime);
             wait.Until(ExpectedConditions.AlertIsPresent());
-            ObjectRepository.Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(ObjectRepository.Config.GetElementLoadTimeOut()));
+            ObjectRepository.Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(ObjectRepository.Config.GetImplicitElementLoadTimeout()));
         }
 
         public static string GetText(By locator)

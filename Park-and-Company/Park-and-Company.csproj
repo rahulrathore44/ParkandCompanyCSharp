@@ -125,6 +125,7 @@
     <Compile Include="Settings\AppConfigKeys.cs" />
     <Compile Include="Settings\ErrorMessage.cs" />
     <Compile Include="Settings\LabelRepository.cs" />
+    <Compile Include="Settings\LocatorRepository.cs" />
     <Compile Include="Settings\ObjectRepository.cs" />
     <Compile Include="TestCases\CheckScreens\Module\Configuration\CustomeAttribute\TestAttribute.cs" />
     <Compile Include="TestCases\CheckScreens\Module\ManagePartnerGrp\TestManagePartnerGrp.cs" />

@@ -19,7 +19,6 @@ namespace Park_and_Company.BaseClasses
         [FindsBy(How = How.XPath,Using = "//div[@class='homeProgramsNav']/a[position()=1]")]
         private IWebElement Homebtn;
 
-
         public PageBase(IWebDriver driver)
         {
             if (driver == null)

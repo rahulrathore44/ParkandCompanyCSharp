@@ -1,13 +1,14 @@
 ﻿using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using Park_and_Company.Settings;
 
 namespace Park_and_Company.ComponentHelper
 {
     public class DropDownHelper
     {
         private static SelectElement select;
-        private static readonly By DownArrow = By.XPath("//span[text()='select']");
+        private static readonly By DownArrow = By.XPath(LocatorRepository.SelectButtonXpath);
 
         public static void SelectByVisibleText(By locator, string text)
         {

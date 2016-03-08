@@ -6,12 +6,12 @@ namespace Park_and_Company.ComponentHelper
 {
     public class JavaScriptExecutorHelper
     {
-        private static IJavaScriptExecutor exeScript;
+        private static IJavaScriptExecutor _exeScript;
 
         public static object ExecuteScript(string script)
         {
-            exeScript = ((IJavaScriptExecutor)ObjectRepository.Driver);
-            return exeScript.ExecuteScript(script);
+            _exeScript = ((IJavaScriptExecutor)ObjectRepository.Driver);
+            return _exeScript.ExecuteScript(script);
         }
 
 
@@ -30,7 +30,7 @@ namespace Park_and_Company.ComponentHelper
 
         public static void ScrollElementAndClick(By locator)
         {
-            IWebElement element = ObjectRepository.Driver.FindElement(locator);
+            var element = ObjectRepository.Driver.FindElement(locator);
             GenericHelper.WaitForElement(element);
             ExecuteScript("window.scrollTo(0," + element.Location.Y + ");");
             element.Click();

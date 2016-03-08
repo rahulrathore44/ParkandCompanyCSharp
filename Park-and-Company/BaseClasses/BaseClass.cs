@@ -6,26 +6,25 @@ using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using Park_and_Company.ComponentHelper;
+using Park_and_Company.Settings;
 
 namespace Park_and_Company.BaseClasses
 {
     public class BaseClass
     {
-        private readonly string logoutXpath =
-            "//div[@id='bergerModal']/following-sibling::div[position()=1]/descendant::span[position()=2]";
+        
         public void Logout()
         {
-            if (GenericHelper.IsElementPresentQuick(By.XPath(logoutXpath)))
-            {
-                var logout = GenericHelper.GetElement(By.XPath(logoutXpath));
-                logout = GenericHelper.WaitForElementClickAble(logout);
-                JavaScriptExecutorHelper.ScrollElementAndClick(logout);
-                logout = GenericHelper.WaitForElement(By.XPath("//a[contains(text(),'Log Off')]"));
-                JavaScriptExecutorHelper.ScrollElementAndClick(logout);
-                GenericHelper.AcceptAlert();
-                GenericHelper.WaitForElement(By.XPath("//div[@class='loginWrapper']"));
-            }
+            if (!GenericHelper.IsElementPresentQuick(By.XPath(LocatorRepository.LogoutXpath)))
+                return;
 
+            var logout = GenericHelper.GetElement(By.XPath(LocatorRepository.LogoutXpath));
+            logout = GenericHelper.WaitForElementClickAble(logout);
+            JavaScriptExecutorHelper.ScrollElementAndClick(logout);
+            logout = GenericHelper.WaitForElement(By.XPath(LocatorRepository.LogOffXpath));
+            JavaScriptExecutorHelper.ScrollElementAndClick(logout);
+            GenericHelper.AcceptAlert();
+            GenericHelper.WaitForElement(By.XPath(LocatorRepository.LoginPageLogoXpath));
         }
 
         public virtual Type GetClassType()

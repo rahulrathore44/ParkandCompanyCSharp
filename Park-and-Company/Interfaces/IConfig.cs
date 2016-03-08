@@ -14,7 +14,8 @@ namespace Park_and_Company.Interfaces
         string GetPassword();
         string GetWebsite();
         int GetPageLoadTimeOut();
-        int GetElementLoadTimeOut();
+        int GetImplicitElementLoadTimeout();
+        int GetExplicitElementLoadTimeout();
 
     }
 }

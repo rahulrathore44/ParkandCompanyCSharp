@@ -14,7 +14,7 @@ namespace Park_and_Company.Configuration
     {
         public BrowserType? GetBrowser()
         {
-            string browser = ConfigurationManager.AppSettings.Get(AppConfigKeys.Browser);
+            var browser = ConfigurationManager.AppSettings.Get(AppConfigKeys.Browser);
             try
             {
                 return (BrowserType)Enum.Parse(typeof(BrowserType), browser);
@@ -25,20 +25,22 @@ namespace Park_and_Company.Configuration
             }
         }
 
-        public int GetElementLoadTimeOut()
+        public int GetImplicitElementLoadTimeout()
         {
-            string timeout = ConfigurationManager.AppSettings.Get(AppConfigKeys.ElementLoadTimeout);
-            if (timeout == null)
-                return 30;
-            return Convert.ToInt32(timeout);
+            var timeout = ConfigurationManager.AppSettings.Get(AppConfigKeys.ImplicitElementLoadTimeout);
+            return timeout == null ? 30 : Convert.ToInt32(timeout);
+        }
+
+        public int GetExplicitElementLoadTimeout()
+        {
+            var timeout = ConfigurationManager.AppSettings.Get(AppConfigKeys.ExplicitElementLoadTimeout);
+            return timeout == null ? 30 : Convert.ToInt32(timeout);
         }
 
         public int GetPageLoadTimeOut()
         {
-            string timeout = ConfigurationManager.AppSettings.Get(AppConfigKeys.PageLoadTimeout);
-            if (timeout == null)
-                return 30;
-            return Convert.ToInt32(timeout);
+            var timeout = ConfigurationManager.AppSettings.Get(AppConfigKeys.PageLoadTimeout);
+            return timeout == null ? 30 : Convert.ToInt32(timeout);
         }
 
         public string GetPassword()
