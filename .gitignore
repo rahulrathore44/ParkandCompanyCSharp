@@ -1,8 +1,8 @@
 bin/**/*
 obj/**/*
 
-bin/Debug/**/*
-obj/Debug/**/*
+bin/Debug/**/*.*
+obj/Debug/**/*.*
 
 # Object files
 *.o
@@ -37,4 +37,5 @@ obj/Debug/**/*
 *.hex
 
 # Debug files
-*.dSYM/
+packages/**/*
+packages/**/*.*
