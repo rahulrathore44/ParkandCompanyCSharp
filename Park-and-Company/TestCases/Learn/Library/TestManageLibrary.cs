@@ -136,6 +136,8 @@ namespace Park_and_Company.TestCases.Learn.Library
             var myLibPage = hPage.NavigateToLibrary();
             var viewPage = myLibPage.NavigateToLibrarySearch();
             viewPage.SelectViewBy("Documents");
+            // Specify the "Search String" & "View by"
+            //viewPage.Search("adas","Documents");
             myLibPage.Logout();
         }
     }

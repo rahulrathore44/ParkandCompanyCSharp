@@ -13,5 +13,6 @@ namespace Park_and_Company.Settings
         public const string LoginPageLogoXpath = "//div[@class='loginWrapper']";
         public const string SelectButtonXpath = "//span[text()='select']";
         public const string LoadingMaskXpath = "//div[@id='loadingIndicatorContainer' and contains(@style,'display: none;')]";
+        public const string WarningXpath = "//label[text()='Warning']";
     }
 }
