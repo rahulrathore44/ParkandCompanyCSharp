@@ -39,3 +39,6 @@ obj/Debug/**/*.*
 # Debug files
 packages/**/*
 packages/**/*.*
+*.pdb
+*.cache
+*.force
