@@ -1,4 +1,5 @@
 ﻿using System.Threading;
+using log4net;
 using Park_and_Company.CustomException;
 using Park_and_Company.Settings;
 
@@ -6,6 +7,7 @@ namespace Park_and_Company.ComponentHelper
 {
     public class BrowserHelper
     {
+        private static readonly ILog Logger = LoggerHelper.GetLogger(typeof (BrowserHelper));
         public static void GoBack()
         {
             ObjectRepository.Driver.Navigate().Back();
