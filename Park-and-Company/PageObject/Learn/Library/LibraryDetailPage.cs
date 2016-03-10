@@ -90,6 +90,15 @@ namespace Park_and_Company.PageObject.Learn.Library
         [FindsBy(How = How.XPath, Using = "//div[@class='homeProgramsNav']/a[contains(text(),'Library')]")]
         public IWebElement LibrarySearchPage;
 
+        [FindsBy(How = How.XPath, Using = "//div[@id='content_DivTag']/following-sibling::div[1]//input[@placeholder='Search']")]
+        public IWebElement SearchTextBox;
+
+        [FindsBy(How = How.XPath, Using = "//select[contains(@ng-model,'selectedAssetType')]")]
+        public IWebElement ViewBy;
+
+        [FindsBy(How = How.XPath, Using = "//select[contains(@ng-model,'selectedSortType')]")]
+        public IWebElement SortBy;
+
         #endregion
 
         #region internal
@@ -148,16 +157,32 @@ namespace Park_and_Company.PageObject.Learn.Library
 
         public string GetAssetDescription(int index)
         {
-            var element = GenericHelper.GetElement(By.XPath(GetAssetXpath(index) + "//div[@class='assetContent']/div[@class='assetDesc']//p/text()"));
+            var element = GenericHelper.GetElement(By.XPath(GetAssetXpath(index) + "//div[@class='assetContent']/div[@class='assetDesc']//p"));
             element.ScrollToElement();
             return element.Text;
         }
 
+        public void Search(string text = "docx", string sortBy = "Last Created Date", string viewBy = "Documents")
+        {
+            DropDownHelper.SelectByVisibleText(SortBy,sortBy);
+            GenericHelper.WaitForLoadingMask();
+            DropDownHelper.SelectByVisibleText(ViewBy,viewBy);
+            GenericHelper.WaitForLoadingMask();
+            SearchTextBox.SendKeys(text);
+            ObjectRepository.Driver.FindElement(By.XPath("//h2[contains(text(),'New/Edit')]")).Click();
+            GenericHelper.WaitForLoadingMask();
+        }
 
-        public LibrarySearchDetailPage NavigateToLibrarySearch()
+        public bool ValiateIsAssetPresent(int index)
+        {
+            return GenericHelper.IsElementPresentQuick(By.XPath(GetAssetXpath(index)));
+        }
+
+        public LibraryViewPage NavigateToLibrarySearch()
         {
             LibrarySearchPage.ScrollElementAndClick();
-            return new LibrarySearchDetailPage(_driver);
+            GenericHelper.WaitForLoadingMask();
+            return new LibraryViewPage(_driver);
         }
 
         #endregion

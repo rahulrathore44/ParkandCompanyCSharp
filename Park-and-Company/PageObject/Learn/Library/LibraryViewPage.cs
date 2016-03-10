@@ -5,10 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using Park_and_Company.BaseClasses;
+using Park_and_Company.ComponentHelper;
+using Park_and_Company.Settings;
 
 namespace Park_and_Company.PageObject.Learn.Library
 {
-    public class LibrarySearchDetailPage : PageBase
+    public class LibraryViewPage : PageBase
     {
 
         #region Field
@@ -19,7 +21,7 @@ namespace Park_and_Company.PageObject.Learn.Library
 
         #region Constructor
 
-        public LibrarySearchDetailPage(IWebDriver driver) : base(driver)
+        public LibraryViewPage(IWebDriver driver) : base(driver)
         {
             _driver = driver;
         }
@@ -29,6 +31,11 @@ namespace Park_and_Company.PageObject.Learn.Library
 
         #region WebElements
 
+        public void SelectViewBy(string value)
+        {
+            DropDownHelper.SelectFromKendoDropDown(By.XPath(LocatorRepository.SelectButtonXpath), value);
+            GenericHelper.WaitForLoadingMask();
+        }
          
 
         #endregion

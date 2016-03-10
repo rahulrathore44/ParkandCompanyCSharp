@@ -52,3 +52,5 @@ C:\Users\rsr\Documents\GitHub\ParkandCompanyCSharp\Park-and-Company\bin\Debug\Mi
 C:\Users\rsr\Documents\GitHub\ParkandCompanyCSharp\Park-and-Company\obj\Debug\Park-and-Company.dll
 C:\Users\rsr\Documents\GitHub\ParkandCompanyCSharp\Park-and-Company\obj\Debug\Park-and-Company.pdb
 C:\Users\rsr\Documents\GitHub\ParkandCompanyCSharp\Park-and-Company\obj\Debug\Park-and-Company.csprojResolveAssemblyReference.cache
+C:\Users\rsr\Documents\GitHub\ParkandCompanyCSharp\Park-and-Company\bin\Debug\log4net.dll
+C:\Users\rsr\Documents\GitHub\ParkandCompanyCSharp\Park-and-Company\bin\Debug\log4net.xml

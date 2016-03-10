@@ -99,5 +99,44 @@ namespace Park_and_Company.TestCases.Learn.Library
             myLibPage.Logout();
 
         }
+
+        [TestMethod]
+        [Description("Test case for searching the pptx file")]
+        public void TestSearchPptx()
+        {
+            var myLibPage = hPage.NavigateToLibrary();
+            myLibPage.Search("pptx");
+            GenericHelper.WaitForLoadingMask();
+            // Suplly the index value to check the asset
+            Assert.IsTrue(myLibPage.ValiateIsAssetPresent(1),"Asset Not Found ");
+            // Suplly the index value to check the asset title
+            Assert.AreEqual(myLibPage.GetAssetName(1), "Presentation2.pptx");
+            // Suplly the index value to check the asset description
+            Assert.AreEqual(myLibPage.GetAssetDescription(1), "PPTTest");
+            myLibPage.Logout();
+        }
+
+        [TestMethod]
+        [Description("Test case for searching the docx file")]
+        public void TestSearchDocx()
+        {
+            var myLibPage = hPage.NavigateToLibrary();
+            // use this method to suppply the search parameter : "search text","sort by","view by"
+            // If you don't supply any thing it will use "docx","Last Created Date","Document"
+            myLibPage.Search("docx", "Start Date", "Documents");
+            GenericHelper.WaitForLoadingMask();
+            Assert.IsTrue(myLibPage.ValiateIsAssetPresent(1), "Asset Not Found ");
+            Assert.AreEqual(myLibPage.GetAssetName(1), "Test3.docx");
+            myLibPage.Logout();
+        }
+
+        [TestMethod]
+        public void TestUserView()
+        {
+            var myLibPage = hPage.NavigateToLibrary();
+            var viewPage = myLibPage.NavigateToLibrarySearch();
+            viewPage.SelectViewBy("Documents");
+            myLibPage.Logout();
+        }
     }
 }

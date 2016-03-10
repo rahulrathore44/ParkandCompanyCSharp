@@ -43,6 +43,7 @@ namespace Park_and_Company.ComponentHelper
             GenericHelper.WaitForLoadingMask();
             Thread.Sleep(1000);
         }
+
         public static void SelectFromKendoDropDown(By selectArrow,string value)
         {
             var arrow = GenericHelper.GetElement(selectArrow);
