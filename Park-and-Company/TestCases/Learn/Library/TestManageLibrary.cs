@@ -133,12 +133,20 @@ namespace Park_and_Company.TestCases.Learn.Library
         [TestMethod]
         public void TestUserView()
         {
-            var myLibPage = hPage.NavigateToLibrary();
-            var viewPage = myLibPage.NavigateToLibrarySearch();
+            var viewPage = hPage.NavigateToLibrary().NavigateToLibrarySearch();
             viewPage.SelectViewBy("Documents");
             // Specify the "Search String" & "View by"
             //viewPage.Search("adas","Documents");
-            myLibPage.Logout();
+            Assert.IsTrue(viewPage.IsViewButtonHidden(1)," View Button is <Visible> Expected is <Hidden>");
+            Assert.IsTrue(viewPage.IsViewButtonHidden(2), " View Button is <Visible> Expected is <Hidden>");
+            Assert.IsTrue(viewPage.IsViewButtonVisible(3), " View Button is <Hidden> Expected is <Visible>");
+            Assert.IsTrue(viewPage.IsDownloadButtonVisible(3), " Download Button is <Hidden> Expected is <Visible>");
+            Assert.IsTrue(viewPage.IsDownloadButtonHidden(4), " Download Button is <Visible> Expected is <Hidden>");
+            // To click on download button in asset container
+            viewPage.ClickDownloadButton(3);
+            // To click on View button in asset container
+            viewPage.ClickViewButton(3);
+            viewPage.Logout();
         }
     }
 }

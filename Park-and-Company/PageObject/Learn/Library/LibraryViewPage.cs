@@ -73,19 +73,68 @@ namespace Park_and_Company.PageObject.Learn.Library
             SelectViewBy(viewBy);
         }
 
+        /// <summary>
+        /// Return true when view button is not present
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
         public bool IsViewButtonHidden(int index)
         {
             return
                 GenericHelper.IsElementPresentQuick(
                     By.XPath(GetAssetContainerXpath(index) +
-                             "//div[@class='actions']/button[contains(@class,'ng-hide')]"));
+                             "//div[@class='actions']/button[contains(@class,'ng-hide')][1]"));
         }
 
-        public bool IsViewButtonVisisble(int index)
+        /// <summary>
+        /// Return true when view button is visible
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
+        public bool IsViewButtonVisible(int index)
         {
             return !IsViewButtonHidden(index);
         }
 
+
+        /// <summary>
+        /// Return true when view button is not present
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
+        public bool IsDownloadButtonHidden(int index)
+        {
+            return
+                GenericHelper.IsElementPresentQuick(
+                    By.XPath(GetAssetContainerXpath(index) +
+                             "//div[@class='actions']/button[contains(@class,'ng-hide')][2]"));
+        }
+
+        /// <summary>
+        /// Return true when view button is visible
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
+        public bool IsDownloadButtonVisible(int index)
+        {
+            return !IsDownloadButtonHidden(index);
+        }
+
+        public void ClickViewButton(int index)
+        {
+            var element = GenericHelper.GetElement(By.XPath(GetAssetContainerXpath(index) +
+                                                            "//div[@class='actions']/button[1]"));
+            element.ScrollElementAndClick();
+            GenericHelper.WaitForLoadingMask();
+        }
+
+        public void ClickDownloadButton(int index)
+        {
+            var element = GenericHelper.GetElement(By.XPath(GetAssetContainerXpath(index) +
+                                                            "//div[@class='actions']/button[2]"));
+            element.ScrollElementAndClick();
+            GenericHelper.WaitForLoadingMask();
+        }
         #endregion
     }
 }
