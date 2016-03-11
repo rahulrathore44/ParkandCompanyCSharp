@@ -1,0 +1,62 @@
+11:19:38,772 [INFO] [WindowMaximize] -  Browser Window Maximize 
+11:19:42,851 [INFO] [IsElementPresentQuick] -  Checking for Element Quick By.Id: overridelink
+11:19:44,941 [INFO] [IsElementPresentQuick] -  Checking for Element Quick By.XPath: //div[@id='bergerModal']/following-sibling::div[position()=1]/descendant::span[position()=2]
+11:19:46,988 [INFO] [GetWebDriverWait] -  Wait Object Created 
+11:19:46,989 [INFO] [IsElementPresent] -  Waiting for Element By.XPath: //div[@class='loginWrapper']
+11:19:53,942 [INFO] [GetWebDriverWait] -  Wait Object Created 
+11:19:53,943 [INFO] [WaitForElement] -  Waiting for Element Exist By.CssSelector: .homeProgramsNav
+11:19:53,962 [INFO] [GetWebDriverWait] -  Wait Object Created 
+11:19:53,962 [INFO] [IsElementPresent] -  Waiting for Element By.CssSelector: .homeProgramsNav
+11:19:54,616 [INFO] [GetWebDriverWait] -  Wait Object Created 
+11:19:54,633 [INFO] [WaitForElement] -  Waiting for Element to be Clickable OpenQA.Selenium.Remote.RemoteWebElement
+11:19:58,657 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to 1 Second 
+11:19:58,657 [INFO] [GetWebDriverWait] -  Wait Object Created 
+11:19:58,657 [INFO] [WaitForLoadingMask] -  Waiting for Loading Mask 
+11:20:01,872 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to Configured Value 
+11:20:14,917 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to 1 Second 
+11:20:14,918 [INFO] [GetWebDriverWait] -  Wait Object Created 
+11:20:14,918 [INFO] [WaitForLoadingMask] -  Waiting for Loading Mask 
+11:20:16,685 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to Configured Value 
+11:20:16,687 [INFO] [GetWebDriverWait] -  Wait Object Created 
+11:20:16,688 [INFO] [IsElementPresent] -  Waiting for Element By.XPath: //span[text()='select']
+11:20:17,843 [INFO] [GetWebDriverWait] -  Wait Object Created 
+11:20:17,844 [INFO] [GetVisiblityOfElement] -  Waiting for Visibility of Element By.XPath: //li[text()='Documents']
+11:20:17,962 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to 1 Second 
+11:20:17,962 [INFO] [GetWebDriverWait] -  Wait Object Created 
+11:20:17,963 [INFO] [WaitForLoadingMask] -  Waiting for Loading Mask 
+11:20:19,785 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to Configured Value 
+11:20:22,786 [INFO] [IsElementPresentQuick] -  Checking for Element Quick By.XPath: //label[text()='Warning']
+11:20:24,842 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to 1 Second 
+11:20:24,842 [INFO] [GetWebDriverWait] -  Wait Object Created 
+11:20:24,842 [INFO] [WaitForLoadingMask] -  Waiting for Loading Mask 
+11:20:24,854 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to Configured Value 
+11:20:24,854 [INFO] [IsElementPresentQuick] -  Checking for Element Quick By.XPath: //div[@id='user-assets-container']/view-assets/div/div[1]//div[@class='actions']/button[contains(@class,'ng-hide')][1]
+11:20:24,881 [INFO] [IsElementPresentQuick] -  Checking for Element Quick By.XPath: //div[@id='user-assets-container']/view-assets/div/div[2]//div[@class='actions']/button[contains(@class,'ng-hide')][1]
+11:20:24,906 [INFO] [IsElementPresentQuick] -  Checking for Element Quick By.XPath: //div[@id='user-assets-container']/view-assets/div/div[3]//div[@class='actions']/button[contains(@class,'ng-hide')][1]
+11:20:26,932 [INFO] [IsElementPresentQuick] -  Checking for Element Quick By.XPath: //div[@id='user-assets-container']/view-assets/div/div[3]//div[@class='actions']/button[contains(@class,'ng-hide')][2]
+11:20:28,989 [INFO] [IsElementPresentQuick] -  Checking for Element Quick By.XPath: //div[@id='user-assets-container']/view-assets/div/div[4]//div[@class='actions']/button[contains(@class,'ng-hide')][2]
+11:20:29,005 [INFO] [GetWebDriverWait] -  Wait Object Created 
+11:20:29,005 [INFO] [IsElementPresent] -  Waiting for Element By.XPath: //div[@id='user-assets-container']/view-assets/div/div[3]//div[@class='actions']/button[2]
+11:20:30,696 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to 1 Second 
+11:20:30,697 [INFO] [GetWebDriverWait] -  Wait Object Created 
+11:20:30,698 [INFO] [WaitForLoadingMask] -  Waiting for Loading Mask 
+11:20:30,713 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to Configured Value 
+11:20:30,714 [INFO] [GetWebDriverWait] -  Wait Object Created 
+11:20:30,715 [INFO] [IsElementPresent] -  Waiting for Element By.XPath: //div[@id='user-assets-container']/view-assets/div/div[3]//div[@class='actions']/button[1]
+11:20:44,181 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to 1 Second 
+11:20:44,189 [INFO] [GetWebDriverWait] -  Wait Object Created 
+11:20:44,190 [INFO] [WaitForLoadingMask] -  Waiting for Loading Mask 
+11:20:44,209 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to Configured Value 
+11:20:48,855 [INFO] [IsElementPresentQuick] -  Checking for Element Quick By.XPath: //div[@id='bergerModal']/following-sibling::div[position()=1]/descendant::span[position()=2]
+11:20:48,880 [INFO] [GetWebDriverWait] -  Wait Object Created 
+11:20:48,881 [INFO] [IsElementPresent] -  Waiting for Element By.XPath: //div[@id='bergerModal']/following-sibling::div[position()=1]/descendant::span[position()=2]
+11:20:48,924 [INFO] [GetWebDriverWait] -  Wait Object Created 
+11:20:48,924 [INFO] [WaitForElementClickAble] -  Waiting for Element to be Clickable OpenQA.Selenium.Remote.RemoteWebElement
+11:20:49,549 [INFO] [GetWebDriverWait] -  Wait Object Created 
+11:20:49,550 [INFO] [WaitForElement] -  Waiting for Element Exist By.XPath: //a[contains(text(),'Log Off')]
+11:20:52,095 [ERROR] [IsAlertPresent] -    at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.Remote.RemoteTargetLocator.Alert()
+   at Park_and_Company.ComponentHelper.GenericHelper.IsAlertPresent() in C:\Users\rsr\Documents\GitHub\ParkandCompanyCSharp\Park-and-Company\ComponentHelper\GenericHelper.cs:line 173
+11:20:52,095 [INFO] [GetWebDriverWait] -  Wait Object Created 
+11:20:52,095 [INFO] [WaitForElement] -  Waiting for Element Exist By.XPath: //div[@class='loginWrapper']

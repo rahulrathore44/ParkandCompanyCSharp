@@ -135,6 +135,8 @@ namespace Park_and_Company.PageObject.Learn.Library
             element.ScrollElementAndClick();
             GenericHelper.WaitForLoadingMask();
         }
+
+        
         #endregion
     }
 }

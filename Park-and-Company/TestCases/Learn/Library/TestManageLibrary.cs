@@ -146,6 +146,9 @@ namespace Park_and_Company.TestCases.Learn.Library
             viewPage.ClickDownloadButton(3);
             // To click on View button in asset container
             viewPage.ClickViewButton(3);
+            Thread.Sleep(2000);
+            viewPage.ModelDialogCloseBtn.ScrollElementAndClick();
+            Thread.Sleep(2000);
             viewPage.Logout();
         }
     }
