@@ -42,3 +42,4 @@ packages/**/*.*
 *.pdb
 *.cache
 *.force
+*.log
