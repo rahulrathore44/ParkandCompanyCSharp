@@ -29,8 +29,14 @@
     <Setting Name="ManualApprovalGrid" Type="System.String" Scope="Application">
       <Value Profile="(Default)">//div[@id='ManualApprovalGrid']</Value>
     </Setting>
-    <Setting Name="MyOrdersGrid" Type="System.String" Scope="User">
+    <Setting Name="MyOrdersGrid" Type="System.String" Scope="Application">
       <Value Profile="(Default)">//div[@kendo-grid='myOrdersGrid']</Value>
+    </Setting>
+    <Setting Name="StoreMarkups" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">//div[@id='markupGrid']/div[1]</Value>
+    </Setting>
+    <Setting Name="StoreInventoryAvaliableItems" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">//div[@kendo-grid='availableItemsGrid']/div[2]</Value>
     </Setting>
   </Settings>
 </SettingsFile>

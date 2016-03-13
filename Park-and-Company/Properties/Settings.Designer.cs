@@ -104,15 +104,30 @@ namespace Park_and_Company.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("//div[@kendo-grid=\'myOrdersGrid\']")]
         public string MyOrdersGrid {
             get {
                 return ((string)(this["MyOrdersGrid"]));
             }
-            set {
-                this["MyOrdersGrid"] = value;
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("//div[@id=\'markupGrid\']/div[1]")]
+        public string StoreMarkups {
+            get {
+                return ((string)(this["StoreMarkups"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("//div[@kendo-grid=\'availableItemsGrid\']/div[2]")]
+        public string StoreInventoryAvaliableItems {
+            get {
+                return ((string)(this["StoreInventoryAvaliableItems"]));
             }
         }
     }

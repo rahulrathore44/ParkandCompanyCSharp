@@ -14,6 +14,7 @@ using Park_and_Company.PageObject.Claims;
 using Park_and_Company.PageObject.Claims.ManageCalims;
 using Park_and_Company.PageObject.Configuration.CustomeAttribute;
 using Park_and_Company.PageObject.Configuration.ManageRoles;
+using Park_and_Company.PageObject.Configuration.StoreMaintenance;
 using Park_and_Company.PageObject.Learn.Library;
 using Park_and_Company.PageObject.Partner.PartnerGrp;
 using Park_and_Company.PageObject.Programs.ManualPointAdjustment;
@@ -58,6 +59,9 @@ namespace Park_and_Company.PageObject
 
         [FindsBy(How = How.XPath, Using = "//div[@id='header4']/descendant::a[text()='Configuration ']")]
         private IWebElement Configuration;
+
+        [FindsBy(How = How.XPath, Using = "//div[@id='header4']/descendant::a[text()='Store Maintenance']")]
+        private IWebElement StoreMaintenance;
 
         [FindsBy(How = How.XPath, Using = "//div[@id='header4']/descendant::a[text()='Reports']")]
         private IWebElement Reports;
@@ -465,6 +469,15 @@ namespace Park_and_Company.PageObject
             _library.Click();
             GenericHelper.WaitForLoadingMask();
             return new LibraryDetailPage(driver);
+        }
+
+        public StoreMaintenance NavigateToStoreMaintenance()
+        {
+            Configuration.Click();
+            GenericHelper.WaitForElement(StoreMaintenance);
+            StoreMaintenance.Click();
+            GenericHelper.WaitForLoadingMask();
+            return new StoreMaintenance(driver);
         }
     }
 }

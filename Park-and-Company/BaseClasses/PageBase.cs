@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using log4net;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using Park_and_Company.ComponentHelper;
@@ -14,6 +15,7 @@ namespace Park_and_Company.BaseClasses
 {
     public class PageBase : BaseClass
     {
+        private static readonly ILog Logger = LoggerHelper.GetLogger(typeof(PageBase));
         protected IWebDriver Driver;
 
         [FindsBy(How = How.XPath,Using = "//div[@class='homeProgramsNav']/a[position()=1]")]
@@ -62,6 +64,7 @@ namespace Park_and_Company.BaseClasses
             var field = T.GetField(elementName, BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
             var cusAttri = field.GetCustomAttribute(typeof(FindsByAttribute));
             var ele = (FindsByAttribute)cusAttri;
+            Logger.Info(string.Format(" Locator of {0} is {1} : {2}",elementName,ele.How,ele.Using));
             return GetElementLocator(ele.How, ele.Using);
         }
 
@@ -70,29 +73,7 @@ namespace Park_and_Company.BaseClasses
             return new PageBase(Driver);
         }
 
-        #region Virtual Methods
-
-        /// <summary>
-        /// Perform the file upload, the file name should be present in Resources folder
-        /// </summary>
-        /// <param name="fileName"></param>
-        public virtual void FileUpload(string fileName)
-        {
-            //TODO Need to modify script for file upload in IE
-
-            var processinfo = new ProcessStartInfo()
-            {
-                FileName = "FileUpload.exe",
-                Arguments = "\"" + Directory.GetCurrentDirectory() + "\\" + fileName + "\""
-            };
-
-            using (var process = Process.Start(processinfo))
-            {
-                process.WaitForExit();
-            }
-        }
-
-        #endregion
+        
 
     }
 }

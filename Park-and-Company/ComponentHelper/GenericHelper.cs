@@ -8,6 +8,7 @@ using log4net;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.Extensions;
 using OpenQA.Selenium.Support.UI;
+using Park_and_Company.ExtensionClass.LoggerExtClass;
 using Park_and_Company.Settings;
 
 namespace Park_and_Company.ComponentHelper
@@ -59,7 +60,7 @@ namespace Park_and_Company.ComponentHelper
             }
             catch (TimeoutException e)
             {
-                Logger.Error(e.StackTrace);
+                Logger.Error(" [Ignore] " + e.StackTrace);
                 return false;
             }
 
@@ -74,7 +75,7 @@ namespace Park_and_Company.ComponentHelper
             }
             catch (Exception e)
             {
-                Logger.Error(e.StackTrace);
+                Logger.Error(" [Ignore] " + e.StackTrace);
                 return false;
             }
         }
@@ -83,14 +84,23 @@ namespace Park_and_Company.ComponentHelper
         {
             if (IsElementPresent(locator))
                 return ObjectRepository.Driver.FindElement(locator);
-            throw new NoSuchElementException("Element Not Found : " + locator.ToString());
+            throw new NoSuchElementException("Element Not Found : " + locator);
         }
 
         public static IWebElement GetVisiblityOfElement(By locator)
         {
-            var wait = GetWebDriverWait(WaitTime);
-            Logger.Info(" Waiting for Visibility of Element " + locator);
-            return wait.Until(ExpectedConditions.ElementIsVisible(locator));
+            try
+            {
+                var wait = GetWebDriverWait(WaitTime);
+                Logger.Info(" Waiting for Visibility of Element " + locator);
+                return wait.Until(ExpectedConditions.ElementIsVisible(locator));
+            }
+            catch (Exception exception)
+            {
+                Logger.LogException(exception);
+                throw;
+            }
+           
         }
 
         public static void WindowMaximize()
@@ -176,7 +186,7 @@ namespace Park_and_Company.ComponentHelper
             }
             catch (Exception e)
             {
-                Logger.Error(e.StackTrace);
+                Logger.Error(" [Ignore] " + e.StackTrace);
                 return false;
             }
         }

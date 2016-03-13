@@ -11,6 +11,7 @@ namespace Park_and_Company.ComponentHelper
         public static void GoBack()
         {
             ObjectRepository.Driver.Navigate().Back();
+            Logger.Info(" Browser Back Button Clicked ");
         }
 
         public static void SwitchToWindow(int windowIndex)
@@ -22,6 +23,7 @@ namespace Park_and_Company.ComponentHelper
                 throw new InvalidBrowserWindowIndex($"Invalid index of Browser window : {windowIndex}");
             }
             ObjectRepository.Driver.SwitchTo().Window(windowList[windowIndex]);
+            Logger.Info(" Switch to Window " + windowIndex);
         }
 
         public static void SwitchToParentWithClose()
@@ -30,9 +32,12 @@ namespace Park_and_Company.ComponentHelper
             for (var i = windowList.Count - 1; i > 0; i--)
             {
                 ObjectRepository.Driver.SwitchTo().Window(windowList[i]);
+                Logger.Info(" Switch to Window " + windowList[i]);
                 ObjectRepository.Driver.Close();
+                Logger.Info(" Browser Window Closed " + windowList[i]);
             }
             ObjectRepository.Driver.SwitchTo().Window(windowList[0]);
+            Logger.Info(" Switch to Parent Window ");
         }
 
     }

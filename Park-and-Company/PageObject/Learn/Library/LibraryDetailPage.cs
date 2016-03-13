@@ -15,17 +15,12 @@ namespace Park_and_Company.PageObject.Learn.Library
     public class LibraryDetailPage : PageBase
     {
 
-        #region Fields
-
-        private IWebDriver _driver;
-
-        #endregion
+        
 
         #region Constructo
 
         public LibraryDetailPage(IWebDriver driver) : base(driver)
         {
-            _driver = driver;
         }
 
         #endregion
@@ -182,7 +177,7 @@ namespace Park_and_Company.PageObject.Learn.Library
         {
             LibrarySearchPage.ScrollElementAndClick();
             GenericHelper.WaitForLoadingMask();
-            return new LibraryViewPage(_driver);
+            return new LibraryViewPage(Driver);
         }
 
         #endregion

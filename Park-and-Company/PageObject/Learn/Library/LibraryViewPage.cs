@@ -16,17 +16,10 @@ namespace Park_and_Company.PageObject.Learn.Library
     public class LibraryViewPage : PageBase
     {
 
-        #region Field
-
-        private IWebDriver _driver;
-
-        #endregion
-
-        #region Constructor
+       #region Constructor
 
         public LibraryViewPage(IWebDriver driver) : base(driver)
         {
-            _driver = driver;
         }
 
 
@@ -55,7 +48,7 @@ namespace Park_and_Company.PageObject.Learn.Library
 
         public void SelectViewBy(string value)
         {
-            DropDownHelper.SelectFromKendoDropDown(By.XPath(LocatorRepository.SelectButtonXpath), value);
+            DropDownHelper.SelectFromKendoDropDown(LocatorRepository.SelectButtonXpath, value);
             Thread.Sleep(2000);
 
             if (GenericHelper.IsElementPresentQuick(By.XPath(LocatorRepository.WarningXpath)))

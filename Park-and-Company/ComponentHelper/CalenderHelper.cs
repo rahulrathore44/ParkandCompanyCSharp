@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using log4net;
 using OpenQA.Selenium;
 using Park_and_Company.Settings;
 
@@ -7,9 +8,11 @@ namespace Park_and_Company.ComponentHelper
 {
     public class CalenderHelper
     {
+        private static readonly ILog Logger = LoggerHelper.GetLogger(typeof(CalenderHelper));
         private static void ClickHeader(string tableXPath)
         {
             ObjectRepository.Driver.FindElement(By.XPath(tableXPath + "/thead/tr[1]//strong")).Click();
+            Logger.Info(" Click on Calender Header " + tableXPath);
             Thread.Sleep(500);
         }
 
@@ -32,6 +35,7 @@ namespace Park_and_Company.ComponentHelper
                     return;
                 }
             }
+            Logger.Info(" Select Month " + month + " from " + tableXPath);
         }
 
         private static void SelectYear(string tableXPath, string year)
@@ -54,6 +58,7 @@ namespace Park_and_Company.ComponentHelper
                     return;
                 }
             }
+            Logger.Info(" Select Year " + year + " from " + tableXPath);
         }
 
         private static void SelectDay(string tableXPath, string day)
@@ -82,6 +87,7 @@ namespace Park_and_Company.ComponentHelper
                     return;
                 }
             }
+            Logger.Info(" Select Day " + day + " from " + tableXPath);
         }
 
         public static void SelectDate(string tableXPath, string day, string month, string year) 
