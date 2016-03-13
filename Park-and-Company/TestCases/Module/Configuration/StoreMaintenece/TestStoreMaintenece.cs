@@ -47,6 +47,35 @@ namespace Park_and_Company.TestCases.Module.Configuration.StoreMaintenece
         };
 
         [TestMethod]
+        [Description("End to end flow for creating the Store Configuration")]
+        public void TestCreateStore()
+        {
+            var smPage = hPage.NavigateToStoreMaintenance().ClickAddButton();
+            smPage.SelectCustomer("cit");
+            smPage.StoreNameInput.SendKeys(string.Format("TestStore{0}",DateTime.UtcNow.ToString("yyyy-MM-dd-hh-mm-ss")));
+            smPage.SelectStatus("Active");
+            smPage.SelectPointType("Visa");
+            smPage.SelectLanguage("English (United States)");
+            smPage.SetPointMonetaryValue("1");
+
+            var configPage = (ConfigurationSettings) smPage.ClickNext(typeof (ConfigurationSettings));
+            configPage.WishListLabel.Click();
+            configPage.CartLabel.Click();
+
+            var invetPage = (StoreInventory)configPage.ClickNext(typeof (StoreInventory));
+            invetPage.SelectLanguage("United States");
+            invetPage.MultiMerchantChk.Click();
+            GenericHelper.WaitForLoadingMask();
+            GridHelper.GetGridElement(Properties.Settings.Default.StoreInventoryAvaliableItems,1,1).Click();
+            GenericHelper.WaitForLoadingMask();
+
+            var markUpPage = (StoreMarkups)configPage.ClickNext(typeof(StoreMarkups));
+            //markUpPage.Save.ScrollElementAndClick(); // Will save the created store
+            markUpPage.Logout();
+
+        }
+
+        [TestMethod]
         public void TestGeneralInfoPage()
         {
             var smPage = hPage.NavigateToStoreMaintenance().ClickAddButton();

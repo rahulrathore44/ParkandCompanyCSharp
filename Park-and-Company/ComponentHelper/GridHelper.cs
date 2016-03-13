@@ -80,6 +80,13 @@ namespace Park_and_Company.ComponentHelper
                 return GenericHelper.GetElement(By.XPath(GetGridElementXpath(gridXpath, row, column) + "/input"));
             }
 
+            if (
+              GenericHelper.IsElementPresentQuick(
+                  By.XPath(GetGridElementXpath(gridXpath, row, column) + "//input")))
+            {
+                return GenericHelper.GetElement(By.XPath(GetGridElementXpath(gridXpath, row, column) + "//input"));
+            }
+
             return GenericHelper.IsElementPresentQuick(
                 By.XPath(GetGridElementXpath(gridXpath, row, column))) ? GenericHelper.GetElement(By.XPath(GetGridElementXpath(gridXpath, row, column))) : null;
         }

@@ -69,3 +69,140 @@
    at OpenQA.Selenium.Support.UI.ExpectedConditions.<>c__DisplayClass13.<ElementIsVisible>b__12(IWebDriver driver)
    at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)
 12:47:24,026 [INFO] [TakeSceenShot] -  Screen Shot Taken WebDriver.Support.jpeg
+19:04:37,766 [INFO] [WindowMaximize] -  Browser Window Maximize 
+19:05:00,306 [INFO] [IsElementPresentQuick] -  Checking for Element Quick By.Id: overridelink
+19:05:02,362 [INFO] [IsElementPresentQuick] -  Checking for Element Quick By.XPath: //div[@id='bergerModal']/following-sibling::div[position()=1]/descendant::span[position()=2]
+19:05:04,393 [INFO] [GetWebDriverWait] -  Wait Object Created 
+19:05:04,394 [INFO] [IsElementPresent] -  Waiting for Element By.XPath: //div[@class='loginWrapper']
+19:05:11,751 [INFO] [GetWebDriverWait] -  Wait Object Created 
+19:05:11,751 [INFO] [WaitForElement] -  Waiting for Element Exist By.CssSelector: .homeProgramsNav
+19:05:11,778 [INFO] [GetWebDriverWait] -  Wait Object Created 
+19:05:11,778 [INFO] [IsElementPresent] -  Waiting for Element By.CssSelector: .homeProgramsNav
+19:05:11,849 [INFO] [GetWebDriverWait] -  Wait Object Created 
+19:05:11,870 [INFO] [WaitForElement] -  Waiting for Element to be Clickable OpenQA.Selenium.Remote.RemoteWebElement
+19:05:15,074 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to 1 Second 
+19:05:15,075 [INFO] [GetWebDriverWait] -  Wait Object Created 
+19:05:15,075 [INFO] [WaitForLoadingMask] -  Waiting for Loading Mask 
+19:05:17,065 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to Configured Value 
+19:05:17,614 [INFO] [ExecuteScript] -  Executing Script window.scrollTo(0,724);
+19:05:21,775 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to 1 Second 
+19:05:21,776 [INFO] [GetWebDriverWait] -  Wait Object Created 
+19:05:21,777 [INFO] [WaitForLoadingMask] -  Waiting for Loading Mask 
+19:05:24,859 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to Configured Value 
+19:05:24,861 [INFO] [IsElementPresentQuick] -  Checking for Element Quick By.XPath: //label[text()='Customer']/following-sibling::div//span[text()='select']
+19:05:26,885 [INFO] [GetWebDriverWait] -  Wait Object Created 
+19:05:26,885 [INFO] [IsElementPresent] -  Waiting for Element By.XPath: //label[text()='Customer']/following-sibling::span//span[text()='select']
+19:05:27,432 [INFO] [ExecuteScript] -  Executing Script window.scrollTo(0,401);
+19:05:27,496 [INFO] [ScrollElementAndClick] -  Scroll Element And Click OpenQA.Selenium.Remote.RemoteWebElement
+19:05:27,997 [INFO] [GetWebDriverWait] -  Wait Object Created 
+19:05:27,998 [INFO] [GetVisiblityOfElement] -  Waiting for Visibility of Element By.XPath: //li[text()='cit']
+19:05:28,152 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to 1 Second 
+19:05:28,152 [INFO] [GetWebDriverWait] -  Wait Object Created 
+19:05:28,152 [INFO] [WaitForLoadingMask] -  Waiting for Loading Mask 
+19:05:28,169 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to Configured Value 
+19:05:29,173 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to 1 Second 
+19:05:29,174 [INFO] [GetWebDriverWait] -  Wait Object Created 
+19:05:29,175 [INFO] [WaitForLoadingMask] -  Waiting for Loading Mask 
+19:05:29,202 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to Configured Value 
+19:05:29,394 [INFO] [IsElementPresentQuick] -  Checking for Element Quick By.XPath: //label[text()='Status']/following-sibling::div//span[text()='select']
+19:05:31,416 [INFO] [GetWebDriverWait] -  Wait Object Created 
+19:05:31,417 [INFO] [IsElementPresent] -  Waiting for Element By.XPath: //label[text()='Status']/following-sibling::span//span[text()='select']
+19:05:32,001 [INFO] [ExecuteScript] -  Executing Script window.scrollTo(0,541);
+19:05:32,105 [INFO] [ScrollElementAndClick] -  Scroll Element And Click OpenQA.Selenium.Remote.RemoteWebElement
+19:05:32,605 [INFO] [GetWebDriverWait] -  Wait Object Created 
+19:05:32,605 [INFO] [GetVisiblityOfElement] -  Waiting for Visibility of Element By.XPath: //li[text()='Active']
+19:05:32,718 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to 1 Second 
+19:05:32,718 [INFO] [GetWebDriverWait] -  Wait Object Created 
+19:05:32,719 [INFO] [WaitForLoadingMask] -  Waiting for Loading Mask 
+19:05:32,728 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to Configured Value 
+19:05:33,733 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to 1 Second 
+19:05:33,734 [INFO] [GetWebDriverWait] -  Wait Object Created 
+19:05:33,734 [INFO] [WaitForLoadingMask] -  Waiting for Loading Mask 
+19:05:33,766 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to Configured Value 
+19:05:33,766 [INFO] [IsElementPresentQuick] -  Checking for Element Quick By.XPath: //label[text()='Point Type']/following-sibling::div//span[text()='select']
+19:05:35,788 [INFO] [GetWebDriverWait] -  Wait Object Created 
+19:05:35,788 [INFO] [IsElementPresent] -  Waiting for Element By.XPath: //label[text()='Point Type']/following-sibling::span//span[text()='select']
+19:05:36,366 [INFO] [ExecuteScript] -  Executing Script window.scrollTo(0,401);
+19:05:36,417 [INFO] [ScrollElementAndClick] -  Scroll Element And Click OpenQA.Selenium.Remote.RemoteWebElement
+19:05:36,918 [INFO] [GetWebDriverWait] -  Wait Object Created 
+19:05:36,918 [INFO] [GetVisiblityOfElement] -  Waiting for Visibility of Element By.XPath: //li[text()='Visa']
+19:05:37,056 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to 1 Second 
+19:05:37,056 [INFO] [GetWebDriverWait] -  Wait Object Created 
+19:05:37,057 [INFO] [WaitForLoadingMask] -  Waiting for Loading Mask 
+19:05:37,068 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to Configured Value 
+19:05:38,072 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to 1 Second 
+19:05:38,073 [INFO] [GetWebDriverWait] -  Wait Object Created 
+19:05:38,074 [INFO] [WaitForLoadingMask] -  Waiting for Loading Mask 
+19:05:38,103 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to Configured Value 
+19:05:38,105 [INFO] [IsElementPresentQuick] -  Checking for Element Quick By.XPath: //label[text()='Language']/following-sibling::div//span[text()='select']
+19:05:40,174 [INFO] [GetWebDriverWait] -  Wait Object Created 
+19:05:40,175 [INFO] [IsElementPresent] -  Waiting for Element By.XPath: //label[text()='Language']/following-sibling::span//span[text()='select']
+19:05:40,783 [INFO] [ExecuteScript] -  Executing Script window.scrollTo(0,471);
+19:05:40,893 [INFO] [ScrollElementAndClick] -  Scroll Element And Click OpenQA.Selenium.Remote.RemoteWebElement
+19:05:41,395 [INFO] [GetWebDriverWait] -  Wait Object Created 
+19:05:41,395 [INFO] [GetVisiblityOfElement] -  Waiting for Visibility of Element By.XPath: //li[text()='English (United States)']
+19:05:41,465 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to 1 Second 
+19:05:41,466 [INFO] [GetWebDriverWait] -  Wait Object Created 
+19:05:41,466 [INFO] [WaitForLoadingMask] -  Waiting for Loading Mask 
+19:05:41,476 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to Configured Value 
+19:05:42,478 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to 1 Second 
+19:05:42,478 [INFO] [GetWebDriverWait] -  Wait Object Created 
+19:05:42,478 [INFO] [WaitForLoadingMask] -  Waiting for Loading Mask 
+19:05:42,488 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to Configured Value 
+19:05:43,046 [INFO] [ExecuteScript] -  Executing Script window.scrollTo(0,536);
+19:05:43,958 [INFO] [ExecuteScript] -  Executing Script window.scrollTo(0,620);
+19:05:44,021 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to 1 Second 
+19:05:44,021 [INFO] [GetWebDriverWait] -  Wait Object Created 
+19:05:44,022 [INFO] [WaitForLoadingMask] -  Waiting for Loading Mask 
+19:05:44,420 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to Configured Value 
+19:05:45,113 [INFO] [ExecuteScript] -  Executing Script window.scrollTo(0,651);
+19:05:45,219 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to 1 Second 
+19:05:45,219 [INFO] [GetWebDriverWait] -  Wait Object Created 
+19:05:45,219 [INFO] [WaitForLoadingMask] -  Waiting for Loading Mask 
+19:05:46,525 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to Configured Value 
+19:05:46,526 [INFO] [GetWebDriverWait] -  Wait Object Created 
+19:05:46,526 [INFO] [IsElementPresent] -  Waiting for Element By.XPath: //span[text()='Select One']/following-sibling::span//span[text()='select']
+19:05:47,075 [INFO] [ExecuteScript] -  Executing Script window.scrollTo(0,389);
+19:05:47,203 [INFO] [ScrollElementAndClick] -  Scroll Element And Click OpenQA.Selenium.Remote.RemoteWebElement
+19:05:47,705 [INFO] [GetWebDriverWait] -  Wait Object Created 
+19:05:47,705 [INFO] [GetVisiblityOfElement] -  Waiting for Visibility of Element By.XPath: //li[text()='United States']
+19:05:47,780 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to 1 Second 
+19:05:47,780 [INFO] [GetWebDriverWait] -  Wait Object Created 
+19:05:47,781 [INFO] [WaitForLoadingMask] -  Waiting for Loading Mask 
+19:05:47,798 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to Configured Value 
+19:05:48,894 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to 1 Second 
+19:05:48,894 [INFO] [GetWebDriverWait] -  Wait Object Created 
+19:05:48,894 [INFO] [WaitForLoadingMask] -  Waiting for Loading Mask 
+19:05:49,306 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to Configured Value 
+19:05:49,434 [INFO] [IsElementPresentQuick] -  Checking for Element Quick By.XPath: //div[@kendo-grid='availableItemsGrid']/div[2]//table//tbody//tr[1]//td[1]/a
+19:05:51,450 [INFO] [IsElementPresentQuick] -  Checking for Element Quick By.XPath: //div[@kendo-grid='availableItemsGrid']/div[2]//table//tbody//tr[1]//td[1]/span
+19:05:53,496 [INFO] [IsElementPresentQuick] -  Checking for Element Quick By.XPath: //div[@kendo-grid='availableItemsGrid']/div[2]//table//tbody//tr[1]//td[1]/input
+19:05:55,506 [INFO] [IsElementPresentQuick] -  Checking for Element Quick By.XPath: //div[@kendo-grid='availableItemsGrid']/div[2]//table//tbody//tr[1]//td[1]//input
+19:05:55,521 [INFO] [GetWebDriverWait] -  Wait Object Created 
+19:05:55,521 [INFO] [IsElementPresent] -  Waiting for Element By.XPath: //div[@kendo-grid='availableItemsGrid']/div[2]//table//tbody//tr[1]//td[1]//input
+19:05:55,602 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to 1 Second 
+19:05:55,603 [INFO] [GetWebDriverWait] -  Wait Object Created 
+19:05:55,603 [INFO] [WaitForLoadingMask] -  Waiting for Loading Mask 
+19:05:56,908 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to Configured Value 
+19:05:57,448 [INFO] [ExecuteScript] -  Executing Script window.scrollTo(0,1074);
+19:05:57,552 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to 1 Second 
+19:05:57,552 [INFO] [GetWebDriverWait] -  Wait Object Created 
+19:05:57,553 [INFO] [WaitForLoadingMask] -  Waiting for Loading Mask 
+19:05:57,910 [INFO] [WaitForLoadingMask] -  Setting the  Implicitly Wait to Configured Value 
+19:05:57,911 [INFO] [IsElementPresentQuick] -  Checking for Element Quick By.XPath: //div[@id='bergerModal']/following-sibling::div[position()=1]/descendant::span[position()=2]
+19:05:57,933 [INFO] [GetWebDriverWait] -  Wait Object Created 
+19:05:57,933 [INFO] [IsElementPresent] -  Waiting for Element By.XPath: //div[@id='bergerModal']/following-sibling::div[position()=1]/descendant::span[position()=2]
+19:05:57,983 [INFO] [GetWebDriverWait] -  Wait Object Created 
+19:05:57,983 [INFO] [WaitForElementClickAble] -  Waiting for Element to be Clickable OpenQA.Selenium.Remote.RemoteWebElement
+19:05:58,531 [INFO] [ExecuteScript] -  Executing Script window.scrollTo(0,72);
+19:05:58,590 [INFO] [ScrollElementAndClick] -  Scroll Element And Click OpenQA.Selenium.Remote.RemoteWebElement
+19:05:58,591 [INFO] [GetWebDriverWait] -  Wait Object Created 
+19:05:58,591 [INFO] [WaitForElement] -  Waiting for Element Exist By.XPath: //a[contains(text(),'Log Off')]
+19:05:59,126 [INFO] [ExecuteScript] -  Executing Script window.scrollTo(0,146);
+19:06:01,810 [INFO] [ScrollElementAndClick] -  Scroll Element And Click OpenQA.Selenium.Remote.RemoteWebElement
+19:06:01,823 [ERROR] [IsAlertPresent] -  [Ignore]    at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.Remote.RemoteTargetLocator.Alert()
+   at Park_and_Company.ComponentHelper.GenericHelper.IsAlertPresent() in C:\Users\rsr\Documents\GitHub\ParkandCompanyCSharp\Park-and-Company\ComponentHelper\GenericHelper.cs:line 183
+19:06:01,823 [INFO] [GetWebDriverWait] -  Wait Object Created 
+19:06:01,824 [INFO] [WaitForElement] -  Waiting for Element Exist By.XPath: //div[@class='loginWrapper']
