@@ -18,7 +18,7 @@ namespace Park_and_Company.ExtensionClass.LoggerExtClass
             logger.Error(" Message " + e.Message);
             logger.Error(" StackTrace " + e.StackTrace);
             logger.Error(" InnerException " + e.InnerException);
-            GenericHelper.TakeSceenShot(e.Source);
+            GenericHelper.TakeSceenShot();
         }
 
         #endregion
