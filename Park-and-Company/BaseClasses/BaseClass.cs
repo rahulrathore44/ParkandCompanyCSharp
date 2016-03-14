@@ -9,6 +9,7 @@ using log4net;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using Park_and_Company.ComponentHelper;
+using Park_and_Company.ExtensionClass.LoggerExtClass;
 using Park_and_Company.Settings;
 
 namespace Park_and_Company.BaseClasses
@@ -83,7 +84,8 @@ namespace Park_and_Company.BaseClasses
             }
             catch (Exception e)
             {
-                Logger.Fatal(e.StackTrace);
+                Logger.LogException(e);
+                throw;
             }
            
         }

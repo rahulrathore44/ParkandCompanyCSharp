@@ -27,16 +27,34 @@ namespace Park_and_Company.ComponentHelper
 
         public static void SelectByVisibleText(By locator, string text)
         {
-            _select = new SelectElement(GenericHelper.GetElement(locator));
-            _select.SelectByText(text);
-            Logger.Info(text + " Selected from " + locator);
+            try
+            {
+                _select = new SelectElement(GenericHelper.GetElement(locator));
+                _select.SelectByText(text);
+                Logger.Info(text + " Selected from " + locator);
+            }
+            catch (Exception exception)
+            {
+                Logger.LogException(exception);
+                throw;
+            }
+           
         }
 
         public static void SelectByVisibleText(IWebElement element, string text)
         {
-            _select = new SelectElement(element);
-            _select.SelectByText(text);
-            Logger.Info(text + " Selected from " + element);
+            try
+            {
+                _select = new SelectElement(element);
+                _select.SelectByText(text);
+                Logger.Info(text + " Selected from " + element);
+            }
+            catch (Exception exception)
+            {
+                Logger.LogException(exception);
+                throw;
+            }
+           
         }
 
         public static void SelectItemPerList(string number)
@@ -52,8 +70,7 @@ namespace Park_and_Company.ComponentHelper
 
         public static void SelectFromDropDownWithLabel(string label,string value)
         {
-            try
-            {
+            
                 var arrow = GenericHelper.GetElement(GetDropDownWithLabelXpath(label));
                 JavaScriptExecutorHelper.ScrollElementAndClick(arrow);
                 Thread.Sleep(500);
@@ -61,19 +78,12 @@ namespace Park_and_Company.ComponentHelper
                 list.Click();
                 GenericHelper.WaitForLoadingMask();
                 Thread.Sleep(1000);
-            }
-            catch (Exception e)
-            {
-                Logger.LogException(e);
-                throw;
-            }
+            
             
         }
 
         public static void SelectFromKendoDropDown(By selectArrow,string value)
         {
-            try
-            {
                 var arrow = GenericHelper.GetElement(selectArrow);
                 JavaScriptExecutorHelper.ScrollElementAndClick(arrow);
                 Thread.Sleep(500);
@@ -81,12 +91,6 @@ namespace Park_and_Company.ComponentHelper
                 list.Click();
                 GenericHelper.WaitForLoadingMask();
                 Thread.Sleep(1000);
-            }
-            catch (Exception e)
-            {
-                Logger.LogException(e);
-                throw;
-            }
             
         }
 

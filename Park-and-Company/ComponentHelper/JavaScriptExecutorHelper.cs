@@ -1,6 +1,8 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using log4net;
 using OpenQA.Selenium;
+using Park_and_Company.ExtensionClass.LoggerExtClass;
 using Park_and_Company.Settings;
 
 namespace Park_and_Company.ComponentHelper
@@ -20,17 +22,35 @@ namespace Park_and_Company.ComponentHelper
 
         public static void ScrollElementAndClick(IWebElement element)
         {
-            Thread.Sleep(500);
-            ExecuteScript("window.scrollTo(0," + element.Location.Y + ");");
-            element.Click();
-            Logger.Info(" Scroll Element And Click " + element);
+            try
+            {
+                Thread.Sleep(500);
+                ExecuteScript("window.scrollTo(0," + element.Location.Y + ");");
+                element.Click();
+                Logger.Info(" Scroll Element And Click " + element);
+            }
+            catch (Exception exception)
+            {
+                Logger.LogException(exception);
+                throw;
+            }
+           
         }
 
         public static void ScrollToElement(IWebElement element)
         {
-            Thread.Sleep(500);
-            ExecuteScript("window.scrollTo(0," + element.Location.Y + ");");
-            Logger.Info(" Scroll To Element " + element);
+            try
+            {
+                Thread.Sleep(500);
+                ExecuteScript("window.scrollTo(0," + element.Location.Y + ");");
+                Logger.Info(" Scroll To Element " + element);
+            }
+            catch (Exception exception)
+            {
+                Logger.LogException(exception);
+                throw;
+            }
+           
         }
 
         public static void ScrollElementAndClick(By locator)
