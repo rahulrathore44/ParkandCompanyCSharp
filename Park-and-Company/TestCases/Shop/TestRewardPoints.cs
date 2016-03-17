@@ -17,7 +17,7 @@ namespace Park_and_Company.TestCases.Shop
         [TestMethod]
         public void TestRPoints()
         {
-            var cPage = hPage.NavigateToCardStore("Card Store"); // supply the name of sub menu item to open
+            var cPage = HPage.NavigateToCardStore("Card Store"); // supply the name of sub menu item to open
             var vPage = cPage.ClickOpenPrePaid();
             var detailPage = vPage.ClickSelectButton(4); // use this method for selecting the card based on index
             detailPage.SetPointAmount("10"); // to set the point amount

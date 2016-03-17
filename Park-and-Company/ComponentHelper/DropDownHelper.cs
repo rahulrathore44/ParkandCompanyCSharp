@@ -27,34 +27,16 @@ namespace Park_and_Company.ComponentHelper
 
         public static void SelectByVisibleText(By locator, string text)
         {
-            try
-            {
-                _select = new SelectElement(GenericHelper.GetElement(locator));
-                _select.SelectByText(text);
-                Logger.Info(text + " Selected from " + locator);
-            }
-            catch (Exception exception)
-            {
-                Logger.LogException(exception);
-                throw;
-            }
-           
+            _select = new SelectElement(GenericHelper.GetElement(locator));
+            _select.SelectByText(text);
+            Logger.Info(text + " Selected from " + locator);
         }
 
         public static void SelectByVisibleText(IWebElement element, string text)
         {
-            try
-            {
-                _select = new SelectElement(element);
-                _select.SelectByText(text);
-                Logger.Info(text + " Selected from " + element);
-            }
-            catch (Exception exception)
-            {
-                Logger.LogException(exception);
-                throw;
-            }
-           
+            _select = new SelectElement(element);
+            _select.SelectByText(text);
+            Logger.Info(text + " Selected from " + element);
         }
 
         public static void SelectItemPerList(string number)

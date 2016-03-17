@@ -23,7 +23,7 @@ namespace Park_and_Company.ComponentHelper
 
         #region MyRegion
 
-        internal static string Pattern { get; set; } = "%date{ABSOLUTE} [%level] [%method] - %message%newline";
+        internal static string Pattern { get; set; } = "%date{ABSOLUTE} [%level] [%class] [%method] - %message%newline";
 
         internal static PatternLayout GetPatternLayout()
         {

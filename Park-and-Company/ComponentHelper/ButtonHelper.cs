@@ -11,17 +11,8 @@ namespace Park_and_Company.ComponentHelper
         private static readonly ILog Logger = LoggerHelper.GetLogger(typeof(ButtonHelper));
         public static void ClickButton(By @by)
         {
-            try
-            {
-                ObjectRepository.Driver.FindElement(by).Click();
-                Logger.Info(" Click on Element " + by);
-            }
-            catch (Exception exception)
-            {
-                Logger.LogException(exception);
-                throw;
-            }
-           
+            ObjectRepository.Driver.FindElement(@by).Click();
+            Logger.Info(" Click on Element " + @by);
         }
     }
 }

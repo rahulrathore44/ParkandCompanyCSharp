@@ -16,7 +16,7 @@ namespace Park_and_Company.TestCases.Learn.Library
         [DeploymentItem("Resources")]
         public void TestManageLibraryUpload()
         {
-            var myLibPage = hPage.NavigateToLibrary();
+            var myLibPage = HPage.NavigateToLibrary();
             myLibPage.DropBox.ScrollElementAndClick();
             myLibPage.FileUpload(@"TestDataFiles\Title.docx");
             Thread.Sleep(1000);
@@ -44,7 +44,7 @@ namespace Park_and_Company.TestCases.Learn.Library
         [DeploymentItem("Resources")]
         public void TestCsvFile()
         {
-            var myLibPage = hPage.NavigateToLibrary();
+            var myLibPage = HPage.NavigateToLibrary();
             myLibPage.DropBox.ScrollElementAndClick();
             myLibPage.FileUpload(@"TestDataFiles\Inventorylist1.csv");
             Thread.Sleep(1000);
@@ -57,7 +57,7 @@ namespace Park_and_Company.TestCases.Learn.Library
         [DeploymentItem("Resources")]
         public void TestWithBigThumbnailImage()
         {
-            var myLibPage = hPage.NavigateToLibrary();
+            var myLibPage = HPage.NavigateToLibrary();
             myLibPage.DropBox.ScrollElementAndClick();
             myLibPage.FileUpload(@"TestDataFiles\Title.docx");
             Thread.Sleep(1000);
@@ -76,7 +76,7 @@ namespace Park_and_Company.TestCases.Learn.Library
         [DeploymentItem("Resources")]
         public void TestEditAsset()
         {
-            var myLibPage = hPage.NavigateToLibrary();
+            var myLibPage = HPage.NavigateToLibrary();
             myLibPage.EditAsset(3);
             Thread.Sleep(1000);
             myLibPage.Save.ScrollElementAndClick();
@@ -91,7 +91,7 @@ namespace Park_and_Company.TestCases.Learn.Library
         [DeploymentItem("Resources")]
         public void TestDeleteAsset()
         {
-            var myLibPage = hPage.NavigateToLibrary();
+            var myLibPage = HPage.NavigateToLibrary();
             myLibPage.DeleteAsset(3);
             Thread.Sleep(1000);
             GenericHelper.WaitForLoadingMask();
@@ -104,7 +104,7 @@ namespace Park_and_Company.TestCases.Learn.Library
         [Description("Test case for searching the pptx file")]
         public void TestSearchPptx()
         {
-            var myLibPage = hPage.NavigateToLibrary();
+            var myLibPage = HPage.NavigateToLibrary();
             myLibPage.Search("pptx");
             GenericHelper.WaitForLoadingMask();
             // Suplly the index value to check the asset
@@ -120,7 +120,7 @@ namespace Park_and_Company.TestCases.Learn.Library
         [Description("Test case for searching the docx file")]
         public void TestSearchDocx()
         {
-            var myLibPage = hPage.NavigateToLibrary();
+            var myLibPage = HPage.NavigateToLibrary();
             // use this method to suppply the search parameter : "search text","sort by","view by"
             // If you don't supply any thing it will use "docx","Last Created Date","Document"
             myLibPage.Search("docx", "Start Date", "Documents");
@@ -133,7 +133,7 @@ namespace Park_and_Company.TestCases.Learn.Library
         [TestMethod]
         public void TestUserView()
         {
-            var viewPage = hPage.NavigateToLibrary().NavigateToLibrarySearch();
+            var viewPage = HPage.NavigateToLibrary().NavigateToLibrarySearch();
             viewPage.SelectViewBy("Documents");
             // Specify the "Search String" & "View by"
             //viewPage.Search("adas","Documents");

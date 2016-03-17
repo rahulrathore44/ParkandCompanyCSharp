@@ -17,33 +17,15 @@ namespace Park_and_Company.ExtensionClass.WebElementExtClass
         private static readonly ILog Logger = LoggerHelper.GetLogger(typeof(JavaScriptExecutor));
         public static void ScrollToElement(this IWebElement element)
         {
-            try
-            {
-                Thread.Sleep(500);
-                JavaScriptExecutorHelper.ExecuteScript("window.scrollTo(0," + element.Location.Y + ");");
-            }
-            catch (Exception exception)
-            {
-                Logger.LogException(exception);
-                throw;
-            }
-           
+            Thread.Sleep(500);
+            JavaScriptExecutorHelper.ExecuteScript("window.scrollTo(0," + element.Location.Y + ");");
         }
 
         public static void ScrollElementAndClick(this IWebElement element)
         {
-            try
-            {
-                Thread.Sleep(500);
-                JavaScriptExecutorHelper.ExecuteScript("window.scrollTo(0," + element.Location.Y + ");");
-                element.Click();
-            }
-            catch (Exception exception)
-            {
-                Logger.LogException(exception);
-                throw;
-            }
-            
+            Thread.Sleep(500);
+            JavaScriptExecutorHelper.ExecuteScript("window.scrollTo(0," + element.Location.Y + ");");
+            element.Click();
         }
     }
 }

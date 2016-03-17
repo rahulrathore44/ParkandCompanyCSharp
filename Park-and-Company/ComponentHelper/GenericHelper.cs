@@ -17,6 +17,7 @@ namespace Park_and_Company.ComponentHelper
     {
         private static readonly int WaitTime = ObjectRepository.Config.GetExplicitElementLoadTimeout();
         private static readonly ILog Logger = LoggerHelper.GetLogger(typeof (GenericHelper));
+        private static WebDriverWait _wait;
 
         private static Func<IWebDriver, bool> MaskPresence()
         {
@@ -24,6 +25,7 @@ namespace Park_and_Company.ComponentHelper
             {
                 if (x.FindElements((By.XPath(LocatorRepository.LoadingMaskXpath))).Any())
                     return true;
+                Logger.Debug(" Loding Mask Present ");
                 return false;
             });
         }
@@ -34,21 +36,27 @@ namespace Park_and_Company.ComponentHelper
             {
                 if (x.FindElements(locator).Any())
                     return true;
+                Logger.Info(string.Format(" Checking for Element : {0}",locator));
                 return false;
             });
         }
 
         public static WebDriverWait GetWebDriverWait(int timeOutInSeconds)
         {
-            var wait = new WebDriverWait(ObjectRepository.Driver, TimeSpan.FromSeconds(timeOutInSeconds))
+            if (_wait != null)
+            {
+                Logger.Info(" Wait Object Created ");
+                return _wait;
+            }
+
+            _wait = new WebDriverWait(ObjectRepository.Driver, TimeSpan.FromSeconds(timeOutInSeconds))
             {
                 PollingInterval = TimeSpan.FromMilliseconds(250),
             };
 
-            wait.IgnoreExceptionTypes(typeof(NoSuchElementException),typeof(ElementNotVisibleException));
+            _wait.IgnoreExceptionTypes(typeof(NoSuchElementException),typeof(ElementNotVisibleException));
             Logger.Info(" Wait Object Created ");
-		    return wait;
-		
+		    return _wait;
 	    }
         public static bool IsElementPresent(By locator)
         {
@@ -82,34 +90,16 @@ namespace Park_and_Company.ComponentHelper
 
         public static IWebElement GetElement(By locator)
         {
-            try
-            {
-                if (IsElementPresent(locator))
-                    return ObjectRepository.Driver.FindElement(locator);
-                throw new NoSuchElementException("Element Not Found : " + locator);
-            }
-            catch (Exception exception)
-            {
-                Logger.LogException(exception);
-                throw;
-            }
-           
+            if (IsElementPresent(locator))
+                return ObjectRepository.Driver.FindElement(locator);
+            throw new NoSuchElementException("Element Not Found : " + locator);
         }
 
         public static IWebElement GetVisiblityOfElement(By locator)
         {
-            try
-            {
-                var wait = GetWebDriverWait(WaitTime);
-                Logger.Info(" Waiting for Visibility of Element " + locator);
-                return wait.Until(ExpectedConditions.ElementIsVisible(locator));
-            }
-            catch (Exception exception)
-            {
-                Logger.LogException(exception);
-                throw;
-            }
-           
+            var wait = GetWebDriverWait(WaitTime);
+            Logger.Info(" Waiting for Visibility of Element " + locator);
+            return wait.Until(ExpectedConditions.ElementIsVisible(locator));
         }
 
         public static void WindowMaximize()
@@ -132,107 +122,52 @@ namespace Park_and_Company.ComponentHelper
 
         public static IWebElement WaitForElement(By locator)
         {
-            try
-            {
-                var wait = GetWebDriverWait(WaitTime);
-                Logger.Info(" Waiting for Element Exist " + locator);
-                return wait.Until(ExpectedConditions.ElementExists(locator));
-            }
-            catch (Exception exception)
-            {
-                Logger.LogException(exception);
-                throw;
-            }
-           
+            var wait = GetWebDriverWait(WaitTime);
+            Logger.Info(" Waiting for Element Exist " + locator);
+            return wait.Until(ExpectedConditions.ElementExists(locator));
         }
 
         public static IWebElement WaitForElementClickAble(By locator)
         {
-            try
-            {
-                var wait = GetWebDriverWait(WaitTime);
-                Logger.Info(" Waiting for Element to be Clickable " + locator);
-                return wait.Until(ExpectedConditions.ElementToBeClickable(locator));
-            }
-            catch (Exception exception)
-            {
-                Logger.LogException(exception);
-                throw;
-            }
-            
+            var wait = GetWebDriverWait(WaitTime);
+            Logger.Info(" Waiting for Element to be Clickable " + locator);
+            return wait.Until(ExpectedConditions.ElementToBeClickable(locator));
         }
 
         public static IWebElement WaitForElementClickAble(IWebElement element)
         {
-            try
-            {
-                var wait = GetWebDriverWait(WaitTime);
-                Logger.Info(" Waiting for Element to be Clickable " + element);
-                return wait.Until(ExpectedConditions.ElementToBeClickable(element));
-            }
-            catch (Exception exception)
-            {
-                Logger.LogException(exception);
-                throw;
-            }
-
-           
+            var wait = GetWebDriverWait(WaitTime);
+            Logger.Info(" Waiting for Element to be Clickable " + element);
+            return wait.Until(ExpectedConditions.ElementToBeClickable(element));
         }
 
         public static IWebElement WaitForElement(IWebElement element)
         {
-            try
-            {
-                var wait = GetWebDriverWait(WaitTime);
-                Logger.Info(" Waiting for Element to be Clickable " + element);
-                return wait.Until(ExpectedConditions.ElementToBeClickable(element));
-            }
-            catch (Exception exception)
-            {
-                Logger.LogException(exception);
-                throw;
-            }
-            
+            var wait = GetWebDriverWait(WaitTime);
+            Logger.Info(" Waiting for Element to be Clickable " + element);
+            return wait.Until(ExpectedConditions.ElementToBeClickable(element));
         }
 
         public static void WaitForLoadingMask()
         {
-            try
-            {
-                ObjectRepository.Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(1));
-                Logger.Info(" Setting the  Implicitly Wait to 1 Second ");
-                var wait = GetWebDriverWait(WaitTime);
-                Logger.Info(" Waiting for Loading Mask ");
-                wait.Until(MaskPresence());
-                ObjectRepository.Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(ObjectRepository.Config.GetImplicitElementLoadTimeout()));
-                Logger.Info(" Setting the  Implicitly Wait to Configured Value ");
-            }
-            catch (Exception exception)
-            {
-                Logger.LogException(exception);
-                throw;
-            }
-            
+            ObjectRepository.Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(1));
+            Logger.Info(" Setting the  Implicitly Wait to 1 Second ");
+            var wait = GetWebDriverWait(WaitTime);
+            Logger.Info(" Waiting for Loading Mask ");
+            wait.Until(MaskPresence());
+            ObjectRepository.Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(ObjectRepository.Config.GetImplicitElementLoadTimeout()));
+            Logger.Info(" Setting the  Implicitly Wait to Configured Value ");
         }
 
         public static void WaitForAlert()
         {
-            try
-            {
-                ObjectRepository.Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(1));
-                Logger.Info(" Setting the  Implicitly Wait to 1 Second ");
-                var wait = GetWebDriverWait(WaitTime);
-                Logger.Info(" Waiting for Alert to Present ");
-                wait.Until(ExpectedConditions.AlertIsPresent());
-                ObjectRepository.Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(ObjectRepository.Config.GetImplicitElementLoadTimeout()));
-                Logger.Info(" Setting the  Implicitly Wait to Configured Value ");
-            }
-            catch (Exception exception)
-            {
-                Logger.LogException(exception);
-                throw;
-            }
-            
+            ObjectRepository.Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(1));
+            Logger.Info(" Setting the  Implicitly Wait to 1 Second ");
+            var wait = GetWebDriverWait(WaitTime);
+            Logger.Info(" Waiting for Alert to Present ");
+            wait.Until(ExpectedConditions.AlertIsPresent());
+            ObjectRepository.Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(ObjectRepository.Config.GetImplicitElementLoadTimeout()));
+            Logger.Info(" Setting the  Implicitly Wait to Configured Value ");
         }
 
         public static string GetText(By locator)

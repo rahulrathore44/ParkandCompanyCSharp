@@ -18,7 +18,7 @@ namespace Park_and_Company.TestCases.CheckScreens.Module.Program.ManageIncentive
         [TestMethod]
         public void TestManageIncentiveProgramsScr()
         {
-            var pAdjPage = hPage.OpenManageIncentivePrograms();
+            var pAdjPage = HPage.OpenManageIncentivePrograms();
             pAdjPage.SelectItemPerList("100");
             pAdjPage.CaptureScreenShot();
             pAdjPage.ClickElemetInGrid(Properties.Settings.Default.ManageIncentiveProgramsGrid,20,1);

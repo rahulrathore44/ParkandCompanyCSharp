@@ -12,61 +12,34 @@ namespace Park_and_Company.ComponentHelper
         private static readonly ILog Logger = LoggerHelper.GetLogger(typeof (BrowserHelper));
         public static void GoBack()
         {
-            try
-            {
-                ObjectRepository.Driver.Navigate().Back();
-                Logger.Info(" Browser Back Button Clicked ");
-            }
-            catch (Exception exception)
-            {
-                Logger.LogException(exception);
-                throw;
-            }
-           
+            ObjectRepository.Driver.Navigate().Back();
+            Logger.Info(" Browser Back Button Clicked ");
         }
 
         public static void SwitchToWindow(int windowIndex)
         {
-            try
+            Thread.Sleep(500);
+            var windowList = ObjectRepository.Driver.WindowHandles;
+            if (windowList == null || windowList.Count < windowIndex)
             {
-                Thread.Sleep(500);
-                var windowList = ObjectRepository.Driver.WindowHandles;
-                if (windowList == null || windowList.Count < windowIndex)
-                {
-                    throw new InvalidBrowserWindowIndex($"Invalid index of Browser window : {windowIndex}");
-                }
-                ObjectRepository.Driver.SwitchTo().Window(windowList[windowIndex]);
-                Logger.Info(" Switch to Window " + windowIndex);
+                throw new InvalidBrowserWindowIndex($"Invalid index of Browser window : {windowIndex}");
             }
-            catch (Exception exception)
-            {
-                Logger.LogException(exception);
-                throw;
-            }
-            
+            ObjectRepository.Driver.SwitchTo().Window(windowList[windowIndex]);
+            Logger.Info(" Switch to Window " + windowIndex);
         }
 
         public static void SwitchToParentWithClose()
         {
-            try
+            var windowList = ObjectRepository.Driver.WindowHandles;
+            for (var i = windowList.Count - 1; i > 0; i--)
             {
-                var windowList = ObjectRepository.Driver.WindowHandles;
-                for (var i = windowList.Count - 1; i > 0; i--)
-                {
-                    ObjectRepository.Driver.SwitchTo().Window(windowList[i]);
-                    Logger.Info(" Switch to Window " + windowList[i]);
-                    ObjectRepository.Driver.Close();
-                    Logger.Info(" Browser Window Closed " + windowList[i]);
-                }
-                ObjectRepository.Driver.SwitchTo().Window(windowList[0]);
-                Logger.Info(" Switch to Parent Window ");
+                ObjectRepository.Driver.SwitchTo().Window(windowList[i]);
+                Logger.Info(" Switch to Window " + windowList[i]);
+                ObjectRepository.Driver.Close();
+                Logger.Info(" Browser Window Closed " + windowList[i]);
             }
-            catch (Exception exception)
-            {
-                Logger.LogException(exception);
-                throw;
-            }
-           
+            ObjectRepository.Driver.SwitchTo().Window(windowList[0]);
+            Logger.Info(" Switch to Parent Window ");
         }
 
     }

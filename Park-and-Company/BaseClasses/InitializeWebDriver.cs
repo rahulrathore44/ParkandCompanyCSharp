@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using log4net;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -21,11 +22,17 @@ namespace Park_and_Company.BaseClasses
     [TestClass]
     public class InitializeWebDriver
     {
+        #region Fields
+
+        private static readonly ILog Logger = LoggerHelper.GetLogger(typeof (InitializeWebDriver));
+
+        #endregion
 
         private static FirefoxProfile GetFirefoxptions()
         {
             var profile = new FirefoxProfile();
             profile.AddExtension(@"C:\downloads\FirefoxGoogleAnalytics.xpi");
+            Logger.Info("Using FirefoxProfile");
             return profile;
         }
         private static ChromeOptions GetChromeOptions()
@@ -34,6 +41,7 @@ namespace Park_and_Company.BaseClasses
             option.AddArgument("start-maximized");
             option.AddExtension(@"C:\downloads\GoogleAnalytics.crx");
             option.Proxy = null;
+            Logger.Info("Using ChromeOptions");
             return option;
         }
 
@@ -45,6 +53,7 @@ namespace Park_and_Company.BaseClasses
                 EnsureCleanSession = true,
                 ElementScrollBehavior = InternetExplorerElementScrollBehavior.Bottom
             };
+            Logger.Info("Using InternetExplorerOptions Profile");
             return options;
         }
 
@@ -69,7 +78,7 @@ namespace Park_and_Company.BaseClasses
 
         private static PhantomJSDriver GetPhantomJsDriver()
         {
-            var driver = new PhantomJSDriver(GetPhantomJsptions());
+            var driver = new PhantomJSDriver(GetPhantomJsDrvierService());
 
             return driver;
         }
@@ -78,15 +87,17 @@ namespace Park_and_Company.BaseClasses
         {
             var option = new PhantomJSOptions();
             option.AddAdditionalCapability("handlesAlerts", true);
+            Logger.Info("Using PhantomJSOptions");
             return option;
         }
 
         private static PhantomJSDriverService GetPhantomJsDrvierService()
         {
             var service = PhantomJSDriverService.CreateDefaultService();
-            service.LogFile = "TestPhantomJS.log";
-            service.HideCommandPromptWindow = false;
+            service.LogFile = string.Format("TestPhantomJS_{0}.log",DateTime.UtcNow.ToString("yyyy_MM_dd"));
+            service.HideCommandPromptWindow = true;
             service.LoadImages = true;
+            Logger.Info("Using PhantomJSDriverService");
             return service;
         }
 
@@ -100,18 +111,22 @@ namespace Park_and_Company.BaseClasses
             {
                 case BrowserType.Firefox:
                     ObjectRepository.Driver = GetFirefoxDriver();
+                    Logger.Info(string.Format(" Browser : {0}", BrowserType.Firefox));
                     break;
 
                 case BrowserType.Chrome:
                     ObjectRepository.Driver = GetChromeDriver();
+                    Logger.Info(string.Format(" Browser : {0}", BrowserType.Chrome));
                     break;
 
                 case BrowserType.IExplorer:
                     ObjectRepository.Driver = GetIeDriver();
+                    Logger.Info(string.Format(" Browser : {0}", BrowserType.IExplorer));
                     break;
 
                 case BrowserType.PhantomJs:
                     ObjectRepository.Driver = GetPhantomJsDriver();
+                    Logger.Info(string.Format(" Browser : {0}", BrowserType.PhantomJs));
                     break;
 
                 default:
@@ -141,6 +156,7 @@ namespace Park_and_Company.BaseClasses
             if (ObjectRepository.Driver != null)
             {
                 ObjectRepository.Driver.Quit();
+                Logger.Info("Stopping the Webdriver");
             }
         }
     }

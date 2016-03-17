@@ -22,35 +22,17 @@ namespace Park_and_Company.ComponentHelper
 
         public static void ScrollElementAndClick(IWebElement element)
         {
-            try
-            {
-                Thread.Sleep(500);
-                ExecuteScript("window.scrollTo(0," + element.Location.Y + ");");
-                element.Click();
-                Logger.Info(" Scroll Element And Click " + element);
-            }
-            catch (Exception exception)
-            {
-                Logger.LogException(exception);
-                throw;
-            }
-           
+            Thread.Sleep(500);
+            ExecuteScript("window.scrollTo(0," + element.Location.Y + ");");
+            element.Click();
+            Logger.Info(" Scroll Element And Click " + element);
         }
 
         public static void ScrollToElement(IWebElement element)
         {
-            try
-            {
-                Thread.Sleep(500);
-                ExecuteScript("window.scrollTo(0," + element.Location.Y + ");");
-                Logger.Info(" Scroll To Element " + element);
-            }
-            catch (Exception exception)
-            {
-                Logger.LogException(exception);
-                throw;
-            }
-           
+            Thread.Sleep(500);
+            ExecuteScript("window.scrollTo(0," + element.Location.Y + ");");
+            Logger.Info(" Scroll To Element " + element);
         }
 
         public static void ScrollElementAndClick(By locator)

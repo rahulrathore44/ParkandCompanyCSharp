@@ -15,7 +15,7 @@ namespace Park_and_Company.TestCases.CheckScreens.Module.Program.ManageCalims
         [TestMethod]
         public void TestManageCalimsScr()
         {
-            var mclaimPage = hPage.OpeManageCalimsPage();
+            var mclaimPage = HPage.OpeManageCalimsPage();
             mclaimPage.SelectProgram("Test expire");
             mclaimPage.CaptureScreenShot($"ProgramName-{DateTime.UtcNow.ToString("hh-mm-ss")}");
             mclaimPage.ClickViewInGrid(Properties.Settings.Default.ManualApprovalGrid,1);

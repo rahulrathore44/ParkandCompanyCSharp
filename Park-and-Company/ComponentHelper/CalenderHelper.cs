@@ -28,7 +28,7 @@ namespace Park_and_Company.ComponentHelper
                         continue;
 
                     var aMonth = ObjectRepository.Driver.FindElement(By.XPath(tableXPath + "/tbody/tr[" + i + "]/td[" + j + "]//span")).Text;
-
+                    Logger.Debug(string.Format("Month : {0}",aMonth));
                     if (!month.Equals(aMonth, StringComparison.OrdinalIgnoreCase))
                         continue;
                     ObjectRepository.Driver.FindElement(By.XPath(tableXPath + "/tbody/tr[" + i + "]/td[" + j + "]//span")).Click();
@@ -50,7 +50,7 @@ namespace Park_and_Company.ComponentHelper
                         continue;
 
                     var aYear = ObjectRepository.Driver.FindElement(By.XPath(tableXPath + "/tbody/tr[" + i + "]/td[" + j + "]//span")).Text;
-
+                    Logger.Debug(string.Format("Year : {0}", aYear));
                     if (!year.Equals(aYear, StringComparison.OrdinalIgnoreCase))
                         continue;
 
@@ -73,8 +73,9 @@ namespace Park_and_Company.ComponentHelper
                         continue;
 
                     var xpath = tableXPath + "/tbody/tr[" + i + "]/td[" + j + "]//span";
+                    
                     var aday = ObjectRepository.Driver.FindElement(By.XPath(xpath)).Text;
-
+                    Logger.Debug(string.Format("Day : {0}", aday));
                     if (!day.Equals(aday, StringComparison.OrdinalIgnoreCase))
                         continue;
 

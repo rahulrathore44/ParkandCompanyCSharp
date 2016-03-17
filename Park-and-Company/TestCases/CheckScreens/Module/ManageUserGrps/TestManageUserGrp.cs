@@ -17,11 +17,11 @@ namespace Park_and_Company.TestCases.CheckScreens.Module.ManageUserGrps
         [TestMethod]
         public void TestManageUserGrpScreen()
         {
-            var mPage = hPage.OpenManageUserGroups();
+            var mPage = HPage.OpenManageUserGroups();
             mPage.ClickOnUserGrp(Properties.Settings.Default.UserGroupGrid, "test group", 1,2);
             GenericHelper.TakeSceenShot("Static User Grp");
             mPage.NavigateToHome();
-            hPage.OpenManageUserGroups();
+            HPage.OpenManageUserGroups();
             mPage.ClickOnUserGrp(Properties.Settings.Default.UserGroupGrid, "Test11/11/2015 5:34:13 PM", 2, 2);
             GenericHelper.TakeSceenShot("Smart User Grp");
             mPage.Logout();
@@ -30,7 +30,7 @@ namespace Park_and_Company.TestCases.CheckScreens.Module.ManageUserGrps
         [TestMethod]
         public void TestClickCreateAndCancel()
         {
-            var mPage = hPage.OpenManageUserGroups();
+            var mPage = HPage.OpenManageUserGroups();
             mPage.ClickCreateAndCancel("Create Group");
             mPage.Logout();
         }
@@ -38,7 +38,7 @@ namespace Park_and_Company.TestCases.CheckScreens.Module.ManageUserGrps
         [TestMethod]
         public void TestCreateGrpOfGrpAndCancel()
         {
-            var mPage = hPage.OpenManageUserGroups();
+            var mPage = HPage.OpenManageUserGroups();
             mPage.SelectGroup(Properties.Settings.Default.UserGroupGrid, 1, 1);
             mPage.SelectGroup(Properties.Settings.Default.UserGroupGrid, 2, 1);
             mPage.CreateGrpOfGrpAndCancel("Grp of Grp Screen Shot");

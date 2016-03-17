@@ -16,7 +16,7 @@ namespace Park_and_Company.TestCases.CheckScreens.Module.Configuration.CustomeAt
         [TestMethod]
         public void TestCustomeAttribute()
         {
-            var caPage = hPage.NavigateToCustomeAttribute();
+            var caPage = HPage.NavigateToCustomeAttribute();
             caPage.ClickOnCustomeAttribute();
             GenericHelper.TakeSceenShot($"CustomeAttribute-{DateTime.UtcNow.ToString("hh-mm-ss")}");
             caPage.ClickOnUserAttribute();
@@ -29,7 +29,7 @@ namespace Park_and_Company.TestCases.CheckScreens.Module.Configuration.CustomeAt
         [TestMethod]
         public void TestNewAttributeScrShot()
         {
-            var caPage = hPage.NavigateToCustomeAttribute();
+            var caPage = HPage.NavigateToCustomeAttribute();
             caPage.ClickOnCustomeAttribute();
             caPage.ClickOnNewAndTakeScrShot($"NewAttribute-{DateTime.UtcNow.ToString("hh-mm-ss")}");
             caPage.Logout();
@@ -38,7 +38,7 @@ namespace Park_and_Company.TestCases.CheckScreens.Module.Configuration.CustomeAt
         [TestMethod]
         public void TestEditAttributeScrShot()
         {
-            var caPage = hPage.NavigateToCustomeAttribute();
+            var caPage = HPage.NavigateToCustomeAttribute();
             caPage.ClickOnCustomeAttribute();
             caPage.ClickEditAndTakeScrShot(Properties.Settings.Default.CustomAttGrid,1,1, $"EditAttribute-{DateTime.UtcNow.ToString("hh-mm-ss")}");
             caPage.Logout();

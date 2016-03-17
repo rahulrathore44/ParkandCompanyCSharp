@@ -1,10 +1,16 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using log4net;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 
 namespace Park_and_Company.ComponentHelper
 {
     public class GridHelper
     {
+        #region Fields
+
+        private static readonly ILog Logger = LoggerHelper.GetLogger(typeof (GenericHelper));
+
+        #endregion
         #region Internal
 
         internal static string GetGridHeaderXpath(string gridXpath, int row, int column)
@@ -87,8 +93,13 @@ namespace Park_and_Company.ComponentHelper
                 return GenericHelper.GetElement(By.XPath(GetGridElementXpath(gridXpath, row, column) + "//input"));
             }
 
-            return GenericHelper.IsElementPresentQuick(
-                By.XPath(GetGridElementXpath(gridXpath, row, column))) ? GenericHelper.GetElement(By.XPath(GetGridElementXpath(gridXpath, row, column))) : null;
+            if (GenericHelper.IsElementPresentQuick(
+                By.XPath(GetGridElementXpath(gridXpath, row, column))))
+                return GenericHelper.GetElement(By.XPath(GetGridElementXpath(gridXpath, row, column)));
+
+            Logger.Error(string.Format("Grid Element {0} not found",GetGridElementXpath(gridXpath, row, column)));
+
+            return null;
         }
 
         public static void VerifyInGridEntry(string gridXpath, string value, int row,int column)

@@ -8,6 +8,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using Park_and_Company.BaseClasses.LoginBaseClass;
 using Park_and_Company.ComponentHelper;
+using Park_and_Company.ExtensionClass.LoggerExtClass;
 using Park_and_Company.ExtensionClass.WebElementExtClass;
 using Park_and_Company.PageObject.Configuration.StoreMaintenance.Catlog;
 using Park_and_Company.Settings;
@@ -46,11 +47,59 @@ namespace Park_and_Company.TestCases.Module.Configuration.StoreMaintenece
 
         };
 
+
+        /// <summary>
+        /// Make sure your test should inherite form "LoginBase" class
+        /// Write the test case in Try catch block
+        /// And use the Logger object as follow
+        /// </summary>
+
+        [TestMethod]
+        [Description("Example to Use Logger in Test")]
+        public void TestLoggerExample()
+        {
+            try
+            {
+                var smPage = HPage.NavigateToStoreMaintenance().ClickAddButton();
+                Logger.Info("Navigate to GeneralInformation Page"); // Logger Object
+                smPage.SelectCustomer("cit");
+                Logger.Info("Select the Customer");
+                smPage.StoreNameInput.SendKeys(string.Format("TestStore{0}", DateTime.UtcNow.ToString("yyyy-MM-dd-hh-mm-ss")));
+                smPage.SelectStatus("Active");
+                smPage.SelectPointType("Visa");
+                smPage.SelectLanguage("English (United States)");
+                smPage.SetPointMonetaryValue("1");
+
+                var configPage = (ConfigurationSettings)smPage.ClickNext(typeof(ConfigurationSettings));
+                Logger.Info("Clicking on Next to Open Configuration Page"); // Logger Object
+                configPage.WishListLabel.Click();
+                configPage.CartLabel.Click();
+
+                var invetPage = (StoreInventory)configPage.ClickNext(typeof(StoreInventory));
+                invetPage.SelectLanguage("United States");
+                invetPage.MultiMerchantChk.Click();
+                GenericHelper.WaitForLoadingMask();
+                GridHelper.GetGridElement(Properties.Settings.Default.StoreInventoryAvaliableItems, 1, 1).Click();
+                GenericHelper.WaitForLoadingMask();
+
+                var markUpPage = (StoreMarkups)configPage.ClickNext(typeof(StoreMarkups));
+                //markUpPage.Save.ScrollElementAndClick(); // Will save the created store
+                markUpPage.Logout();
+            }
+            catch (Exception exception)
+            {
+                Logger.LogException(exception);
+                throw;
+            }
+            
+
+        }
+
         [TestMethod]
         [Description("End to end flow for creating the Store Configuration")]
         public void TestCreateStore()
         {
-            var smPage = hPage.NavigateToStoreMaintenance().ClickAddButton();
+            var smPage = HPage.NavigateToStoreMaintenance().ClickAddButton();
             smPage.SelectCustomer("cit");
             smPage.StoreNameInput.SendKeys(string.Format("TestStore{0}",DateTime.UtcNow.ToString("yyyy-MM-dd-hh-mm-ss")));
             smPage.SelectStatus("Active");
@@ -78,7 +127,7 @@ namespace Park_and_Company.TestCases.Module.Configuration.StoreMaintenece
         [TestMethod]
         public void TestGeneralInfoPage()
         {
-            var smPage = hPage.NavigateToStoreMaintenance().ClickAddButton();
+            var smPage = HPage.NavigateToStoreMaintenance().ClickAddButton();
             //smPage.SelectCustomer("cit"); // For Selecting the customer
             //smPage.StoreNameInput.SendKeys("Test"); //For Providing the Store Name
             //smPage.SelectStatus("Active"); //For Selecting the Status
@@ -92,7 +141,7 @@ namespace Park_and_Company.TestCases.Module.Configuration.StoreMaintenece
         [TestMethod]
         public void TestConfigurationPage()
         {
-            var smPage = hPage.NavigateToStoreMaintenance().ClickAddButton();
+            var smPage = HPage.NavigateToStoreMaintenance().ClickAddButton();
             var configPage = (ConfigurationSettings)smPage.ClickNext(typeof(ConfigurationSettings)); // Click on next
             GenericHelper.WaitForLoadingMask();
             configPage.MaritzLabel.Click();
@@ -115,7 +164,7 @@ namespace Park_and_Company.TestCases.Module.Configuration.StoreMaintenece
         [TestMethod]
         public void TestStoreInventoryPage()
         {
-            var smPage = hPage.NavigateToStoreMaintenance().ClickAddButton();
+            var smPage = HPage.NavigateToStoreMaintenance().ClickAddButton();
             var config = (ConfigurationSettings)smPage.ClickNext(typeof(ConfigurationSettings));
             var invePage = (StoreInventory)config.ClickNext(typeof(StoreInventory));
             invePage.SelectLanguage("United States");
@@ -161,7 +210,7 @@ namespace Park_and_Company.TestCases.Module.Configuration.StoreMaintenece
         [TestMethod]
         public void TestMarkupsPage()
         {
-            var smPage = hPage.NavigateToStoreMaintenance().ClickAddButton();
+            var smPage = HPage.NavigateToStoreMaintenance().ClickAddButton();
             var config = (ConfigurationSettings)smPage.ClickNext(typeof(ConfigurationSettings));
             var invePage = (StoreInventory)config.ClickNext(typeof(StoreInventory));
             var markupPage = (StoreMarkups)invePage.ClickNext(typeof(StoreMarkups));
